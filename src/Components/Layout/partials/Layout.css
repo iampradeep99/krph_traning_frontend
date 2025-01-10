@@ -1,0 +1,15 @@
+/* Layout.css */
+.admin-layout {
+    display: flex;
+  }
+  
+  .main-content {
+    margin-left: 250px; /* Sidebar width */
+    width: calc(100% - 250px);
+  }
+  
+  .content-area {
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
