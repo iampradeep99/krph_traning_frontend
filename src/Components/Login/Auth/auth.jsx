@@ -1,8 +1,6 @@
 import CryptoJS from "crypto-js";
-// A import moment from "moment";
-
+import { jwtDecode } from "jwt-decode";
 const encryptedKey = "cfcfcgjh-hghgh-3hgh4ge-6refcg-hgfhf75rtdcgfcbv";
-
 export const encryptData = (data) => {
   return CryptoJS.AES.encrypt(JSON.stringify(data), encryptedKey).toString();
 };
@@ -45,9 +43,10 @@ export const getDecryptSessionStorage = (key) => {
 };
 
 export const checkAuthExist = () => {
+  debugger;
   const userData = getSessionStorage("user");
   if (userData) {
-    const expiryDate = userData.token.validTo;
+    const expiryDate = userData.token.exp;
     if (expiryDate) {
       const date = new Date(expiryDate);
       const now = new Date();
@@ -146,4 +145,12 @@ export const decryptStringData = (data) => {
   } catch (err) {
     return null;
   }
+};
+
+export const decodeJWTToken = (token) => {
+  const decodedToken = jwtDecode(token[0].token);
+  if (decodedToken) {
+    return decodedToken;
+  }
+  return null;
 };

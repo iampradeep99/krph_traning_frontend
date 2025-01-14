@@ -1,0 +1,58 @@
+.carousel-indicators {
+  /* margin-top: 160px; */
+  height: 10px;
+}
+
+.carousel .carousel-indicators li {
+  background-color: #212529;
+
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+}
+.corousel ol {
+  margin-top: 10%;
+}
+
+#leftindicator {
+  color: black;
+  margin-right: 70px;
+  font-size: 2em;
+  margin-top: 50px;
+}
+#rightindicator {
+  color: black;
+  margin-left: 70px;
+  font-size: 2em;
+  margin-top: 50px;
+}
+/* #headerall{
+
+    margin-left: 20px;
+} */
+#sidebarcolor .a {
+  color: white;
+}
+.sidebar .a {
+  color: white;
+}
+.container .col h5 {
+  margin-left: 20px;
+}
+
+.nav-link1 {
+  color: blue;
+}
+.carousel-inner .carousel-item img {
+  object-fit: contain;
+  height: 240px;
+  margin-top: 10px;
+}
+.slider_Image {
+  margin-top: 10px;
+  margin-left: 100px;
+  font-size: medium;
+}
+.text-gold {
+  color: #fccd60;
+}
