@@ -1,0 +1,31 @@
+.login-container {
+  height: 100vh;
+  background: url('./Assets/login-bg.png') no-repeat center center;
+  background-size: cover;
+
+  .left-section {
+    color: #fff;
+    padding: 20px;
+  }
+
+  .right-section {
+    .login-box {
+      max-width: 600px;
+      min-width: 480px;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 30px;
+      color: black;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .text {
+      color: black;
+      text-align: center;
+      font-weight: 600;
+    }
+     .submit_color{
+      color: #075307;
+     }
+    
+  }
+}
