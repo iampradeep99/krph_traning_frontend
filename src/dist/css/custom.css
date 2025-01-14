@@ -1,0 +1,119 @@
+.bg-blue i.fa {
+  color: #fff;
+  font-size: 20px;
+  padding: 5px;
+}
+.footer {
+  background: #19437f;
+  min-height: 28px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+.page-title {
+  padding: 5px;
+  background: #fbd3b7;
+}
+.page-title-name {
+  font-size: 18px;
+  color: #19437f;
+  font-weight: 500;
+}
+#form input.form-control {
+  width: auto;
+  display: inline-flex;
+  line-height: 1.6;
+  padding: 0.15rem 0.15rem;
+}
+.btn-orange {
+  background: #f26623;
+  border-color: #f26623;
+}
+.search {
+  margin-left: -8px;
+  margin-top: -4px;
+}
+.mt-0-1 {
+  margin-top: -5px;
+}
+
+table {
+  text-align: left;
+  position: relative;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 0.25rem;
+}
+tr.red th {
+  background: #446fad;
+  color: white;
+}
+th {
+  background: white;
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+.table-bordered td {
+  border: 1px solid #ffd0ae;
+  text-align: center;
+}
+.table-bordered th {
+  border: 1px solid #f7f7f7;
+  text-align: center;
+}
+.table-stripped > tbody > tr:nth-child(odd) > td {
+  background: #fbd3b7 !important;
+}
+
+.table-stripped > tbody > tr:nth-child(odd) > th {
+  background: #fbd3b7;
+}
+.modal .col-md-4 {
+  padding-right: 0px;
+}
+.modal-content {
+  min-height: 100vh;
+}
+.modal-header {
+  color: #fff;
+  background: #013c86;
+}
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 1;
+}
+.form-control {
+  padding: 0.35rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+select.form-control:not([size]):not([multiple]) {
+  height: calc(1.85rem + 2px);
+  line-height: 1.1;
+  font-size: 1rem;
+}
+td.text-left {
+  text-align: left;
+}
+td.text-right {
+  text-align: right;
+}
+span.select2.select2-container {
+  width: 100% !important;
+}
+
+@media (max-width: 1250px) {
+  div#navbarNavDropdown {
+    max-width: 900px;
+    overflow-x: auto;
+  }
+}
