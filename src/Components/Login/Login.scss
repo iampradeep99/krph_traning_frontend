@@ -1,6 +1,6 @@
 .login-container {
   height: 100vh;
-  background: url('./Assets/login-bg.png') no-repeat center center;
+  background: url("./Assets/login-bg.png") no-repeat center center;
   background-size: cover;
 
   .left-section {
@@ -23,9 +23,8 @@
       text-align: center;
       font-weight: 600;
     }
-     .submit_color{
+    .submit_color {
       color: #075307;
-     }
-    
+    }
   }
 }

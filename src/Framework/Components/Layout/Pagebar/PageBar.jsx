@@ -50,7 +50,15 @@ PageSelect.propTypes = {
 };
 
 const PageSearch = React.forwardRef((props, ref) => {
-  const { onClick, focus, btnText = "Search", label = "Search", className, disabled = false, ...restPropsProps } = props;
+  const {
+    onClick,
+    focus,
+    btnText = "Search",
+    label = "Search",
+    className,
+    disabled = false,
+    ...restPropsProps
+  } = props;
 
   const firstSearchInput = useRef();
 
@@ -84,7 +92,12 @@ const PageSearch = React.forwardRef((props, ref) => {
         disabled={disabled}
         {...restPropsProps}
       />
-      <button type="button" className={BizClass.DynBiz_PageTitle_SearchBoxBtn} onClick={() => ButtonClickFunction()} disabled={disabled}>
+      <button
+        type="button"
+        className={BizClass.DynBiz_PageTitle_SearchBoxBtn}
+        onClick={() => ButtonClickFunction()}
+        disabled={disabled}
+      >
         {btnText}
       </button>
     </div>
@@ -106,7 +119,12 @@ const PageButton = React.forwardRef((props, ref) => {
   const { loader, className, children, ...restProps } = props;
 
   return (
-    <button type="button" className={BizClass.DynBiz_PageTitle_Btn} ref={ref} {...restProps}>
+    <button
+      type="button"
+      className={BizClass.DynBiz_PageTitle_Btn}
+      ref={ref}
+      {...restProps}
+    >
       {loader === true ? (
         <div className="DynBiz_btn__spinner">
           <div className="DynBiz_btn__bounce1" />
@@ -131,7 +149,13 @@ PageButton.propTypes = {
 const PageInput = React.forwardRef((props, ref) => {
   const { className, ...restProps } = props;
 
-  return <input className={classNames(BizClass.DynBiz_PageTitle_Input, className)} ref={ref} {...restProps} />;
+  return (
+    <input
+      className={classNames(BizClass.DynBiz_PageTitle_Input, className)}
+      ref={ref}
+      {...restProps}
+    />
+  );
 });
 
 PageBar.Input = PageInput;
@@ -144,7 +168,12 @@ const PageExcelButton = React.forwardRef((props, ref) => {
   const { loader, className, children, ...restProps } = props;
 
   return (
-    <button type="button" className={BizClass.DynBiz_PageTitle_ExcelBtn} ref={ref} {...restProps}>
+    <button
+      type="button"
+      className={BizClass.DynBiz_PageTitle_ExcelBtn}
+      ref={ref}
+      {...restProps}
+    >
       {loader === true ? (
         <div className="DynBiz_btn__spinner">
           <div className="DynBiz_btn__bounce1" />

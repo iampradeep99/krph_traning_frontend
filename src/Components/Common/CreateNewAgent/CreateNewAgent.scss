@@ -1,0 +1,150 @@
+.form-wrapper {
+    margin: 10px auto; 
+    background-color: white;
+    height: 100vh;
+  }
+
+
+.container {
+    background: white;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .agent-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 10px;  
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;  
+    font-size: 12px;  
+    color: #333;
+  }
+  
+  input,
+  select {
+    padding: 8px;  
+    font-size: 12px;  
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #075307;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .privilege-options {
+    margin-top: 8px;  
+    display: flex;
+    gap: 12px;  
+  }
+  
+  .radio-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;  
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .radio-label input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-label .radio-custom {
+    width: 14px; 
+    height: 14px;
+    border: 2px solid #D3D3D3;  
+    border-radius: 50%;
+    margin-right: 6px;  
+    position: relative;
+  }
+  
+  .radio-label input[type="radio"]:checked + .radio-custom {
+    background-color: #075307;
+    border: 2px solid #D3D3D3;
+  }
+  
+  .radio-label input[type="radio"]:checked + .radio-custom::before {
+    content: '';
+    width: 6px;  
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .password-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-group input {
+    width: 100%;
+    padding-right: 100px;  
+    font-size: 12px;  
+  }
+  
+  .password-group .generate-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #075307;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;  
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 12px;  
+    transition: background-color 0.3s ease;
+  }
+  
+  .password-group .generate-btn:hover {
+    background-color: #054a06;
+  }
+  
+  .submit-btn {
+    padding: 10px;  
+    background-color: #075307;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;  
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #054a06;
+  }
+  

@@ -4,7 +4,6 @@ export const APIEndpoints = {
     GetYearmaster: "Brand/Setup/GetYearmaster",
     GetYearwiseTopbrand: "Brand/Setup/GetYearwiseTopbrand",
   },
-  
 };
 
 export default APIEndpoints;

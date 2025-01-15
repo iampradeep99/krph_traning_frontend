@@ -4,11 +4,10 @@ import { Navigate } from "react-router-dom";
 
 function PageAuthenticator() {
   if (checkAuthExist()) {
-   return <Navigate to="/home" />;
+    return <Navigate to="/home" />;
   }
 
-return <Navigate to="/login" />;
-  
+  return <Navigate to="/login" />;
 }
 
 export default PageAuthenticator;

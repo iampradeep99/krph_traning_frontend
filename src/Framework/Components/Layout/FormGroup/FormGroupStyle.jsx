@@ -15,7 +15,10 @@ export const FormGroupStyle = styled.div`
     grid-template-columns: repeat(
       ${(props) => props.column},
       [label] minmax(${(props) => props.minwidth}, max-content) [input]
-        ${(props) => (props.controlwidth ? `minmax(80px, ${props.controlwidth})` : "minmax(120px, 180px)")}
+        ${(props) =>
+          props.controlwidth
+            ? `minmax(80px, ${props.controlwidth})`
+            : "minmax(120px, 180px)"}
     );
     grid-gap: 8px;
     align-items: center;

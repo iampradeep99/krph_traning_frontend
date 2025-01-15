@@ -81,7 +81,10 @@ const getPoint = (el, tt, placement, space) => {
     }
 
     if (recurCount < 3)
-      if ((pos.isHorizontal() && (pt.x < bdys.l || pt.x > bdys.r)) || (pos.isVertical() && (pt.y < bdys.t || pt.y > bdys.b))) {
+      if (
+        (pos.isHorizontal() && (pt.x < bdys.l || pt.x > bdys.r)) ||
+        (pos.isVertical() && (pt.y < bdys.t || pt.y > bdys.b))
+      ) {
         pt.reset(recursive(pos.negate()));
       }
     pt.restrictRect(bdys);
@@ -97,16 +100,27 @@ function ContextMenu({ placement = "bottom", space = 6, children }) {
 
   const handleMOver = (e) => {
     setShow(1);
-    posRef.current = getPoint(e.currentTarget, tooltipRefSub.current, placement, space);
+    posRef.current = getPoint(
+      e.currentTarget,
+      tooltipRefSub.current,
+      placement,
+      space,
+    );
   };
 
   function useOnClickOutside(tooltipRefMain, tooltipRefSub, handler) {
     useEffect(() => {
       const listener = (event) => {
-        if (!tooltipRefMain.current || tooltipRefMain.current.contains(event.target)) {
+        if (
+          !tooltipRefMain.current ||
+          tooltipRefMain.current.contains(event.target)
+        ) {
           return;
         }
-        if (!tooltipRefSub.current || tooltipRefSub.current.contains(event.target)) {
+        if (
+          !tooltipRefSub.current ||
+          tooltipRefSub.current.contains(event.target)
+        ) {
           return;
         }
         handler(event);

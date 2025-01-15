@@ -24,7 +24,7 @@ export const authenticate = async (userName, password) => {
       if (result.responseCode.toString() === "1") {
         const buff = Buffer.from(
           result.responseDynamic ? result.responseDynamic : "",
-          "base64"
+          "base64",
         );
         if (buff.length !== 0) {
           const Data = JSON.parse(pako.inflate(buff, { to: "string" }));

@@ -8,13 +8,13 @@ import "../../../dist/js/adminlte.js";
 import "../../../dist/js/demo.js";
 import PropTypes from "prop-types";
 
-
-
 function Page(props) {
   const { title, component } = props;
 
   useEffect(() => {
-    document.title = title ? `${title} || "KRPH Training Management"` : "KRPH Training Management";
+    document.title = title
+      ? `${title} || "KRPH Training Management"`
+      : "KRPH Training Management";
   }, [title]);
 
   return (
@@ -23,7 +23,6 @@ function Page(props) {
         <Header />
         <SideBar />
         <div class="content-wrapper">{component}</div>
-       
       </div>
     </>
   );

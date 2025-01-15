@@ -73,7 +73,15 @@ function Header() {
       </ul>
 
       {/* Right section */}
-      <ul className="navbar-nav ml-auto" style={{ display: "flex", alignItems: "center" ,marginRight: "5px", padding: "0px 20px 0px 20px"}}>
+      <ul
+        className="navbar-nav ml-auto"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginRight: "5px",
+          padding: "0px 20px 0px 20px",
+        }}
+      >
         <li style={iconBoxStyle}>
           <i className="fas fa-bell"></i>
           <span style={badgeStyle}>2</span>

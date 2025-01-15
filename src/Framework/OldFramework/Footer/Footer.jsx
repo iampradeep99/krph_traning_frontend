@@ -19,7 +19,14 @@ export const FooterBox = (props) => {
   const { aligned, children, ...rest } = props;
 
   return (
-    <div className={aligned === "right" ? `${BizClass.BoxRight} ${BizClass.Box}` : BizClass.Box} {...rest}>
+    <div
+      className={
+        aligned === "right"
+          ? `${BizClass.BoxRight} ${BizClass.Box}`
+          : BizClass.Box
+      }
+      {...rest}
+    >
       {children}
     </div>
   );

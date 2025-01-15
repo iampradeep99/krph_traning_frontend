@@ -1,8 +1,8 @@
 // Layout.jsx
-import React from 'react';
+import React from "react";
 import "../Layout/partials/Layout.css";
-import Sidebar from './partials/Sidebar';
-import Header from './partials/Header';
+import Sidebar from "./partials/Sidebar";
+import Header from "./partials/Header";
 
 const Layout = ({ children }) => {
   return (
@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <div className="main-content">
         <Header />
         <div className="content-area">
-          {children}  {/* This is where the route content will be injected */}
+          {children} {/* This is where the route content will be injected */}
         </div>
       </div>
     </div>

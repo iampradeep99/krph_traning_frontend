@@ -1,6 +1,7 @@
 import CryptoJS from "crypto-js";
 import { jwtDecode } from "jwt-decode";
 const encryptedKey = "cfcfcgjh-hghgh-3hgh4ge-6refcg-hgfhf75rtdcgfcbv";
+
 export const encryptData = (data) => {
   return CryptoJS.AES.encrypt(JSON.stringify(data), encryptedKey).toString();
 };
@@ -45,14 +46,18 @@ export const getDecryptSessionStorage = (key) => {
 export const checkAuthExist = () => {
   debugger;
   const userData = getSessionStorage("user");
+  console.log("This is UserData " + JSON.stringify(userData));
   if (userData) {
-    const expiryDate = userData.token.exp;
+    const expiryDate = userData.token.expiryTime;
+    const loginDate = userData.token.loginTime;
     if (expiryDate) {
-      const date = new Date(expiryDate);
-      const now = new Date();
+      // const date1 = new Date(expiryDate * 1000);
+      // const currentDate =  date1.toLocaleString(); 
+      // const date = new Date(expiryDate);
+      // const now = new Date();
       // Now.setMinutes(now.getMinutes() + 59);
       // Console.log(date, now);
-      if (date > now) {
+      if (expiryDate > loginDate) {
         return true;
       }
       sessionStorage.removeItem("IsLoggedIn");
@@ -64,6 +69,11 @@ export const checkAuthExist = () => {
   sessionStorage.removeItem("IsLoggedIn");
   return false;
 };
+
+
+
+
+
 
 // A export const checkAuthExist = () => {
 // A  debugger;
@@ -92,7 +102,11 @@ export const getUserRightCodeAccess = (rightCode) => {
   const data = getSessionStorage("UserRights");
   if (data) {
     const filterData = data.filter((data) => {
-      return (data && data.RightCode ? data.RightCode.toString().toUpperCase().trim() : "") === rightCode.toString().toUpperCase().trim();
+      return (
+        (data && data.RightCode
+          ? data.RightCode.toString().toUpperCase().trim()
+          : "") === rightCode.toString().toUpperCase().trim()
+      );
     });
 
     if (filterData.length > 0) {
@@ -154,3 +168,54 @@ export const decodeJWTToken = (token) => {
   }
   return null;
 };
+
+// This is token logic
+
+const isTokenValid = (token) => {
+  return token !== null && token !== "";
+};
+
+// Function to check if the user is authenticated
+export const checkAuthExisttoken = () => {
+  const userData = getSessionStorage("user");
+  console.log("This is UserData " + JSON.stringify(userData));
+
+  if (userData) {
+    const token = userData.token;
+
+    if (token) {
+      const isValid = isTokenValid(token);
+
+      if (isValid) {
+        return true;
+      } else {
+        sessionStorage.removeItem("IsLoggedIn");
+        handleTokenExpiration();
+        return false;
+      }
+    }
+  }
+
+  sessionStorage.removeItem("IsLoggedIn");
+  return false;
+};
+
+// Function to handle operations when the token is considered invalid
+const handleTokenExpiration = () => {
+  console.log(
+    "Token is invalid or expired. Perform necessary operations like logout or redirection.",
+  );
+  sessionStorage.clear();
+};
+
+// Function to check the token validity every 60 seconds (1 minute)
+export const startTokenValidation = () => {
+  setInterval(() => {
+    const isValid = checkAuthExisttoken();
+    if (!isValid) {
+      console.log("Token has expired or is invalid.");
+    }
+  }, 60000);
+};
+
+startTokenValidation();

@@ -10,7 +10,7 @@ export const getCategorymasterData = async (formData) => {
     };
     const result = await ApiCalling(
       requestData,
-      APIEndpoints.Home.GetCategorymaster
+      APIEndpoints.Home.GetCategorymaster,
     );
     return result;
   } catch (error) {
@@ -30,7 +30,7 @@ export const getYearmasterData = async (formData) => {
     };
     const result = await ApiCalling(
       requestData,
-      APIEndpoints.Home.GetYearmaster
+      APIEndpoints.Home.GetYearmaster,
     );
     return result;
   } catch (error) {
@@ -50,7 +50,7 @@ export const getYearwiseTopbrandData = async (formData) => {
     };
     const result = await ApiCalling(
       requestData,
-      APIEndpoints.Home.GetYearwiseTopbrand
+      APIEndpoints.Home.GetYearwiseTopbrand,
     );
     return result;
   } catch (error) {
