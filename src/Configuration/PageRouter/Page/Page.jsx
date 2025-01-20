@@ -4,6 +4,7 @@ import "../../../dist/css/adminlte.css";
 import "../../../dist/css/style.css";
 import Header from "../../../Components/Common/Header/Header.jsx";
 import SideBar from "../../../Components/Common/SideBar/SideBar.jsx";
+import SideBarModified from "../../../Components/Common/SideBar/SideBarModified.jsx";
 import "../../../dist/js/adminlte.js";
 import "../../../dist/js/demo.js";
 import PropTypes from "prop-types";
@@ -28,7 +29,7 @@ function Page(props) {
     <>
       <div class="wrapper">
         <Header toggleSidebar={toggleSidebar} />
-        <SideBar  isSidebarOpen={isSidebarOpen} />
+        <SideBarModified  isSidebarOpen={isSidebarOpen} />
         <div class="content-wrapper">{component}</div>
       </div>
     </>

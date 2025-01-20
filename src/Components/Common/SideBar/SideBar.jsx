@@ -8,29 +8,29 @@ import { getSessionStorage } from "../../Login/Auth/auth";
 
 function SideBar({ isSidebarOpen }) {
   const navigate = useNavigate();
-  const setAlertMessage = AlertMessage();
+  // const setAlertMessage = AlertMessage();
 
    let data = getSessionStorage('useriInfo');
    console.log("getting session storage", JSON.stringify(data));
 
 
-  const signOut = async () => {
-    debugger;
-    try {
-      sessionStorage.clear();
-      navigate("/login");
-      setAlertMessage({
-        type: "success",
-        message: "You have been  succesfully logout",
-      });
-    } catch (error) {
-      console.log(error);
-      setAlertMessage({
-        type: "error",
-        message: error,
-      });
-    }
-  };
+  // const signOut = async () => {
+  //   debugger;
+  //   try {
+  //     sessionStorage.clear();
+  //     navigate("/login");
+  //     setAlertMessage({
+  //       type: "success",
+  //       message: "You have been  succesfully logout",
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     setAlertMessage({
+  //       type: "error",
+  //       message: error,
+  //     });
+  //   }
+  // };
 
 
 

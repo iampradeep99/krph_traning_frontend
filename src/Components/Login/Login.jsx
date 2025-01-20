@@ -57,9 +57,10 @@ const Login = () => {
       if (result.responseCode === 1) {
         const user = {
           ...result.responseData,
+       
         };
         // sessionStorage.clear();
-        setSessionStorage("useriInfo", user);
+        setSessionStorage("user", user);
         navigate("/home");
       } else {
         setAlertMessage({
