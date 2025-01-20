@@ -11312,10 +11312,10 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
   top: calc((3.5rem + 1px + (0.5rem * 2)) / -1);
 }
 
-.layout-navbar-fixed .wrapper .main-sidebar:hover .brand-link {
+/* .layout-navbar-fixed .wrapper .main-sidebar:hover .brand-link {
   transition: width 0.3s ease-in-out;
   width: 250px;
-}
+} */
 
 .layout-navbar-fixed .wrapper .brand-link {
   overflow: hidden;
@@ -11799,10 +11799,10 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
   height: calc(2.93725rem + 1px);
 }
 
-.layout-navbar-fixed .wrapper.sidebar-collapse .main-sidebar:hover .brand-link {
+/* .layout-navbar-fixed .wrapper.sidebar-collapse .main-sidebar:hover .brand-link {
   transition: width 0.3s ease-in-out;
   width: 250px;
-}
+} */
 
 .layout-navbar-fixed .wrapper .brand-link {
   overflow: hidden;
@@ -11907,13 +11907,13 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
   .layout-sm-navbar-fixed .wrapper.sidebar-collapse .brand-link.text-sm {
     height: calc(2.93725rem + 1px);
   }
-  .layout-sm-navbar-fixed
+  /* .layout-sm-navbar-fixed
     .wrapper.sidebar-collapse
     .main-sidebar:hover
     .brand-link {
     transition: width 0.3s ease-in-out;
     width: 250px;
-  }
+  } */
   .layout-sm-navbar-fixed .wrapper .brand-link {
     overflow: hidden;
     position: fixed;
@@ -12010,13 +12010,13 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
   .layout-md-navbar-fixed .wrapper.sidebar-collapse .brand-link.text-sm {
     height: calc(2.93725rem + 1px);
   }
-  .layout-md-navbar-fixed
+  /* .layout-md-navbar-fixed
     .wrapper.sidebar-collapse
     .main-sidebar:hover
     .brand-link {
     transition: width 0.3s ease-in-out;
     width: 250px;
-  }
+  } */
   .layout-md-navbar-fixed .wrapper .brand-link {
     overflow: hidden;
     position: fixed;
@@ -12113,13 +12113,13 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
   .layout-lg-navbar-fixed .wrapper.sidebar-collapse .brand-link.text-sm {
     height: calc(2.93725rem + 1px);
   }
-  .layout-lg-navbar-fixed
+  /* .layout-lg-navbar-fixed
     .wrapper.sidebar-collapse
     .main-sidebar:hover
     .brand-link {
     transition: width 0.3s ease-in-out;
     width: 250px;
-  }
+  } */
   .layout-lg-navbar-fixed .wrapper .brand-link {
     overflow: hidden;
     position: fixed;
@@ -12216,13 +12216,13 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
   .layout-xl-navbar-fixed .wrapper.sidebar-collapse .brand-link.text-sm {
     height: calc(2.93725rem + 1px);
   }
-  .layout-xl-navbar-fixed
+  /* .layout-xl-navbar-fixed
     .wrapper.sidebar-collapse
     .main-sidebar:hover
     .brand-link {
     transition: width 0.3s ease-in-out;
     width: 250px;
-  }
+  } */
   .layout-xl-navbar-fixed .wrapper .brand-link {
     overflow: hidden;
     position: fixed;

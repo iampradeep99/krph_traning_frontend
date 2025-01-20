@@ -16,6 +16,7 @@ export const decryptData = (ciphertext) => {
 };
 
 export const setSessionStorage = (key, data) => {
+  debugger;
   const encryptedData = encryptData(data);
   sessionStorage.setItem(key, encryptedData);
 };
@@ -162,6 +163,7 @@ export const decryptStringData = (data) => {
 };
 
 export const decodeJWTToken = (token) => {
+  
   const decodedToken = jwtDecode(token[0].token);
   if (decodedToken) {
     return decodedToken;

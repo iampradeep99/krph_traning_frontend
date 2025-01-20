@@ -4,7 +4,7 @@ import { AlertMessage } from "../../Framework/Components/Widgets/Notification/No
 import "./Login.scss";
 import logo from "./Assets/logo.png";
 import { authenticate, getUserByID } from "./Services/Methods";
-import { decodeJWTToken, setSessionStorage } from "../Login/Auth/auth";
+import { decodeJWTToken, setEncryptSessionStorage, setSessionStorage } from "../Login/Auth/auth";
 
 const Login = () => {
   const setAlertMessage = AlertMessage();
@@ -18,13 +18,23 @@ const Login = () => {
     debugger;
     try {
       const result = await authenticate(userId, password);
+      const decodetoken = decodeJWTToken(result.responseData);
+      const sessionToken = result.responseData[0].token;
+     
+
+
+      console.log("This is decodetoken rahul::::::"+ JSON.stringify(result.responseData[0].token));
+
       console.log("Login Successful:", result);
       if (result.responseCode === 1) {
+      setSessionStorage("token", sessionToken);
+
         setAlertMessage({
           type: "success",
           message: "Login Successfully",
         });
         const decodetoken = decodeJWTToken(result.responseData);
+        console.log("This is decodetoken ::::::"+ decodetoken);
         getUserAgentByID(decodetoken, result.responseData[0].token);
       } else {
         setAlertMessage({
@@ -47,10 +57,9 @@ const Login = () => {
       if (result.responseCode === 1) {
         const user = {
           ...result.responseData,
-          token: decodetoken,
         };
-        sessionStorage.clear();
-        setSessionStorage("user", user);
+        // sessionStorage.clear();
+        setSessionStorage("useriInfo", user);
         navigate("/home");
       } else {
         setAlertMessage({
@@ -111,7 +120,7 @@ const Login = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-success btn-block mt-3">
+              <button type="submit" className="btn custom-button btn-block mt-3">
                 SIGN IN
               </button>
               <a href="/" className="d-block mt-3 text-muted">

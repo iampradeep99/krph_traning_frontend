@@ -6,7 +6,7 @@ const EditAgent = ({ agentData, onClose }) => {
   return (
     <div className="popup-overlay">
       <div className="popup-container">
-        
+        <h4>Modify Agent Details</h4>
         <div className="container">
                 <form className="agent-form" >
                     <div className="form-row">

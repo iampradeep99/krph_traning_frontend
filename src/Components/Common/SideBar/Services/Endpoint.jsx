@@ -1,6 +1,6 @@
 const APIEndpoints = {
-    Common: {
-      GetAllAgent: "agent/allAgent",
+    SideBar: {
+      GetSideBarMenu: "agent/getById",
     },
   };
   

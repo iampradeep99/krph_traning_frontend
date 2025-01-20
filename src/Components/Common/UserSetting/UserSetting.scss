@@ -1,0 +1,72 @@
+.form-wrapper-agent {
+    margin: 10px auto; 
+    background-color: white;
+    height: 100vh;
+  }
+
+
+.user-setting {
+    padding: 25px;
+
+  
+    .header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #004d00;
+    }
+  
+    .tabs {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+  
+      .tab {
+        padding: 10px 15px;
+        background-color: #e6f4e6;
+        font-weight: 600;
+        color: #004d00;
+        border: 1px solid #004d00;
+        border-radius: 5px;
+        cursor: pointer;
+  
+        &.active {
+          background-color: #004d00;
+          color: white;
+        }
+      }
+    }
+  
+    .permissions {
+      table {
+        border: 2px solid #004d00;
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+  
+        th {
+          background-color: #004d00;
+          color: white;
+          padding: 10px;
+        }
+  
+        td {
+          padding: 10px;
+          text-align: center;
+  
+          input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+          }
+        }
+  
+        tr:nth-child(even) {
+          background-color: #f9f9f9;
+        }
+  
+        tr:hover {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+  }

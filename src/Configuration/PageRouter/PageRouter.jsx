@@ -7,7 +7,10 @@ import Home from "../../Components/Common/Home/Home";
 import CreateNewAgent from "../../Components/Common/CreateNewAgent/CreateNewAgent";
 import CreateNewTraining from "../../Components/Common/CreateNewTraining/CreateNewTraining";
 import ModifyAgent from "../../Components/Common/AgentModify/AgentModify";
-
+import CompleteTrainingReport from "../../Components/Common/CompleteTrainingReport/CompleteTrainingReport";
+import UserSetting from "../../Components/Common/UserSetting/UserSetting";
+TrainingDashboard
+import TrainingDashboard from "../../Components/Common/TrainingDashboard/TrainingDashboard";
 
 function PageRouter() {
   return (
@@ -18,7 +21,7 @@ function PageRouter() {
         <Route
           exact
           path="/home"
-          element={<Page component={<Home />} title="Home" />}
+          element={<Page component={<TrainingDashboard />} title="Home" />}
           
         />
         <Route
@@ -37,6 +40,24 @@ function PageRouter() {
           exact
           path="/ModifyAgent"
           element={<Page component={<ModifyAgent />} title="Modify Agent" />}
+          
+        />
+         <Route
+          exact
+          path="/CompleteTrainingReport"
+          element={<Page component={<CompleteTrainingReport />} title="Complete Training Report" />}
+          
+        />
+          <Route
+          exact
+          path="/UserSetting"
+          element={<Page component={<UserSetting />} title="User Setting" />}
+          
+        />
+          <Route
+          exact
+          path="/TrainingDashboard"
+          element={<Page component={<TrainingDashboard />} title="Training Dashboard" />}
           
         />
         

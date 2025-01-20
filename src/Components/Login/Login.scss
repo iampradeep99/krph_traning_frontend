@@ -17,6 +17,7 @@
       padding: 30px;
       color: black;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
     }
     .text {
       color: black;
@@ -24,7 +25,24 @@
       font-weight: 600;
     }
     .submit_color {
-      color: #075307;
+      color: #054a06;
     }
   }
 }
+
+.custom-button {
+  background-color: #054a06;
+  border-color: #054a06; 
+  color: #fff; 
+}
+
+.custom-button:hover {
+  background-color: green; 
+  color: white;
+}
+// .form-group label {
+//   margin: 0;
+//   padding: 15px 10px 10px 0px; 
+//   display: block;
+//   font-size: 15px; 
+// }

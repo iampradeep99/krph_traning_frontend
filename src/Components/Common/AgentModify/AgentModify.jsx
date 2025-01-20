@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AgGridReact } from "ag-grid-react";
 import 'ag-grid-enterprise/dist/styles/ag-grid.css';
 import 'ag-grid-enterprise/dist/styles/ag-theme-alpine.css';
 import "./AgentModify.scss";
-import { FaEdit, FaTrash, FaBell } from 'react-icons/fa';
+import { FaEdit, FaBell, FaBan } from 'react-icons/fa';
 import CommonHeader from "../CommonHeader/CommonHeader";
 import EditAgent from "../EditAgent/EditAgent"; 
-
+import {getAllAgent} from "./Services/Methods";
 const ModifyAgent = () => {
-
+  const [formData, setFormData] = useState({});
   const [isPopupOpen, setPopupOpen] = useState(false); 
   const [selectedAgent, setSelectedAgent] = useState(null); 
   const [rowData] = useState([
@@ -21,6 +21,14 @@ const ModifyAgent = () => {
       region: 'South',
     },
     {
+      agentName: 'Rohit Kumar',
+      userName: 'agent-007',
+      email: 'yourmail@domain.com',
+      mobile: '9012452104',
+      designation: 'User Experience Designer',
+      region: 'North',
+    },
+      {
       agentName: 'Rohit Kumar',
       userName: 'agent-007',
       email: 'yourmail@domain.com',
@@ -49,7 +57,7 @@ const ModifyAgent = () => {
             onClick={() => handleEdit(params.data)} 
           />
           <FaBell className="icon notify-icon" title="Notify" />
-          <FaTrash className="icon delete-icon" title="Delete" />
+          <FaBan className="icon disable-icon" title="Disable" />
         </div>
       ),
     },
@@ -70,6 +78,9 @@ const ModifyAgent = () => {
     setPopupOpen(false);
     setSelectedAgent(null);
   };
+  useEffect(() => {
+    getAllAgent(formData);
+  }, [formData]);
 
   return (
     <>

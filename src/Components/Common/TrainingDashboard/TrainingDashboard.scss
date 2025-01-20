@@ -1,0 +1,98 @@
+.form-wrapper-training {
+    margin: 10px auto; 
+    background-color: white;
+    height: 100vh;
+  }
+
+
+
+.training-dashboard {
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+  
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 20px;
+  
+      .card {
+        flex: 1;
+        background: #f9f9f9;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+  
+        h3 {
+          font-size: 1.5rem;
+          color: green;
+        }
+  
+        p {
+          margin-top: 10px;
+          font-size: 1rem;
+        }
+      }
+    }
+  
+    .current-status {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+  
+      & > div {
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 15px;
+  
+        h2,
+        h3,
+        p {
+          margin: 0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  
+    .state-wise-details {
+      margin-bottom: 20px;
+  
+      h3 {
+        margin-bottom: 10px;
+      }
+  
+      .state-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+  
+        span {
+          flex: 1;
+        }
+  
+        .bar {
+          flex: 3;
+          height: 10px;
+          background-color: #4caf50;
+          border-radius: 5px;
+        }
+      }
+    }
+  
+    .chart-section-pie{
+    //   text-align: ;
+    justify-content: center;
+      canvas {
+        margin: 0 0;
+        max-width: 400px;
+        // height: 100px;
+      }
+  
+      h3 {
+        margin-top: 20px;
+      }
+    }
+  }
+  

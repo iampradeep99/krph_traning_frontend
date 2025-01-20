@@ -54,6 +54,7 @@
     .ag-grid-container {
       height: 500px;
     color: white;
+    border: 2px solid #006400;
       .ag-header {
         background-color: #006400;
         color: white;
@@ -61,12 +62,14 @@
       }
   
       .action-icons {
+       
         display: flex;
         gap: 10px;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items: left;
   
         .icon {
+          margin: 5px;
           font-size: 16px;
           cursor: pointer;
   

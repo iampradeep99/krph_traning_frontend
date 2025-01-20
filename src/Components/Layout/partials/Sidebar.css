@@ -25,11 +25,11 @@
   padding: 10px 20px;
 }
 
-.sidebar ul li a:hover {
+/* .sidebar ul li a:hover {
   border-radius: 20px;
   background-color: #e3f7b6;
   color: green;
-}
+} */
 
 /* Sidebar.css */
 .sidebar {
@@ -58,8 +58,8 @@
   padding: 10px 20px;
 }
 
-.sidebar_krph ul li a:hover {
+/* .sidebar_krph ul li a:hover {
   border-radius: 20px;
   background-color: #e3f7b6;
   color: green;
-}
+} */

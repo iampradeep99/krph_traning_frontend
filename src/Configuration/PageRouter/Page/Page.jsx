@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import "../../../plugins/fontawesome-free/css/all.min.css";
 import "../../../dist/css/adminlte.css";
 import "../../../dist/css/style.css";
@@ -13,15 +13,22 @@ function Page(props) {
 
   useEffect(() => {
     document.title = title
-      ? `${title} || "KRPH Training Management"`
+      ? "KRPH Training Management"
       : "KRPH Training Management";
   }, [title]);
+
+
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true); 
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
     <>
       <div class="wrapper">
-        <Header />
-        <SideBar />
+        <Header toggleSidebar={toggleSidebar} />
+        <SideBar  isSidebarOpen={isSidebarOpen} />
         <div class="content-wrapper">{component}</div>
       </div>
     </>

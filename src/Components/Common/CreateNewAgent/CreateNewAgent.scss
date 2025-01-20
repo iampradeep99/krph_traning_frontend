@@ -7,12 +7,14 @@
 
 .container {
     background: white;
+    border: 2px solid #054a06;
     margin: 30px auto;
-    padding: 15px;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
+    box-shadow: 2px 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
     width: 100%;
     max-width: 1000px;
+    margin: 0px auto;
   }
   
   .agent-form {
@@ -134,6 +136,7 @@
   
   .submit-btn {
     padding: 10px;  
+    margin-top: 10px;
     background-color: #075307;
     color: #fff;
     border: none;
