@@ -2,12 +2,12 @@ import React from "react";
 
 function GreenButton() {
   const buttonStyle = {
-    background:" linear-gradient(to bottom, red,rgb(53, 181, 60))",
+    background: " linear-gradient(to bottom, red,rgb(53, 181, 60))",
     color: "white", // White text
     padding: "15px 30px", // Padding for the button
     textAlign: "center", // Center-align text
     fontSize: "16px", // Font size
-    fontWeight:"600",
+    fontWeight: "600",
     borderRadius: "8px", // Rounded corners
     border: "none", // Remove border
     fontFamily: "Arial, sans-serif", // Font family

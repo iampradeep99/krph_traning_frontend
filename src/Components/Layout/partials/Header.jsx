@@ -1,6 +1,6 @@
 // Header.jsx
-import React from 'react';
-import './Header.css'; // Optional, for custom styling
+import React from "react";
+import "./Header.css"; // Optional, for custom styling
 
 const Header = () => {
   return (
@@ -12,6 +12,6 @@ const Header = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

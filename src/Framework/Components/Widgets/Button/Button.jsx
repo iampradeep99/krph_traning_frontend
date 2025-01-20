@@ -4,9 +4,19 @@ import "./Button.scss";
 import classNames from "classnames";
 
 function Button(props) {
-  const { varient = "grey", trigger, className, children, ...restProps } = props;
+  const {
+    varient = "grey",
+    trigger,
+    className,
+    children,
+    ...restProps
+  } = props;
   return (
-    <button type="button" className={classNames(`DynBiz_Btn DynBiz_${varient}_Btn`, className)} {...restProps}>
+    <button
+      type="button"
+      className={classNames(`DynBiz_Btn DynBiz_${varient}_Btn`, className)}
+      {...restProps}
+    >
       {trigger === "true" || trigger === true ? (
         <div className="DynBiz_btn__spinner">
           <div className="DynBiz_btn__bounce1" />

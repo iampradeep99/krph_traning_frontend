@@ -38,9 +38,9 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
@@ -73,9 +73,18 @@ section {
 
 body {
   margin: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2138,7 +2147,9 @@ pre code {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2412,7 +2423,8 @@ textarea.form-control.is-valid {
 .custom-select.is-valid {
   border-color: #28a745;
   padding-right: calc(0.75em + 2.3125rem) !important;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+  background:
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
       right 0.75rem center/8px 10px no-repeat,
     #fff
       url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e")
@@ -2551,7 +2563,8 @@ textarea.form-control.is-invalid {
 .custom-select.is-invalid {
   border-color: #dc3545;
   padding-right: calc(0.75em + 2.3125rem) !important;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+  background:
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
       right 0.75rem center/8px 10px no-repeat,
     #fff
       url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e")
@@ -2712,8 +2725,11 @@ textarea.form-control.is-invalid {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4114,7 +4130,9 @@ input[type="button"].btn-block {
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 0 0 1px #fff,
+  box-shadow:
+    inset 0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 1px #fff,
     0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
@@ -4236,12 +4254,21 @@ input[type="button"].btn-block {
   height: calc(1rem - 4px);
   background-color: #adb5bd;
   border-radius: 0.5rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
-  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
+    -webkit-transform 0.15s ease-in-out;
+  transition:
+    transform 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    transform 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
     -webkit-transform 0.15s ease-in-out;
 }
 
@@ -4418,15 +4445,21 @@ input[type="button"].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4441,9 +4474,13 @@ input[type="button"].btn-block {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-  -webkit-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  -webkit-transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
@@ -4478,9 +4515,13 @@ input[type="button"].btn-block {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-  -moz-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  -moz-transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   -moz-appearance: none;
   appearance: none;
@@ -4518,9 +4559,13 @@ input[type="button"].btn-block {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-  -ms-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  -ms-transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   appearance: none;
 }
@@ -4581,7 +4626,9 @@ input[type="button"].btn-block {
 .custom-control-label::before,
 .custom-file-label,
 .custom-select {
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
 }
 
@@ -5546,8 +5593,11 @@ input[type="button"].btn-block {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6421,7 +6471,9 @@ a.close.disabled {
 .modal.fade .modal-dialog {
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition:
+    transform 0.3s ease-out,
+    -webkit-transform 0.3s ease-out;
   -webkit-transform: translate(0, -50px);
   transform: translate(0, -50px);
 }
@@ -6633,9 +6685,18 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6760,9 +6821,18 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6967,7 +7037,9 @@ a.close.disabled {
   backface-visibility: hidden;
   transition: -webkit-transform 0.6s ease;
   transition: transform 0.6s ease;
-  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    -webkit-transform 0.6s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -12331,17 +12403,29 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
   margin-left: 0;
 }
 
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .content-wrapper,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .content-wrapper::before,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-footer,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-footer::before,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-header,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-header::before {
   margin-left: 0;
 }
@@ -12478,7 +12562,9 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
 
 .main-sidebar,
 .main-sidebar::before {
-  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+  transition:
+    margin-left 0.3s ease-in-out,
+    width 0.3s ease-in-out;
   width: 250px;
 }
 
@@ -13773,7 +13859,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .nav-sidebar .nav-item > .nav-link .right {
   transition: -webkit-transform ease-in-out 0.3s;
   transition: transform ease-in-out 0.3s;
-  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+  transition:
+    transform ease-in-out 0.3s,
+    -webkit-transform ease-in-out 0.3s;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -13948,7 +14036,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 [class*="sidebar-light-"] .nav-sidebar > .nav-item > .nav-link.active {
   color: #000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 [class*="sidebar-light-"] .nav-sidebar > .nav-item > .nav-treeview {
@@ -14049,7 +14139,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link.active {
   color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-treeview {
@@ -15351,7 +15443,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   margin-bottom: 0.2rem;
 }
 
-.layout-boxed:not(.sidebar-mini):not(.sidebar-mini-md):not(.sidebar-mini-xs).sidebar-collapse
+.layout-boxed:not(.sidebar-mini):not(.sidebar-mini-md):not(
+    .sidebar-mini-xs
+  ).sidebar-collapse
   .main-sidebar {
   margin-left: 0;
 }
@@ -18637,7 +18731,10 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .main-sidebar .logo-xs,
 .main-sidebar .logo-xl,
 .sidebar .user-panel .info {
-  transition: margin-left 0.3s linear, opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    margin-left 0.3s linear,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -18667,7 +18764,9 @@ html.control-sidebar-animate {
   display: none;
   right: -250px;
   width: 250px;
-  transition: right 0.3s ease-in-out, display 0.3s ease-in-out;
+  transition:
+    right 0.3s ease-in-out,
+    display 0.3s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -18733,7 +18832,9 @@ body.text-sm .control-sidebar {
 .control-sidebar-slide-open .control-sidebar,
 .control-sidebar-slide-open .control-sidebar::before {
   right: 0;
-  transition: right 0.3s ease-in-out, display 0.3s ease-in-out;
+  transition:
+    right 0.3s ease-in-out,
+    display 0.3s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -27886,23 +27987,33 @@ blockquote.quote-gray-dark h6 {
 }
 
 .elevation-1 {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24) !important;
 }
 
 .elevation-2 {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23) !important;
 }
 
 .elevation-3 {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23) !important;
 }
 
 .elevation-4 {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22) !important;
 }
 
 .elevation-5 {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22) !important;
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22) !important;
 }
 
 .bg-primary {
@@ -30197,14 +30308,18 @@ a.text-muted:hover {
 
 .accent-primary .btn-link,
 .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-primary .nav-tabs .nav-link {
   color: #007bff;
 }
 
 .accent-primary .btn-link:hover,
 .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-primary .nav-tabs .nav-link:hover {
   color: #0056b3;
 }
@@ -30287,14 +30402,18 @@ a.text-muted:hover {
 
 .accent-secondary .btn-link,
 .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-secondary .nav-tabs .nav-link {
   color: #6c757d;
 }
 
 .accent-secondary .btn-link:hover,
 .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-secondary .nav-tabs .nav-link:hover {
   color: #494f54;
 }
@@ -30379,14 +30498,18 @@ a.text-muted:hover {
 
 .accent-success .btn-link,
 .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-success .nav-tabs .nav-link {
   color: #28a745;
 }
 
 .accent-success .btn-link:hover,
 .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-success .nav-tabs .nav-link:hover {
   color: #19692c;
 }
@@ -30469,14 +30592,18 @@ a.text-muted:hover {
 
 .accent-info .btn-link,
 .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-info .nav-tabs .nav-link {
   color: #17a2b8;
 }
 
 .accent-info .btn-link:hover,
 .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-info .nav-tabs .nav-link:hover {
   color: #0f6674;
 }
@@ -30559,14 +30686,18 @@ a.text-muted:hover {
 
 .accent-warning .btn-link,
 .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-warning .nav-tabs .nav-link {
   color: #ffc107;
 }
 
 .accent-warning .btn-link:hover,
 .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-warning .nav-tabs .nav-link:hover {
   color: #ba8b00;
 }
@@ -30649,14 +30780,18 @@ a.text-muted:hover {
 
 .accent-danger .btn-link,
 .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-danger .nav-tabs .nav-link {
   color: #dc3545;
 }
 
 .accent-danger .btn-link:hover,
 .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-danger .nav-tabs .nav-link:hover {
   color: #a71d2a;
 }
@@ -30739,14 +30874,18 @@ a.text-muted:hover {
 
 .accent-light .btn-link,
 .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-light .nav-tabs .nav-link {
   color: #f8f9fa;
 }
 
 .accent-light .btn-link:hover,
 .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-light .nav-tabs .nav-link:hover {
   color: #cbd3da;
 }
@@ -30829,14 +30968,18 @@ a.text-muted:hover {
 
 .accent-dark .btn-link,
 .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-dark .nav-tabs .nav-link {
   color: #343a40;
 }
 
 .accent-dark .btn-link:hover,
 .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-dark .nav-tabs .nav-link:hover {
   color: #121416;
 }
@@ -30919,14 +31062,18 @@ a.text-muted:hover {
 
 .accent-lightblue .btn-link,
 .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-lightblue .nav-tabs .nav-link {
   color: #3c8dbc;
 }
 
 .accent-lightblue .btn-link:hover,
 .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-lightblue .nav-tabs .nav-link:hover {
   color: #296282;
 }
@@ -31011,14 +31158,18 @@ a.text-muted:hover {
 
 .accent-navy .btn-link,
 .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-navy .nav-tabs .nav-link {
   color: #001f3f;
 }
 
 .accent-navy .btn-link:hover,
 .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-navy .nav-tabs .nav-link:hover {
   color: black;
 }
@@ -31101,14 +31252,18 @@ a.text-muted:hover {
 
 .accent-olive .btn-link,
 .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-olive .nav-tabs .nav-link {
   color: #3d9970;
 }
 
 .accent-olive .btn-link:hover,
 .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-olive .nav-tabs .nav-link:hover {
   color: #276248;
 }
@@ -31191,14 +31346,18 @@ a.text-muted:hover {
 
 .accent-lime .btn-link,
 .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-lime .nav-tabs .nav-link {
   color: #01ff70;
 }
 
 .accent-lime .btn-link:hover,
 .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-lime .nav-tabs .nav-link:hover {
   color: #00b44e;
 }
@@ -31281,14 +31440,18 @@ a.text-muted:hover {
 
 .accent-fuchsia .btn-link,
 .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-fuchsia .nav-tabs .nav-link {
   color: #f012be;
 }
 
 .accent-fuchsia .btn-link:hover,
 .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-fuchsia .nav-tabs .nav-link:hover {
   color: #ab0b87;
 }
@@ -31371,14 +31534,18 @@ a.text-muted:hover {
 
 .accent-maroon .btn-link,
 .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-maroon .nav-tabs .nav-link {
   color: #d81b60;
 }
 
 .accent-maroon .btn-link:hover,
 .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-maroon .nav-tabs .nav-link:hover {
   color: #941342;
 }
@@ -31461,14 +31628,18 @@ a.text-muted:hover {
 
 .accent-blue .btn-link,
 .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-blue .nav-tabs .nav-link {
   color: #007bff;
 }
 
 .accent-blue .btn-link:hover,
 .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-blue .nav-tabs .nav-link:hover {
   color: #0056b3;
 }
@@ -31551,14 +31722,18 @@ a.text-muted:hover {
 
 .accent-indigo .btn-link,
 .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-indigo .nav-tabs .nav-link {
   color: #6610f2;
 }
 
 .accent-indigo .btn-link:hover,
 .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-indigo .nav-tabs .nav-link:hover {
   color: #4709ac;
 }
@@ -31641,14 +31816,18 @@ a.text-muted:hover {
 
 .accent-purple .btn-link,
 .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-purple .nav-tabs .nav-link {
   color: #6f42c1;
 }
 
 .accent-purple .btn-link:hover,
 .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-purple .nav-tabs .nav-link:hover {
   color: #4e2d89;
 }
@@ -31731,14 +31910,18 @@ a.text-muted:hover {
 
 .accent-pink .btn-link,
 .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-pink .nav-tabs .nav-link {
   color: #e83e8c;
 }
 
 .accent-pink .btn-link:hover,
 .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-pink .nav-tabs .nav-link:hover {
   color: #c21766;
 }
@@ -31821,14 +32004,18 @@ a.text-muted:hover {
 
 .accent-red .btn-link,
 .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-red .nav-tabs .nav-link {
   color: #dc3545;
 }
 
 .accent-red .btn-link:hover,
 .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-red .nav-tabs .nav-link:hover {
   color: #a71d2a;
 }
@@ -31911,14 +32098,18 @@ a.text-muted:hover {
 
 .accent-orange .btn-link,
 .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-orange .nav-tabs .nav-link {
   color: #fd7e14;
 }
 
 .accent-orange .btn-link:hover,
 .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-orange .nav-tabs .nav-link:hover {
   color: #c35a02;
 }
@@ -32001,14 +32192,18 @@ a.text-muted:hover {
 
 .accent-yellow .btn-link,
 .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-yellow .nav-tabs .nav-link {
   color: #ffc107;
 }
 
 .accent-yellow .btn-link:hover,
 .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-yellow .nav-tabs .nav-link:hover {
   color: #ba8b00;
 }
@@ -32091,14 +32286,18 @@ a.text-muted:hover {
 
 .accent-green .btn-link,
 .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-green .nav-tabs .nav-link {
   color: #28a745;
 }
 
 .accent-green .btn-link:hover,
 .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-green .nav-tabs .nav-link:hover {
   color: #19692c;
 }
@@ -32181,14 +32380,18 @@ a.text-muted:hover {
 
 .accent-teal .btn-link,
 .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-teal .nav-tabs .nav-link {
   color: #20c997;
 }
 
 .accent-teal .btn-link:hover,
 .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-teal .nav-tabs .nav-link:hover {
   color: #158765;
 }
@@ -32271,14 +32474,18 @@ a.text-muted:hover {
 
 .accent-cyan .btn-link,
 .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-cyan .nav-tabs .nav-link {
   color: #17a2b8;
 }
 
 .accent-cyan .btn-link:hover,
 .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-cyan .nav-tabs .nav-link:hover {
   color: #0f6674;
 }
@@ -32361,14 +32568,18 @@ a.text-muted:hover {
 
 .accent-white .btn-link,
 .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-white .nav-tabs .nav-link {
   color: #fff;
 }
 
 .accent-white .btn-link:hover,
 .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-white .nav-tabs .nav-link:hover {
   color: #d9d9d9;
 }
@@ -32451,14 +32662,18 @@ a.text-muted:hover {
 
 .accent-gray .btn-link,
 .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-gray .nav-tabs .nav-link {
   color: #6c757d;
 }
 
 .accent-gray .btn-link:hover,
 .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-gray .nav-tabs .nav-link:hover {
   color: #494f54;
 }
@@ -32541,14 +32756,18 @@ a.text-muted:hover {
 
 .accent-gray-dark .btn-link,
 .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .accent-gray-dark .nav-tabs .nav-link {
   color: #343a40;
 }
 
 .accent-gray-dark .btn-link:hover,
 .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .accent-gray-dark .nav-tabs .nav-link:hover {
   color: #121416;
 }
@@ -34190,7 +34409,9 @@ a.text-muted:hover {
 .dark-mode .accent-primary .btn-link,
 .dark-mode
   .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-primary .nav-tabs .nav-link {
   color: #3f6791;
 }
@@ -34198,7 +34419,9 @@ a.text-muted:hover {
 .dark-mode .accent-primary .btn-link:hover,
 .dark-mode
   .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-primary .nav-tabs .nav-link:hover {
   color: #28415c;
 }
@@ -34294,7 +34517,9 @@ a.text-muted:hover {
 .dark-mode .accent-secondary .btn-link,
 .dark-mode
   .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-secondary .nav-tabs .nav-link {
   color: #6c757d;
 }
@@ -34302,7 +34527,9 @@ a.text-muted:hover {
 .dark-mode .accent-secondary .btn-link:hover,
 .dark-mode
   .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-secondary .nav-tabs .nav-link:hover {
   color: #494f54;
 }
@@ -34398,7 +34625,9 @@ a.text-muted:hover {
 .dark-mode .accent-success .btn-link,
 .dark-mode
   .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-success .nav-tabs .nav-link {
   color: #00bc8c;
 }
@@ -34406,7 +34635,9 @@ a.text-muted:hover {
 .dark-mode .accent-success .btn-link:hover,
 .dark-mode
   .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-success .nav-tabs .nav-link:hover {
   color: #007053;
 }
@@ -34502,7 +34733,9 @@ a.text-muted:hover {
 .dark-mode .accent-info .btn-link,
 .dark-mode
   .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-info .nav-tabs .nav-link {
   color: #3498db;
 }
@@ -34510,7 +34743,9 @@ a.text-muted:hover {
 .dark-mode .accent-info .btn-link:hover,
 .dark-mode
   .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-info .nav-tabs .nav-link:hover {
   color: #1d6fa5;
 }
@@ -34606,7 +34841,9 @@ a.text-muted:hover {
 .dark-mode .accent-warning .btn-link,
 .dark-mode
   .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-warning .nav-tabs .nav-link {
   color: #f39c12;
 }
@@ -34614,7 +34851,9 @@ a.text-muted:hover {
 .dark-mode .accent-warning .btn-link:hover,
 .dark-mode
   .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-warning .nav-tabs .nav-link:hover {
   color: #b06f09;
 }
@@ -34710,7 +34949,9 @@ a.text-muted:hover {
 .dark-mode .accent-danger .btn-link,
 .dark-mode
   .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-danger .nav-tabs .nav-link {
   color: #e74c3c;
 }
@@ -34718,7 +34959,9 @@ a.text-muted:hover {
 .dark-mode .accent-danger .btn-link:hover,
 .dark-mode
   .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-danger .nav-tabs .nav-link:hover {
   color: #bf2718;
 }
@@ -34814,7 +35057,9 @@ a.text-muted:hover {
 .dark-mode .accent-light .btn-link,
 .dark-mode
   .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-light .nav-tabs .nav-link {
   color: #f8f9fa;
 }
@@ -34822,7 +35067,9 @@ a.text-muted:hover {
 .dark-mode .accent-light .btn-link:hover,
 .dark-mode
   .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-light .nav-tabs .nav-link:hover {
   color: #cbd3da;
 }
@@ -34918,7 +35165,9 @@ a.text-muted:hover {
 .dark-mode .accent-dark .btn-link,
 .dark-mode
   .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-dark .nav-tabs .nav-link {
   color: #343a40;
 }
@@ -34926,7 +35175,9 @@ a.text-muted:hover {
 .dark-mode .accent-dark .btn-link:hover,
 .dark-mode
   .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-dark .nav-tabs .nav-link:hover {
   color: #121416;
 }
@@ -35054,7 +35305,9 @@ a.text-muted:hover {
 .dark-mode .accent-lightblue .btn-link,
 .dark-mode
   .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-lightblue .nav-tabs .nav-link {
   color: #86bad8;
 }
@@ -35062,7 +35315,9 @@ a.text-muted:hover {
 .dark-mode .accent-lightblue .btn-link:hover,
 .dark-mode
   .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-lightblue .nav-tabs .nav-link:hover {
   color: #4c99c6;
 }
@@ -35158,7 +35413,9 @@ a.text-muted:hover {
 .dark-mode .accent-navy .btn-link,
 .dark-mode
   .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-navy .nav-tabs .nav-link {
   color: #002c59;
 }
@@ -35166,7 +35423,9 @@ a.text-muted:hover {
 .dark-mode .accent-navy .btn-link:hover,
 .dark-mode
   .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-navy .nav-tabs .nav-link:hover {
   color: #00060c;
 }
@@ -35262,7 +35521,9 @@ a.text-muted:hover {
 .dark-mode .accent-olive .btn-link,
 .dark-mode
   .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-olive .nav-tabs .nav-link {
   color: #74c8a3;
 }
@@ -35270,7 +35531,9 @@ a.text-muted:hover {
 .dark-mode .accent-olive .btn-link:hover,
 .dark-mode
   .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-olive .nav-tabs .nav-link:hover {
   color: #44ab7d;
 }
@@ -35366,7 +35629,9 @@ a.text-muted:hover {
 .dark-mode .accent-lime .btn-link,
 .dark-mode
   .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-lime .nav-tabs .nav-link {
   color: #67ffa9;
 }
@@ -35374,7 +35639,9 @@ a.text-muted:hover {
 .dark-mode .accent-lime .btn-link:hover,
 .dark-mode
   .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-lime .nav-tabs .nav-link:hover {
   color: #1bff7e;
 }
@@ -35470,7 +35737,9 @@ a.text-muted:hover {
 .dark-mode .accent-fuchsia .btn-link,
 .dark-mode
   .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-fuchsia .nav-tabs .nav-link {
   color: #f672d8;
 }
@@ -35478,7 +35747,9 @@ a.text-muted:hover {
 .dark-mode .accent-fuchsia .btn-link:hover,
 .dark-mode
   .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-fuchsia .nav-tabs .nav-link:hover {
   color: #f22ac5;
 }
@@ -35574,7 +35845,9 @@ a.text-muted:hover {
 .dark-mode .accent-maroon .btn-link,
 .dark-mode
   .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-maroon .nav-tabs .nav-link {
   color: #ed6c9b;
 }
@@ -35582,7 +35855,9 @@ a.text-muted:hover {
 .dark-mode .accent-maroon .btn-link:hover,
 .dark-mode
   .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-maroon .nav-tabs .nav-link:hover {
   color: #e4286d;
 }
@@ -35678,7 +35953,9 @@ a.text-muted:hover {
 .dark-mode .accent-blue .btn-link,
 .dark-mode
   .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-blue .nav-tabs .nav-link {
   color: #3f6791;
 }
@@ -35686,7 +35963,9 @@ a.text-muted:hover {
 .dark-mode .accent-blue .btn-link:hover,
 .dark-mode
   .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-blue .nav-tabs .nav-link:hover {
   color: #28415c;
 }
@@ -35782,7 +36061,9 @@ a.text-muted:hover {
 .dark-mode .accent-indigo .btn-link,
 .dark-mode
   .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-indigo .nav-tabs .nav-link {
   color: #6610f2;
 }
@@ -35790,7 +36071,9 @@ a.text-muted:hover {
 .dark-mode .accent-indigo .btn-link:hover,
 .dark-mode
   .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-indigo .nav-tabs .nav-link:hover {
   color: #4709ac;
 }
@@ -35886,7 +36169,9 @@ a.text-muted:hover {
 .dark-mode .accent-purple .btn-link,
 .dark-mode
   .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-purple .nav-tabs .nav-link {
   color: #6f42c1;
 }
@@ -35894,7 +36179,9 @@ a.text-muted:hover {
 .dark-mode .accent-purple .btn-link:hover,
 .dark-mode
   .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-purple .nav-tabs .nav-link:hover {
   color: #4e2d89;
 }
@@ -35990,7 +36277,9 @@ a.text-muted:hover {
 .dark-mode .accent-pink .btn-link,
 .dark-mode
   .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-pink .nav-tabs .nav-link {
   color: #e83e8c;
 }
@@ -35998,7 +36287,9 @@ a.text-muted:hover {
 .dark-mode .accent-pink .btn-link:hover,
 .dark-mode
   .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-pink .nav-tabs .nav-link:hover {
   color: #c21766;
 }
@@ -36094,7 +36385,9 @@ a.text-muted:hover {
 .dark-mode .accent-red .btn-link,
 .dark-mode
   .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-red .nav-tabs .nav-link {
   color: #e74c3c;
 }
@@ -36102,7 +36395,9 @@ a.text-muted:hover {
 .dark-mode .accent-red .btn-link:hover,
 .dark-mode
   .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-red .nav-tabs .nav-link:hover {
   color: #bf2718;
 }
@@ -36198,7 +36493,9 @@ a.text-muted:hover {
 .dark-mode .accent-orange .btn-link,
 .dark-mode
   .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-orange .nav-tabs .nav-link {
   color: #fd7e14;
 }
@@ -36206,7 +36503,9 @@ a.text-muted:hover {
 .dark-mode .accent-orange .btn-link:hover,
 .dark-mode
   .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-orange .nav-tabs .nav-link:hover {
   color: #c35a02;
 }
@@ -36302,7 +36601,9 @@ a.text-muted:hover {
 .dark-mode .accent-yellow .btn-link,
 .dark-mode
   .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-yellow .nav-tabs .nav-link {
   color: #f39c12;
 }
@@ -36310,7 +36611,9 @@ a.text-muted:hover {
 .dark-mode .accent-yellow .btn-link:hover,
 .dark-mode
   .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-yellow .nav-tabs .nav-link:hover {
   color: #b06f09;
 }
@@ -36406,7 +36709,9 @@ a.text-muted:hover {
 .dark-mode .accent-green .btn-link,
 .dark-mode
   .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-green .nav-tabs .nav-link {
   color: #00bc8c;
 }
@@ -36414,7 +36719,9 @@ a.text-muted:hover {
 .dark-mode .accent-green .btn-link:hover,
 .dark-mode
   .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-green .nav-tabs .nav-link:hover {
   color: #007053;
 }
@@ -36510,7 +36817,9 @@ a.text-muted:hover {
 .dark-mode .accent-teal .btn-link,
 .dark-mode
   .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-teal .nav-tabs .nav-link {
   color: #20c997;
 }
@@ -36518,7 +36827,9 @@ a.text-muted:hover {
 .dark-mode .accent-teal .btn-link:hover,
 .dark-mode
   .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-teal .nav-tabs .nav-link:hover {
   color: #158765;
 }
@@ -36614,7 +36925,9 @@ a.text-muted:hover {
 .dark-mode .accent-cyan .btn-link,
 .dark-mode
   .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-cyan .nav-tabs .nav-link {
   color: #3498db;
 }
@@ -36622,7 +36935,9 @@ a.text-muted:hover {
 .dark-mode .accent-cyan .btn-link:hover,
 .dark-mode
   .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-cyan .nav-tabs .nav-link:hover {
   color: #1d6fa5;
 }
@@ -36718,7 +37033,9 @@ a.text-muted:hover {
 .dark-mode .accent-white .btn-link,
 .dark-mode
   .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-white .nav-tabs .nav-link {
   color: #fff;
 }
@@ -36726,7 +37043,9 @@ a.text-muted:hover {
 .dark-mode .accent-white .btn-link:hover,
 .dark-mode
   .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-white .nav-tabs .nav-link:hover {
   color: #d9d9d9;
 }
@@ -36822,7 +37141,9 @@ a.text-muted:hover {
 .dark-mode .accent-gray .btn-link,
 .dark-mode
   .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-gray .nav-tabs .nav-link {
   color: #6c757d;
 }
@@ -36830,7 +37151,9 @@ a.text-muted:hover {
 .dark-mode .accent-gray .btn-link:hover,
 .dark-mode
   .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-gray .nav-tabs .nav-link:hover {
   color: #494f54;
 }
@@ -36926,7 +37249,9 @@ a.text-muted:hover {
 .dark-mode .accent-gray-dark .btn-link,
 .dark-mode
   .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn),
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn),
 .dark-mode .accent-gray-dark .nav-tabs .nav-link {
   color: #343a40;
 }
@@ -36934,7 +37259,9 @@ a.text-muted:hover {
 .dark-mode .accent-gray-dark .btn-link:hover,
 .dark-mode
   .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover,
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover,
 .dark-mode .accent-gray-dark .nav-tabs .nav-link:hover {
   color: #121416;
 }

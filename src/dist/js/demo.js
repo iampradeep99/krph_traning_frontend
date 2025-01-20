@@ -17,7 +17,7 @@
     ) {
       localStorage.setItem(
         "AdminLTE:Demo:MessageShowed",
-        Date.now() + 15 * 60 * 1000
+        Date.now() + 15 * 60 * 1000,
       );
       // eslint-disable-next-line no-alert
       //alert('You load AdminLTE\'s "demo.js", \nthis file is only created for testing purposes!')
@@ -52,7 +52,7 @@
         text: capitalizeFirstLetter(
           (typeof color === "object" ? color.join(" ") : color)
             .replace(/navbar-|accent-|bg-/, "")
-            .replace("-", " ")
+            .replace("-", " "),
         ),
       });
 
@@ -171,7 +171,7 @@
     '[data-widget="pushmenu"]',
     function () {
       $sidebar_collapsed_checkbox.prop("checked", true);
-    }
+    },
   );
   $(document).on("shown.lte.pushmenu", '[data-widget="pushmenu"]', function () {
     $sidebar_collapsed_checkbox.prop("checked", false);
@@ -632,8 +632,8 @@
 
         $body.addClass(accent_color_class);
       },
-      true
-    )
+      true,
+    ),
   );
 
   var active_accent_color = null;
@@ -673,7 +673,7 @@
       $sidebar.addClass(sidebar_class);
       $(".sidebar").removeClass("os-theme-dark").addClass("os-theme-light");
     },
-    true
+    true,
   );
   $container.append($sidebar_dark_variants);
 
@@ -726,7 +726,7 @@
       $sidebar.addClass(sidebar_class);
       $(".sidebar").removeClass("os-theme-light").addClass("os-theme-dark");
     },
-    true
+    true,
   );
   $container.append($sidebar_light_variants);
 
@@ -798,7 +798,7 @@
           .addClass(
             color !== "navbar-light" && color !== "navbar-white"
               ? "text-light"
-              : ""
+              : "",
           );
       } else {
         $(this).removeClass().addClass("custom-select mb-3 border-0");
@@ -806,7 +806,7 @@
 
       $logo.addClass(color);
     },
-    true
+    true,
   ).append($clear_btn);
   $container.append($brand_variants);
 

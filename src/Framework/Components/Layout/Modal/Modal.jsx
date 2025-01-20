@@ -48,11 +48,17 @@ function Modal(props) {
     document.addEventListener("keydown", keyDownHander, false);
   }, []);
 
-  const Header = React.Children.toArray(children).filter((children) => children.type.displayName === "BizNextPopupHeader");
+  const Header = React.Children.toArray(children).filter(
+    (children) => children.type.displayName === "BizNextPopupHeader",
+  );
 
-  const Body = React.Children.toArray(children).filter((children) => children.type.displayName === "BizNextPopupBody");
+  const Body = React.Children.toArray(children).filter(
+    (children) => children.type.displayName === "BizNextPopupBody",
+  );
 
-  const Footer = React.Children.toArray(children).filter((children) => children.type.displayName === "BizNextPopupFooter");
+  const Footer = React.Children.toArray(children).filter(
+    (children) => children.type.displayName === "BizNextPopupFooter",
+  );
 
   return (
     <Portal>
@@ -60,7 +66,12 @@ function Modal(props) {
         <Draggable handle="#handle" disabled={draggable}>
           <PopupBox
             Index={index + 1}
-            className={classNames(BizClass.popup, BizClass[varient], isModalAnimOpen ? BizClass.AnimOn : null, className)}
+            className={classNames(
+              BizClass.popup,
+              BizClass[varient],
+              isModalAnimOpen ? BizClass.AnimOn : null,
+              className,
+            )}
             height={height}
             width={width}
             left={left}
@@ -71,20 +82,32 @@ function Modal(props) {
             {onlymodal === "true" ? null : (
               <header id="handle" className={BizClass.Header}>
                 <h2>{title}</h2>
-                <div className={BizClass.ContentBox}>{Header.length === 1 ? Header : null}</div>
-                <button type="button" className={BizClass.CloseBtn} onClick={show}>
+                <div className={BizClass.ContentBox}>
+                  {Header.length === 1 ? Header : null}
+                </div>
+                <button
+                  type="button"
+                  className={BizClass.CloseBtn}
+                  onClick={show}
+                >
                   <FaTimes />
                 </button>
               </header>
             )}
             <form className={BizClass.FormContent} {...restProps}>
-              <div className={BizClass.BodyContent}>{Body.length === 1 ? Body : null}</div>
+              <div className={BizClass.BodyContent}>
+                {Body.length === 1 ? Body : null}
+              </div>
               {Footer.length === 1 ? (
                 <footer className={BizClass.Footer}>
                   <div className={BizClass.FooterBox}>
                     {Footer}
                     {onlyfooter === "true" ? null : (
-                      <Button type="button" varient="grey" onClick={() => show()}>
+                      <Button
+                        type="button"
+                        varient="grey"
+                        onClick={() => show()}
+                      >
                         Cancel
                       </Button>
                     )}
@@ -94,7 +117,11 @@ function Modal(props) {
             </form>
           </PopupBox>
         </Draggable>
-        <PopupBox Index={index} className={classNames(BizClass.Overlay, BizClass[overlay])} onClick={() => toggleModalAnimOpen()} />
+        <PopupBox
+          Index={index}
+          className={classNames(BizClass.Overlay, BizClass[overlay])}
+          onClick={() => toggleModalAnimOpen()}
+        />
       </PopupBox>
     </Portal>
   );

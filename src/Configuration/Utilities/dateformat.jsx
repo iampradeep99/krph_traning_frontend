@@ -41,7 +41,9 @@ export const daysdifference = (firstDate, secondDate) => {
 };
 
 export const tConvert = (time) => {
-  time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+  time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [
+    time,
+  ];
 
   if (time.length > 1) {
     time = time.slice(1);
@@ -94,7 +96,8 @@ export const getCurrentDateTimeTick = () => {
   // A  get current seconds
   const curseconds = DateTime.getSeconds();
 
-  const varunique = curyear + curmonth + curdate + curhours + curminutes + curseconds;
+  const varunique =
+    curyear + curmonth + curdate + curhours + curminutes + curseconds;
   return varunique;
 };
 

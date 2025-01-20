@@ -2,7 +2,10 @@ import React, { useRef, useEffect } from "react";
 import { EnterKeyCode } from "Configration/Utilities/Constants/Constants";
 import "./FormComponents.scss";
 import Select from "react-select";
-import { ReactSelectStyleKrph, ReactMultiSelectStyleKrph } from "../../Assets/Styles/Widgets/SelectStyle/SelectStyleKrph";
+import {
+  ReactSelectStyleKrph,
+  ReactMultiSelectStyleKrph,
+} from "../../Assets/Styles/Widgets/SelectStyle/SelectStyleKrph";
 import { BiLinkExternal } from "react-icons/bi";
 
 function FormComponent(props) {
@@ -19,7 +22,10 @@ function FormComponent(props) {
   }
 
   return (
-    <div className={`DynBiz_Popup_Form_Content DynBiz_Popup_Form_ConCol_${column}`} {...rest}>
+    <div
+      className={`DynBiz_Popup_Form_Content DynBiz_Popup_Form_ConCol_${column}`}
+      {...rest}
+    >
       {elements}
     </div>
   );
@@ -28,7 +34,15 @@ function FormComponent(props) {
 export default FormComponent;
 
 export const PopupSearch = (props) => {
-  const { ControlTxt = "", children, onClick, focus, Text = "Search", placeholder = "Search", ...rest } = props;
+  const {
+    ControlTxt = "",
+    children,
+    onClick,
+    focus,
+    Text = "Search",
+    placeholder = "Search",
+    ...rest
+  } = props;
 
   const firstSearchInputBox = useRef();
 
@@ -76,7 +90,15 @@ export const MainGroup = (props) => {
 };
 
 export const BoxFormComponent = (props) => {
-  const { column = "1", BoxCol = "", RowCol = "", boxtitle = "", minWidth = "", children, ...rest } = props;
+  const {
+    column = "1",
+    BoxCol = "",
+    RowCol = "",
+    boxtitle = "",
+    minWidth = "",
+    children,
+    ...rest
+  } = props;
 
   let elements = React.Children.toArray(props.children);
   if (elements.length > 0) {
@@ -98,38 +120,80 @@ export const BoxFormComponent = (props) => {
       {...rest}
     >
       <h2 className="DynBiz_Popup_FormCheckBheadTxt">{boxtitle}</h2>
-      <div className={`DynBiz_Popup_FormBox_Content DynBiz_Popup_FormBox_ConCol_${column}`}>{elements}</div>
+      <div
+        className={`DynBiz_Popup_FormBox_Content DynBiz_Popup_FormBox_ConCol_${column}`}
+      >
+        {elements}
+      </div>
     </div>
   );
 };
 
 export const InputGroup = (props) => {
-  const { ErrorMsg = "", LabelTxt = "", Col = "1", Row = "", ColStart = "4", minWidth = "", LabelReq = "", children, ...rest } = props;
+  const {
+    ErrorMsg = "",
+    LabelTxt = "",
+    Col = "1",
+    Row = "",
+    ColStart = "4",
+    minWidth = "",
+    LabelReq = "",
+    children,
+    ...rest
+  } = props;
 
   return (
-    <div className={`DynBiz_Popup_InputGroupBox Col__${Col} ColStart__${ColStart} ss_${Row}`}>
+    <div
+      className={`DynBiz_Popup_InputGroupBox Col__${Col} ColStart__${ColStart} ss_${Row}`}
+    >
       {LabelTxt ? (
-        <label className={`DynBiz_Popup_LabelTxt DynBiz_Popup_Req_${LabelReq}`} style={{ minWidth: `${minWidth}` }} {...rest}>
+        <label
+          className={`DynBiz_Popup_LabelTxt DynBiz_Popup_Req_${LabelReq}`}
+          style={{ minWidth: `${minWidth}` }}
+          {...rest}
+        >
           {LabelTxt}
         </label>
       ) : null}
-      <div className={`${ErrorMsg}` ? "DynBiz_Popup_InputGroup DynBiz_Popup_InputGroup_Error" : "DynBiz_Popup_InputGroup"}>
+      <div
+        className={
+          `${ErrorMsg}`
+            ? "DynBiz_Popup_InputGroup DynBiz_Popup_InputGroup_Error"
+            : "DynBiz_Popup_InputGroup"
+        }
+      >
         {children}
-        {ErrorMsg ? <span className="DynBiz_Popup_InputGroupError_Msg">{ErrorMsg}</span> : null}
+        {ErrorMsg ? (
+          <span className="DynBiz_Popup_InputGroupError_Msg">{ErrorMsg}</span>
+        ) : null}
       </div>
     </div>
   );
 };
 
 export const MultiInputGroup = (props) => {
-  const { children, ControlCol, LabelTxt = "", LabelReq = "", Col = "", ...rest } = props;
+  const {
+    children,
+    ControlCol,
+    LabelTxt = "",
+    LabelReq = "",
+    Col = "",
+    ...rest
+  } = props;
 
   return (
     <div style={{ display: "contents" }}>
-      <label className={`DynBiz_Popup_LabelTxt DynBiz_Popup_Req_${LabelReq}`} style={{ gridColumnStart: "1" }}>
+      <label
+        className={`DynBiz_Popup_LabelTxt DynBiz_Popup_Req_${LabelReq}`}
+        style={{ gridColumnStart: "1" }}
+      >
         {LabelTxt}
       </label>
-      <div className={`DynBiz_Popup_MultiInputGroupBox Col__${Col}`} style={{ gridTemplateColumns: `${ControlCol}` }} {...rest}>
+      <div
+        className={`DynBiz_Popup_MultiInputGroupBox Col__${Col}`}
+        style={{ gridTemplateColumns: `${ControlCol}` }}
+        {...rest}
+      >
         {children}
       </div>
     </div>
@@ -172,7 +236,11 @@ export const InputControl = React.forwardRef((props, ref) => {
         <React.Fragment>
           <input
             placeholder={`${ControlTxt}`}
-            className={MaxLength === "" ? "DynBiz_AddPopup_Inputbox" : "DynBiz_AddPopup_Inputbox DynBiz_AddPopup_InputboxMaxLength"}
+            className={
+              MaxLength === ""
+                ? "DynBiz_AddPopup_Inputbox"
+                : "DynBiz_AddPopup_Inputbox DynBiz_AddPopup_InputboxMaxLength"
+            }
             maxLength={maxLength}
             style={{ width: `${controlwidth}` }}
             ref={ref}
@@ -195,7 +263,9 @@ export const InputControl = React.forwardRef((props, ref) => {
               menuPortalTarget={document.body}
               isSearchable={isSearchable}
               styles={ReactSelectStyleKrph}
-              placeholder={TxtPrefix === false ? `${ControlTxt}` : `Select ${ControlTxt}`}
+              placeholder={
+                TxtPrefix === false ? `${ControlTxt}` : `Select ${ControlTxt}`
+              }
               ref={ref}
               menuShouldScrollIntoView={false}
               noOptionsMessage={() => "No Result Found"}
@@ -219,7 +289,9 @@ export const InputControl = React.forwardRef((props, ref) => {
               menuPortalTarget={document.body}
               isSearchable={isSearchable}
               styles={ReactMultiSelectStyleKrph}
-              placeholder={TxtPrefix === false ? `${ControlTxt}` : `Select ${ControlTxt}`}
+              placeholder={
+                TxtPrefix === false ? `${ControlTxt}` : `Select ${ControlTxt}`
+              }
               ref={ref}
               menuShouldScrollIntoView={false}
               noOptionsMessage={() => "No Result Found"}
@@ -233,8 +305,17 @@ export const InputControl = React.forwardRef((props, ref) => {
       InputBox = (
         <React.Fragment>
           <label className="DynBiz__panel_Switch">
-            <input className="DynBiz__panel_Switch-input" type="checkbox" ref={ref} {...rest} />
-            <span className="DynBiz__panel_Switch-label" data-on="Yes" data-off="No"></span>
+            <input
+              className="DynBiz__panel_Switch-input"
+              type="checkbox"
+              ref={ref}
+              {...rest}
+            />
+            <span
+              className="DynBiz__panel_Switch-label"
+              data-on="Yes"
+              data-off="No"
+            ></span>
             <span className="DynBiz__panel_Switch-handle"></span>
           </label>
         </React.Fragment>
@@ -245,7 +326,11 @@ export const InputControl = React.forwardRef((props, ref) => {
       InputBox = (
         <React.Fragment>
           <textarea
-            className={MaxLength === "" ? "DynBiz_AddPopup_Inputbox" : "DynBiz_AddPopup_Inputbox DynBiz_AddPopup_InputboxMaxLength"}
+            className={
+              MaxLength === ""
+                ? "DynBiz_AddPopup_Inputbox"
+                : "DynBiz_AddPopup_Inputbox DynBiz_AddPopup_InputboxMaxLength"
+            }
             ref={ref}
             maxLength={maxLength}
             placeholder={`${ControlTxt}`}

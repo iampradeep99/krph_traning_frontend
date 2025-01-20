@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function Header() {
+function Header({ toggleSidebar }) {
   const navigate = useNavigate();
 
   const OpenPage = (type) => {
@@ -48,7 +48,7 @@ function Header() {
       {/* Left section */}
       <ul className="navbar-nav">
         <li className="nav-item text-white font-weight-normal">
-          <a className="nav-link" data-widget="pushmenu" href="#" role="button">
+          <a onClick={toggleSidebar} className="nav-link" data-widget="pushmenu" href="#" role="button">
             <i className="fas fa-bars"></i>
           </a>
         </li>
@@ -73,7 +73,15 @@ function Header() {
       </ul>
 
       {/* Right section */}
-      <ul className="navbar-nav ml-auto" style={{ display: "flex", alignItems: "center" ,marginRight: "5px", padding: "0px 20px 0px 20px"}}>
+      <ul
+        className="navbar-nav ml-auto"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginRight: "5px",
+          padding: "0px 20px 0px 20px",
+        }}
+      >
         <li style={iconBoxStyle}>
           <i className="fas fa-bell"></i>
           <span style={badgeStyle}>2</span>

@@ -5,7 +5,8 @@ import { EnterKeyCode } from "Configration/Utilities/Constants";
 import "./PageTitle.scss";
 
 function PageTitle(props) {
-  const { Title, children, className, controlOnLeft, leftControl, ...rest } = props;
+  const { Title, children, className, controlOnLeft, leftControl, ...rest } =
+    props;
 
   return (
     <React.Fragment>
@@ -56,7 +57,16 @@ export const PageSelect = React.forwardRef((props, ref) => {
 });
 
 export const PageSearch = (props) => {
-  const { ControlTxt = "", children, onClick, focus, Text = "Search", withoutButton, placeholder = "Search", ...rest } = props;
+  const {
+    ControlTxt = "",
+    children,
+    onClick,
+    focus,
+    Text = "Search",
+    withoutButton,
+    placeholder = "Search",
+    ...rest
+  } = props;
 
   const firstSearchInput = useRef();
 
@@ -87,7 +97,11 @@ export const PageSearch = (props) => {
           onKeyDown={(e) => handleKeyDown(e)}
         />
         {withoutButton === true ? null : (
-          <button type="button" className="DynBiz_PageTitle_SearchBoxBtn" onClick={onClick}>
+          <button
+            type="button"
+            className="DynBiz_PageTitle_SearchBoxBtn"
+            onClick={onClick}
+          >
             {Text}
           </button>
         )}

@@ -1,39 +1,5 @@
 /* Sidebar.css */
 .sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: green;
-    color: #ecf0f1;
-    padding-top: 20px;
-    position: fixed;
-  }
-
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin: 20px 10px 20px 10px;
-  }
-  
-  .sidebar ul li a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 10px 20px;
-  }
-  
-  .sidebar ul li a:hover {
-    border-radius: 20px;
-    background-color: #E3F7B6;
-    color: green;
-  }
-  
-  /* Sidebar.css */
-.sidebar {
   width: 250px;
   height: 100vh;
   background-color: green;
@@ -42,6 +8,38 @@
   position: fixed;
 }
 
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 10px 20px 10px;
+}
+
+.sidebar ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+}
+
+/* .sidebar ul li a:hover {
+  border-radius: 20px;
+  background-color: #e3f7b6;
+  color: green;
+} */
+
+/* Sidebar.css */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: green;
+  color: #ecf0f1;
+  padding-top: 20px;
+  position: fixed;
+}
 
 .sidebar_krph ul {
   list-style-type: none;
@@ -60,8 +58,8 @@
   padding: 10px 20px;
 }
 
-.sidebar_krph ul li a:hover {
+/* .sidebar_krph ul li a:hover {
   border-radius: 20px;
-  background-color: #E3F7B6;
+  background-color: #e3f7b6;
   color: green;
-}
+} */

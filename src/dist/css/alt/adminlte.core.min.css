@@ -37,9 +37,9 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-sans-serif: "Source Sans Pro", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
@@ -68,9 +68,18 @@ section {
 }
 body {
   margin: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1927,7 +1936,9 @@ pre code {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   box-shadow: inset 0 0 0 transparent;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2160,7 +2171,8 @@ textarea.form-control.is-valid {
 .was-validated .custom-select:valid {
   border-color: #28a745;
   padding-right: calc(0.75em + 2.3125rem) !important;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+  background:
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
       right 0.75rem center/8px 10px no-repeat,
     #fff
       url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e")
@@ -2280,7 +2292,8 @@ textarea.form-control.is-invalid {
 .was-validated .custom-select:invalid {
   border-color: #dc3545;
   padding-right: calc(0.75em + 2.3125rem) !important;
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+  background:
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
       right 0.75rem center/8px 10px no-repeat,
     #fff
       url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e")
@@ -2427,8 +2440,11 @@ textarea.form-control.is-invalid {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .btn {
@@ -3624,7 +3640,9 @@ input[type="submit"].btn-block {
   box-shadow: none;
 }
 .custom-control-input:focus ~ .custom-control-label::before {
-  box-shadow: inset 0 0 0 transparent, 0 0 0 1px #fff,
+  box-shadow:
+    inset 0 0 0 transparent,
+    0 0 0 1px #fff,
     0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
@@ -3727,12 +3745,21 @@ input[type="submit"].btn-block {
   height: calc(1rem - 4px);
   background-color: #adb5bd;
   border-radius: 0.5rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
-  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
+    -webkit-transform 0.15s ease-in-out;
+  transition:
+    transform 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    transform 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out,
     -webkit-transform 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3886,13 +3913,19 @@ input[type="submit"].btn-block {
   outline: 0;
 }
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow:
+    0 0 0 1px #fff,
+    0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .custom-range::-moz-focus-outer {
   border: 0;
@@ -3905,9 +3938,13 @@ input[type="submit"].btn-block {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-  -webkit-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  -webkit-transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   -webkit-appearance: none;
   appearance: none;
@@ -3938,9 +3975,13 @@ input[type="submit"].btn-block {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-  -moz-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  -moz-transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   -moz-appearance: none;
   appearance: none;
@@ -3974,9 +4015,13 @@ input[type="submit"].btn-block {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-  -ms-transition: background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  -ms-transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   appearance: none;
 }
@@ -4026,7 +4071,9 @@ input[type="submit"].btn-block {
 .custom-control-label::before,
 .custom-file-label,
 .custom-select {
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4868,8 +4915,11 @@ input[type="submit"].btn-block {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .badge {
@@ -5607,7 +5657,9 @@ a.close.disabled {
 .modal.fade .modal-dialog {
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+  transition:
+    transform 0.3s ease-out,
+    -webkit-transform 0.3s ease-out;
   -webkit-transform: translate(0, -50px);
   transform: translate(0, -50px);
 }
@@ -5792,9 +5844,18 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5902,9 +5963,18 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6082,7 +6152,9 @@ a.close.disabled {
   backface-visibility: hidden;
   transition: -webkit-transform 0.6s ease;
   transition: transform 0.6s ease;
-  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    -webkit-transform 0.6s ease;
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-item {
@@ -10993,17 +11065,29 @@ body:not(.layout-fixed).layout-navbar-fixed.text-sm
 .layout-top-nav .wrapper .main-header {
   margin-left: 0;
 }
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .content-wrapper,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .content-wrapper::before,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-footer,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-footer::before,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-header,
-body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-mini)
+body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(
+    .sidebar-mini
+  )
   .main-header::before {
   margin-left: 0;
 }
@@ -11124,7 +11208,9 @@ body.sidebar-collapse:not(.sidebar-mini-xs):not(.sidebar-mini-md):not(.sidebar-m
 }
 .main-sidebar,
 .main-sidebar::before {
-  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+  transition:
+    margin-left 0.3s ease-in-out,
+    width 0.3s ease-in-out;
   width: 250px;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -12281,7 +12367,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .nav-sidebar .nav-item > .nav-link .right {
   transition: -webkit-transform ease-in-out 0.3s;
   transition: transform ease-in-out 0.3s;
-  transition: transform ease-in-out 0.3s, -webkit-transform ease-in-out 0.3s;
+  transition:
+    transform ease-in-out 0.3s,
+    -webkit-transform ease-in-out 0.3s;
 }
 @media (prefers-reduced-motion: reduce) {
   .nav-sidebar .nav-item > .nav-link .right {
@@ -12426,7 +12514,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 [class*="sidebar-light-"] .nav-sidebar > .nav-item > .nav-link.active {
   color: #000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
 }
 [class*="sidebar-light-"] .nav-sidebar > .nav-item > .nav-treeview {
   background-color: transparent;
@@ -12508,7 +12598,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-link.active {
   color: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
 }
 [class*="sidebar-dark-"] .nav-sidebar > .nav-item > .nav-treeview {
   background-color: transparent;
@@ -13667,7 +13759,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .sidebar nav .form-inline {
   margin-bottom: 0.2rem;
 }
-.layout-boxed:not(.sidebar-mini):not(.sidebar-mini-md):not(.sidebar-mini-xs).sidebar-collapse
+.layout-boxed:not(.sidebar-mini):not(.sidebar-mini-md):not(
+    .sidebar-mini-xs
+  ).sidebar-collapse
   .main-sidebar {
   margin-left: 0;
 }
@@ -16760,7 +16854,10 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 .main-sidebar .logo-xs,
 .sidebar .nav-link p,
 .sidebar .user-panel .info {
-  transition: margin-left 0.3s linear, opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    margin-left 0.3s linear,
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 @media (prefers-reduced-motion: reduce) {
   .main-sidebar .brand-text,
@@ -16786,7 +16883,9 @@ html.control-sidebar-animate {
   display: none;
   right: -250px;
   width: 250px;
-  transition: right 0.3s ease-in-out, display 0.3s ease-in-out;
+  transition:
+    right 0.3s ease-in-out,
+    display 0.3s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .control-sidebar,
@@ -16840,7 +16939,9 @@ body.text-sm .control-sidebar {
 .control-sidebar-slide-open .control-sidebar,
 .control-sidebar-slide-open .control-sidebar::before {
   right: 0;
-  transition: right 0.3s ease-in-out, display 0.3s ease-in-out;
+  transition:
+    right 0.3s ease-in-out,
+    display 0.3s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
   .control-sidebar-slide-open .control-sidebar,
@@ -24405,19 +24506,29 @@ blockquote.quote-gray-dark h6 {
   box-shadow: none !important;
 }
 .elevation-1 {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24) !important;
 }
 .elevation-2 {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23) !important;
 }
 .elevation-3 {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23) !important;
 }
 .elevation-4 {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22) !important;
 }
 .elevation-5 {
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22) !important;
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22) !important;
 }
 .bg-primary {
   background-color: #007bff !important;
@@ -26458,13 +26569,17 @@ a.text-muted:hover {
 .accent-primary .btn-link,
 .accent-primary .nav-tabs .nav-link,
 .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #007bff;
 }
 .accent-primary .btn-link:hover,
 .accent-primary .nav-tabs .nav-link:hover,
 .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #0056b3;
 }
 .accent-primary .dropdown-item.active,
@@ -26534,13 +26649,17 @@ a.text-muted:hover {
 .accent-secondary .btn-link,
 .accent-secondary .nav-tabs .nav-link,
 .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6c757d;
 }
 .accent-secondary .btn-link:hover,
 .accent-secondary .nav-tabs .nav-link:hover,
 .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #494f54;
 }
 .accent-secondary .dropdown-item.active,
@@ -26612,13 +26731,17 @@ a.text-muted:hover {
 .accent-success .btn-link,
 .accent-success .nav-tabs .nav-link,
 .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #28a745;
 }
 .accent-success .btn-link:hover,
 .accent-success .nav-tabs .nav-link:hover,
 .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #19692c;
 }
 .accent-success .dropdown-item.active,
@@ -26688,13 +26811,17 @@ a.text-muted:hover {
 .accent-info .btn-link,
 .accent-info .nav-tabs .nav-link,
 .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #17a2b8;
 }
 .accent-info .btn-link:hover,
 .accent-info .nav-tabs .nav-link:hover,
 .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #0f6674;
 }
 .accent-info .dropdown-item.active,
@@ -26764,13 +26891,17 @@ a.text-muted:hover {
 .accent-warning .btn-link,
 .accent-warning .nav-tabs .nav-link,
 .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #ffc107;
 }
 .accent-warning .btn-link:hover,
 .accent-warning .nav-tabs .nav-link:hover,
 .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #ba8b00;
 }
 .accent-warning .dropdown-item.active,
@@ -26840,13 +26971,17 @@ a.text-muted:hover {
 .accent-danger .btn-link,
 .accent-danger .nav-tabs .nav-link,
 .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #dc3545;
 }
 .accent-danger .btn-link:hover,
 .accent-danger .nav-tabs .nav-link:hover,
 .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #a71d2a;
 }
 .accent-danger .dropdown-item.active,
@@ -26916,13 +27051,17 @@ a.text-muted:hover {
 .accent-light .btn-link,
 .accent-light .nav-tabs .nav-link,
 .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #f8f9fa;
 }
 .accent-light .btn-link:hover,
 .accent-light .nav-tabs .nav-link:hover,
 .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #cbd3da;
 }
 .accent-light .dropdown-item.active,
@@ -26992,13 +27131,17 @@ a.text-muted:hover {
 .accent-dark .btn-link,
 .accent-dark .nav-tabs .nav-link,
 .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #343a40;
 }
 .accent-dark .btn-link:hover,
 .accent-dark .nav-tabs .nav-link:hover,
 .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #121416;
 }
 .accent-dark .dropdown-item.active,
@@ -27068,13 +27211,17 @@ a.text-muted:hover {
 .accent-lightblue .btn-link,
 .accent-lightblue .nav-tabs .nav-link,
 .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #3c8dbc;
 }
 .accent-lightblue .btn-link:hover,
 .accent-lightblue .nav-tabs .nav-link:hover,
 .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #296282;
 }
 .accent-lightblue .dropdown-item.active,
@@ -27146,13 +27293,17 @@ a.text-muted:hover {
 .accent-navy .btn-link,
 .accent-navy .nav-tabs .nav-link,
 .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #001f3f;
 }
 .accent-navy .btn-link:hover,
 .accent-navy .nav-tabs .nav-link:hover,
 .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #000;
 }
 .accent-navy .dropdown-item.active,
@@ -27222,13 +27373,17 @@ a.text-muted:hover {
 .accent-olive .btn-link,
 .accent-olive .nav-tabs .nav-link,
 .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #3d9970;
 }
 .accent-olive .btn-link:hover,
 .accent-olive .nav-tabs .nav-link:hover,
 .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #276248;
 }
 .accent-olive .dropdown-item.active,
@@ -27298,13 +27453,17 @@ a.text-muted:hover {
 .accent-lime .btn-link,
 .accent-lime .nav-tabs .nav-link,
 .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #01ff70;
 }
 .accent-lime .btn-link:hover,
 .accent-lime .nav-tabs .nav-link:hover,
 .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #00b44e;
 }
 .accent-lime .dropdown-item.active,
@@ -27374,13 +27533,17 @@ a.text-muted:hover {
 .accent-fuchsia .btn-link,
 .accent-fuchsia .nav-tabs .nav-link,
 .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #f012be;
 }
 .accent-fuchsia .btn-link:hover,
 .accent-fuchsia .nav-tabs .nav-link:hover,
 .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #ab0b87;
 }
 .accent-fuchsia .dropdown-item.active,
@@ -27450,13 +27613,17 @@ a.text-muted:hover {
 .accent-maroon .btn-link,
 .accent-maroon .nav-tabs .nav-link,
 .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #d81b60;
 }
 .accent-maroon .btn-link:hover,
 .accent-maroon .nav-tabs .nav-link:hover,
 .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #941342;
 }
 .accent-maroon .dropdown-item.active,
@@ -27526,13 +27693,17 @@ a.text-muted:hover {
 .accent-blue .btn-link,
 .accent-blue .nav-tabs .nav-link,
 .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #007bff;
 }
 .accent-blue .btn-link:hover,
 .accent-blue .nav-tabs .nav-link:hover,
 .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #0056b3;
 }
 .accent-blue .dropdown-item.active,
@@ -27602,13 +27773,17 @@ a.text-muted:hover {
 .accent-indigo .btn-link,
 .accent-indigo .nav-tabs .nav-link,
 .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6610f2;
 }
 .accent-indigo .btn-link:hover,
 .accent-indigo .nav-tabs .nav-link:hover,
 .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #4709ac;
 }
 .accent-indigo .dropdown-item.active,
@@ -27678,13 +27853,17 @@ a.text-muted:hover {
 .accent-purple .btn-link,
 .accent-purple .nav-tabs .nav-link,
 .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6f42c1;
 }
 .accent-purple .btn-link:hover,
 .accent-purple .nav-tabs .nav-link:hover,
 .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #4e2d89;
 }
 .accent-purple .dropdown-item.active,
@@ -27754,13 +27933,17 @@ a.text-muted:hover {
 .accent-pink .btn-link,
 .accent-pink .nav-tabs .nav-link,
 .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #e83e8c;
 }
 .accent-pink .btn-link:hover,
 .accent-pink .nav-tabs .nav-link:hover,
 .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #c21766;
 }
 .accent-pink .dropdown-item.active,
@@ -27830,13 +28013,17 @@ a.text-muted:hover {
 .accent-red .btn-link,
 .accent-red .nav-tabs .nav-link,
 .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #dc3545;
 }
 .accent-red .btn-link:hover,
 .accent-red .nav-tabs .nav-link:hover,
 .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #a71d2a;
 }
 .accent-red .dropdown-item.active,
@@ -27906,13 +28093,17 @@ a.text-muted:hover {
 .accent-orange .btn-link,
 .accent-orange .nav-tabs .nav-link,
 .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #fd7e14;
 }
 .accent-orange .btn-link:hover,
 .accent-orange .nav-tabs .nav-link:hover,
 .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #c35a02;
 }
 .accent-orange .dropdown-item.active,
@@ -27982,13 +28173,17 @@ a.text-muted:hover {
 .accent-yellow .btn-link,
 .accent-yellow .nav-tabs .nav-link,
 .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #ffc107;
 }
 .accent-yellow .btn-link:hover,
 .accent-yellow .nav-tabs .nav-link:hover,
 .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #ba8b00;
 }
 .accent-yellow .dropdown-item.active,
@@ -28058,13 +28253,17 @@ a.text-muted:hover {
 .accent-green .btn-link,
 .accent-green .nav-tabs .nav-link,
 .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #28a745;
 }
 .accent-green .btn-link:hover,
 .accent-green .nav-tabs .nav-link:hover,
 .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #19692c;
 }
 .accent-green .dropdown-item.active,
@@ -28134,13 +28333,17 @@ a.text-muted:hover {
 .accent-teal .btn-link,
 .accent-teal .nav-tabs .nav-link,
 .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #20c997;
 }
 .accent-teal .btn-link:hover,
 .accent-teal .nav-tabs .nav-link:hover,
 .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #158765;
 }
 .accent-teal .dropdown-item.active,
@@ -28210,13 +28413,17 @@ a.text-muted:hover {
 .accent-cyan .btn-link,
 .accent-cyan .nav-tabs .nav-link,
 .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #17a2b8;
 }
 .accent-cyan .btn-link:hover,
 .accent-cyan .nav-tabs .nav-link:hover,
 .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #0f6674;
 }
 .accent-cyan .dropdown-item.active,
@@ -28286,13 +28493,17 @@ a.text-muted:hover {
 .accent-white .btn-link,
 .accent-white .nav-tabs .nav-link,
 .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #fff;
 }
 .accent-white .btn-link:hover,
 .accent-white .nav-tabs .nav-link:hover,
 .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #d9d9d9;
 }
 .accent-white .dropdown-item.active,
@@ -28362,13 +28573,17 @@ a.text-muted:hover {
 .accent-gray .btn-link,
 .accent-gray .nav-tabs .nav-link,
 .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6c757d;
 }
 .accent-gray .btn-link:hover,
 .accent-gray .nav-tabs .nav-link:hover,
 .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #494f54;
 }
 .accent-gray .dropdown-item.active,
@@ -28438,13 +28653,17 @@ a.text-muted:hover {
 .accent-gray-dark .btn-link,
 .accent-gray-dark .nav-tabs .nav-link,
 .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #343a40;
 }
 .accent-gray-dark .btn-link:hover,
 .accent-gray-dark .nav-tabs .nav-link:hover,
 .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #121416;
 }
 .accent-gray-dark .dropdown-item.active,
@@ -29820,14 +30039,18 @@ a.text-muted:hover {
 .dark-mode .accent-primary .nav-tabs .nav-link,
 .dark-mode
   .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #3f6791;
 }
 .dark-mode .accent-primary .btn-link:hover,
 .dark-mode .accent-primary .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-primary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #28415c;
 }
 .dark-mode .accent-primary .dropdown-item.active,
@@ -29910,14 +30133,18 @@ a.text-muted:hover {
 .dark-mode .accent-secondary .nav-tabs .nav-link,
 .dark-mode
   .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6c757d;
 }
 .dark-mode .accent-secondary .btn-link:hover,
 .dark-mode .accent-secondary .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-secondary
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #494f54;
 }
 .dark-mode .accent-secondary .dropdown-item.active,
@@ -30000,14 +30227,18 @@ a.text-muted:hover {
 .dark-mode .accent-success .nav-tabs .nav-link,
 .dark-mode
   .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #00bc8c;
 }
 .dark-mode .accent-success .btn-link:hover,
 .dark-mode .accent-success .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-success
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #007053;
 }
 .dark-mode .accent-success .dropdown-item.active,
@@ -30090,14 +30321,18 @@ a.text-muted:hover {
 .dark-mode .accent-info .nav-tabs .nav-link,
 .dark-mode
   .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #3498db;
 }
 .dark-mode .accent-info .btn-link:hover,
 .dark-mode .accent-info .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-info
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #1d6fa5;
 }
 .dark-mode .accent-info .dropdown-item.active,
@@ -30180,14 +30415,18 @@ a.text-muted:hover {
 .dark-mode .accent-warning .nav-tabs .nav-link,
 .dark-mode
   .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #f39c12;
 }
 .dark-mode .accent-warning .btn-link:hover,
 .dark-mode .accent-warning .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-warning
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #b06f09;
 }
 .dark-mode .accent-warning .dropdown-item.active,
@@ -30270,14 +30509,18 @@ a.text-muted:hover {
 .dark-mode .accent-danger .nav-tabs .nav-link,
 .dark-mode
   .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #e74c3c;
 }
 .dark-mode .accent-danger .btn-link:hover,
 .dark-mode .accent-danger .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-danger
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #bf2718;
 }
 .dark-mode .accent-danger .dropdown-item.active,
@@ -30360,14 +30603,18 @@ a.text-muted:hover {
 .dark-mode .accent-light .nav-tabs .nav-link,
 .dark-mode
   .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #f8f9fa;
 }
 .dark-mode .accent-light .btn-link:hover,
 .dark-mode .accent-light .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-light
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #cbd3da;
 }
 .dark-mode .accent-light .dropdown-item.active,
@@ -30450,14 +30697,18 @@ a.text-muted:hover {
 .dark-mode .accent-dark .nav-tabs .nav-link,
 .dark-mode
   .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #343a40;
 }
 .dark-mode .accent-dark .btn-link:hover,
 .dark-mode .accent-dark .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #121416;
 }
 .dark-mode .accent-dark .dropdown-item.active,
@@ -30564,14 +30815,18 @@ a.text-muted:hover {
 .dark-mode .accent-lightblue .nav-tabs .nav-link,
 .dark-mode
   .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #86bad8;
 }
 .dark-mode .accent-lightblue .btn-link:hover,
 .dark-mode .accent-lightblue .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-lightblue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #4c99c6;
 }
 .dark-mode .accent-lightblue .dropdown-item.active,
@@ -30654,14 +30909,18 @@ a.text-muted:hover {
 .dark-mode .accent-navy .nav-tabs .nav-link,
 .dark-mode
   .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #002c59;
 }
 .dark-mode .accent-navy .btn-link:hover,
 .dark-mode .accent-navy .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-navy
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #00060c;
 }
 .dark-mode .accent-navy .dropdown-item.active,
@@ -30744,14 +31003,18 @@ a.text-muted:hover {
 .dark-mode .accent-olive .nav-tabs .nav-link,
 .dark-mode
   .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #74c8a3;
 }
 .dark-mode .accent-olive .btn-link:hover,
 .dark-mode .accent-olive .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-olive
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #44ab7d;
 }
 .dark-mode .accent-olive .dropdown-item.active,
@@ -30834,14 +31097,18 @@ a.text-muted:hover {
 .dark-mode .accent-lime .nav-tabs .nav-link,
 .dark-mode
   .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #67ffa9;
 }
 .dark-mode .accent-lime .btn-link:hover,
 .dark-mode .accent-lime .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-lime
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #1bff7e;
 }
 .dark-mode .accent-lime .dropdown-item.active,
@@ -30924,14 +31191,18 @@ a.text-muted:hover {
 .dark-mode .accent-fuchsia .nav-tabs .nav-link,
 .dark-mode
   .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #f672d8;
 }
 .dark-mode .accent-fuchsia .btn-link:hover,
 .dark-mode .accent-fuchsia .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-fuchsia
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #f22ac5;
 }
 .dark-mode .accent-fuchsia .dropdown-item.active,
@@ -31014,14 +31285,18 @@ a.text-muted:hover {
 .dark-mode .accent-maroon .nav-tabs .nav-link,
 .dark-mode
   .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #ed6c9b;
 }
 .dark-mode .accent-maroon .btn-link:hover,
 .dark-mode .accent-maroon .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-maroon
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #e4286d;
 }
 .dark-mode .accent-maroon .dropdown-item.active,
@@ -31104,14 +31379,18 @@ a.text-muted:hover {
 .dark-mode .accent-blue .nav-tabs .nav-link,
 .dark-mode
   .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #3f6791;
 }
 .dark-mode .accent-blue .btn-link:hover,
 .dark-mode .accent-blue .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-blue
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #28415c;
 }
 .dark-mode .accent-blue .dropdown-item.active,
@@ -31194,14 +31473,18 @@ a.text-muted:hover {
 .dark-mode .accent-indigo .nav-tabs .nav-link,
 .dark-mode
   .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6610f2;
 }
 .dark-mode .accent-indigo .btn-link:hover,
 .dark-mode .accent-indigo .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-indigo
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #4709ac;
 }
 .dark-mode .accent-indigo .dropdown-item.active,
@@ -31284,14 +31567,18 @@ a.text-muted:hover {
 .dark-mode .accent-purple .nav-tabs .nav-link,
 .dark-mode
   .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6f42c1;
 }
 .dark-mode .accent-purple .btn-link:hover,
 .dark-mode .accent-purple .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-purple
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #4e2d89;
 }
 .dark-mode .accent-purple .dropdown-item.active,
@@ -31374,14 +31661,18 @@ a.text-muted:hover {
 .dark-mode .accent-pink .nav-tabs .nav-link,
 .dark-mode
   .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #e83e8c;
 }
 .dark-mode .accent-pink .btn-link:hover,
 .dark-mode .accent-pink .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-pink
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #c21766;
 }
 .dark-mode .accent-pink .dropdown-item.active,
@@ -31464,14 +31755,18 @@ a.text-muted:hover {
 .dark-mode .accent-red .nav-tabs .nav-link,
 .dark-mode
   .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #e74c3c;
 }
 .dark-mode .accent-red .btn-link:hover,
 .dark-mode .accent-red .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-red
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #bf2718;
 }
 .dark-mode .accent-red .dropdown-item.active,
@@ -31554,14 +31849,18 @@ a.text-muted:hover {
 .dark-mode .accent-orange .nav-tabs .nav-link,
 .dark-mode
   .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #fd7e14;
 }
 .dark-mode .accent-orange .btn-link:hover,
 .dark-mode .accent-orange .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-orange
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #c35a02;
 }
 .dark-mode .accent-orange .dropdown-item.active,
@@ -31644,14 +31943,18 @@ a.text-muted:hover {
 .dark-mode .accent-yellow .nav-tabs .nav-link,
 .dark-mode
   .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #f39c12;
 }
 .dark-mode .accent-yellow .btn-link:hover,
 .dark-mode .accent-yellow .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-yellow
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #b06f09;
 }
 .dark-mode .accent-yellow .dropdown-item.active,
@@ -31734,14 +32037,18 @@ a.text-muted:hover {
 .dark-mode .accent-green .nav-tabs .nav-link,
 .dark-mode
   .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #00bc8c;
 }
 .dark-mode .accent-green .btn-link:hover,
 .dark-mode .accent-green .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-green
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #007053;
 }
 .dark-mode .accent-green .dropdown-item.active,
@@ -31824,14 +32131,18 @@ a.text-muted:hover {
 .dark-mode .accent-teal .nav-tabs .nav-link,
 .dark-mode
   .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #20c997;
 }
 .dark-mode .accent-teal .btn-link:hover,
 .dark-mode .accent-teal .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-teal
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #158765;
 }
 .dark-mode .accent-teal .dropdown-item.active,
@@ -31914,14 +32225,18 @@ a.text-muted:hover {
 .dark-mode .accent-cyan .nav-tabs .nav-link,
 .dark-mode
   .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #3498db;
 }
 .dark-mode .accent-cyan .btn-link:hover,
 .dark-mode .accent-cyan .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-cyan
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #1d6fa5;
 }
 .dark-mode .accent-cyan .dropdown-item.active,
@@ -32004,14 +32319,18 @@ a.text-muted:hover {
 .dark-mode .accent-white .nav-tabs .nav-link,
 .dark-mode
   .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #fff;
 }
 .dark-mode .accent-white .btn-link:hover,
 .dark-mode .accent-white .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-white
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #d9d9d9;
 }
 .dark-mode .accent-white .dropdown-item.active,
@@ -32094,14 +32413,18 @@ a.text-muted:hover {
 .dark-mode .accent-gray .nav-tabs .nav-link,
 .dark-mode
   .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #6c757d;
 }
 .dark-mode .accent-gray .btn-link:hover,
 .dark-mode .accent-gray .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-gray
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #494f54;
 }
 .dark-mode .accent-gray .dropdown-item.active,
@@ -32184,14 +32507,18 @@ a.text-muted:hover {
 .dark-mode .accent-gray-dark .nav-tabs .nav-link,
 .dark-mode
   .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn) {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn) {
   color: #343a40;
 }
 .dark-mode .accent-gray-dark .btn-link:hover,
 .dark-mode .accent-gray-dark .nav-tabs .nav-link:hover,
 .dark-mode
   .accent-gray-dark
-  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.badge):not(.btn):hover {
+  a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(
+    .page-link
+  ):not(.badge):not(.btn):hover {
   color: #121416;
 }
 .dark-mode .accent-gray-dark .dropdown-item.active,

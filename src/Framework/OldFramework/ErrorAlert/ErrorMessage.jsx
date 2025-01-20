@@ -58,7 +58,11 @@ const ErrorMessage = (props) => {
   };
 
   return (
-    <div className="Biz_clear___toast" onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()}>
+    <div
+      className="Biz_clear___toast"
+      onMouseEnter={() => handleMouseEnter()}
+      onMouseLeave={() => handleMouseLeave()}
+    >
       <div className={"Biz_toast__fd " + className}>
         <div className="Biz_toast__icon">{MainIcon}</div>
         <div className="Biz_toast__text">
@@ -66,7 +70,13 @@ const ErrorMessage = (props) => {
           <p>{props.msgAlert.msg}</p>
         </div>
         <div className="Biz_toast__close">
-          <button type="button" onClick={() => onClose()} className="Biz_toast__closebtn" data-dismiss="alert" aria-label="Close">
+          <button
+            type="button"
+            onClick={() => onClose()}
+            className="Biz_toast__closebtn"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
             <IoCloseSharp className="Biz__Icon" />
           </button>
         </div>

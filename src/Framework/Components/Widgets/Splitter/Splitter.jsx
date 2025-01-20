@@ -10,14 +10,29 @@ function Splitter(props) {
   return (
     <Split
       render={({ getGridProps, getGutterProps }) => (
-        <SplitterDash className={BizClass.Splitter_Dash} {...getGridProps()} template={template} varient={varient}>
+        <SplitterDash
+          className={BizClass.Splitter_Dash}
+          {...getGridProps()}
+          template={template}
+          varient={varient}
+        >
           {children && children[1] ? children[0] : null}
           {children && children[1]
             ? children.map((data, i) => {
                 return (
                   <React.Fragment key={i}>
-                    {varient === "column" ? <Splitter.Columm getGutterProps={getGutterProps} column={(i + 2 + i).toString()} /> : null}
-                    {varient === "row" ? <Splitter.Row getGutterProps={getGutterProps} row={(i + 2 + i).toString()} /> : null}
+                    {varient === "column" ? (
+                      <Splitter.Columm
+                        getGutterProps={getGutterProps}
+                        column={(i + 2 + i).toString()}
+                      />
+                    ) : null}
+                    {varient === "row" ? (
+                      <Splitter.Row
+                        getGutterProps={getGutterProps}
+                        row={(i + 2 + i).toString()}
+                      />
+                    ) : null}
                     {children[i + 1]}
                   </React.Fragment>
                 );
@@ -39,7 +54,13 @@ Splitter.propTypes = {
 
 function SplitterColumn(props) {
   const { column, getGutterProps } = props;
-  return <ColumnSplitter className={BizClass.Grid_ColumnSplitter} {...getGutterProps("column", 1)} column={column} />;
+  return (
+    <ColumnSplitter
+      className={BizClass.Grid_ColumnSplitter}
+      {...getGutterProps("column", 1)}
+      column={column}
+    />
+  );
 }
 
 Splitter.Columm = SplitterColumn;
@@ -51,7 +72,13 @@ SplitterColumn.propTypes = {
 
 function SplitterRow(props) {
   const { row, getGutterProps } = props;
-  return <RowSplitter className={BizClass.Grid_RowSplitter} {...getGutterProps("row", 1)} row={row} />;
+  return (
+    <RowSplitter
+      className={BizClass.Grid_RowSplitter}
+      {...getGutterProps("row", 1)}
+      row={row}
+    />
+  );
 }
 
 Splitter.Row = SplitterRow;
@@ -63,8 +90,14 @@ SplitterRow.propTypes = {
 
 const SplitterDash = styled.div`
   &&& {
-    ${(props) => (props.varient === "column" ? `grid-template-columns:  ${props.template};` : null)}
-    ${(props) => (props.varient === "row" ? `grid-template-rows:  ${props.template};` : null)}
+    ${(props) =>
+      props.varient === "column"
+        ? `grid-template-columns:  ${props.template};`
+        : null}
+    ${(props) =>
+      props.varient === "row"
+        ? `grid-template-rows:  ${props.template};`
+        : null}
   }
 `;
 

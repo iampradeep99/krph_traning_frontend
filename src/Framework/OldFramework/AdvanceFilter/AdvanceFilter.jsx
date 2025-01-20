@@ -12,7 +12,10 @@ function AdvanceFilter(props) {
           <p>{Title}</p>
           <div className={BizClass.Div_SubBox}>
             <div className={BizClass.Div_CloseBox}>
-              <IoClose className={BizClass.Div_CloseIcon} onClick={toggleFilter} />
+              <IoClose
+                className={BizClass.Div_CloseIcon}
+                onClick={toggleFilter}
+              />
             </div>
           </div>
         </div>

@@ -77,7 +77,13 @@
 .DynBiz_PageTitle_ExcelBtn {
   background-color: whitesmoke;
   color: var(--Main-light-text-color);
-  background: -webkit-gradient(linear, top left, bottom left, color-stop(0, #2bbe60), color-stop(1, #0f9d58));
+  background: -webkit-gradient(
+    linear,
+    top left,
+    bottom left,
+    color-stop(0, #2bbe60),
+    color-stop(1, #0f9d58)
+  );
   background: -webkit-linear-gradient(top, #2bbe60, #0f9d58);
   background: linear-gradient(to bottom, #2bbe60, #0f9d58);
   border: 1px solid #0f9d58;

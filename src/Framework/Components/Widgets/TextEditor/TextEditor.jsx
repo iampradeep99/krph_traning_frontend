@@ -115,7 +115,22 @@ const TextEditor = ({ value, onChange, setWordcount, sizeLimit }) => {
           [{ background: ["red", "#785412"] }],
         ],
       }}
-      formats={["header", "font", "bold", "italic", "underline", "strike", "blockquote", "list", "bullet", "script", "indent", "align", "color", "background"]}
+      formats={[
+        "header",
+        "font",
+        "bold",
+        "italic",
+        "underline",
+        "strike",
+        "blockquote",
+        "list",
+        "bullet",
+        "script",
+        "indent",
+        "align",
+        "color",
+        "background",
+      ]}
       bounds=".ql-editor"
       style={{ height: "240px" }}
     />
