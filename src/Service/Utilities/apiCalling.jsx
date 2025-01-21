@@ -94,10 +94,7 @@ export const ApiCalling = async (requestApiData, apiPath) => {
   debugger;
   try {
   
-    const userData = getSessionStorage("user");
-    localStorage.setItem("sessionToken", sessionToken);
-
-    const sessionToken = localStorage.getItem("sessionToken");
+    const sessionToken = getSessionStorage("token");
 
     const requestData = {
       ...requestApiData.main,
