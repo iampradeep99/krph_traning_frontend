@@ -36,15 +36,12 @@ export const authenticate = async (userName, password) => {
           responseMessage: result.responseMessage,
         };
       }
-      setAlertMessage({
-        type: "error",
-        message: result.responseMessage,
-      });
-      // return {
-      //   responseCode: 0,
-      //   responseData: result,
-      //   responseMessage: result.responseMessage,
-      // };
+
+      return {
+        responseCode: 0,
+        responseData: result,
+        responseMessage: result.responseMessage,
+      };
     }
     return {
       responseCode: 0,
