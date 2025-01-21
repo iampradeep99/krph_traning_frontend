@@ -1,5 +1,5 @@
   import { ApiCalling } from "../../../../Service/Utilities/apiCalling";
-  import APIEndpoints from "./EndPoint";
+  import APIEndpoints from "./Endpoint";
  
 
   export const getAllAgent = async (formData) => {
