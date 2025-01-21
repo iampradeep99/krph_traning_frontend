@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { getSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
-import { useNavigate } from "react-router-dom";
-import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
+
 
 const SideBarModified = ({ isSidebarOpen }) => {
-  const navigate = useNavigate();
-  const setAlertMessage = AlertMessage();
 
   // Get session storage data with a fallback
   let dataMenu = getSessionStorage("user") || [];
@@ -75,7 +72,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                       {menu.name}
                       <i
                         className={`right fas fa-angle-${
-                          expandedMenu === menu._id ? "down" : "left"
+                          expandedMenu === menu._id ? "down" : "down"
                         }`}
                       ></i>
                     </p>

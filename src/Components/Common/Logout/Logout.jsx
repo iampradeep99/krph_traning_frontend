@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
 
-const LogoutComponent = () => {
+const Logout = () => {
   const navigate = useNavigate();
   const setAlertMessage = AlertMessage();
 
@@ -28,10 +28,8 @@ const LogoutComponent = () => {
   }, []);
 
   return (
-    <div>
-    
-    </div>
+  <></>
   );
 };
 
-export default LogoutComponent;
+export default Logout;
