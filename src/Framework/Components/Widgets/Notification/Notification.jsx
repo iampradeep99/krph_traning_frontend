@@ -73,7 +73,11 @@ function Notification({ id, type, title, message, dispatch }) {
     <div
       onMouseEnter={() => handlePauseTimer()}
       onMouseLeave={() => handleStartTimer()}
-      className={classNames(BizClass.Toast, BizClass[ToastclassName], exit && BizClass.exit)}
+      className={classNames(
+        BizClass.Toast,
+        BizClass[ToastclassName],
+        exit && BizClass.exit,
+      )}
     >
       <div className={BizClass.ToastBox}>
         <div className={BizClass.ToastTitle}>

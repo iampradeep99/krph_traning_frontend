@@ -10,7 +10,7 @@ export const getBrandmasterData = async (formData) => {
     };
     const result = await ApiCalling(
       requestData,
-      APIEndpoints.Brand.GetBrandmaster
+      APIEndpoints.Brand.GetBrandmaster,
     );
     return result;
   } catch (error) {
@@ -30,7 +30,7 @@ export const addBrandMasterData = async (formData) => {
     };
     const result = await ApiCalling(
       requestData,
-      APIEndpoints.Brand.AddBrandMaster
+      APIEndpoints.Brand.AddBrandMaster,
     );
     return result;
   } catch (error) {
@@ -50,7 +50,7 @@ export const updateBrandMasterData = async (formData) => {
     };
     const result = await ApiCalling(
       requestData,
-      APIEndpoints.Brand.UpdateBrandMaster
+      APIEndpoints.Brand.UpdateBrandMaster,
     );
     return result;
   } catch (error) {
@@ -70,7 +70,7 @@ export const updateBrandStatusData = async (formData) => {
     };
     const result = await ApiCalling(
       requestData,
-      APIEndpoints.Category.UpdateBrandStatus
+      APIEndpoints.Category.UpdateBrandStatus,
     );
     return result;
   } catch (error) {

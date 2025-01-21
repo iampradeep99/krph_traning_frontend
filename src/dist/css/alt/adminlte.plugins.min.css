@@ -332,7 +332,9 @@
 .fc-color-picker > li .svg-inline--fa {
   transition: -webkit-transform linear 0.3s;
   transition: transform linear 0.3s;
-  transition: transform linear 0.3s, -webkit-transform linear 0.3s;
+  transition:
+    transform linear 0.3s,
+    -webkit-transform linear 0.3s;
 }
 .fc-color-picker > li .fa:hover,
 .fc-color-picker > li .fab:hover,
@@ -349,7 +351,9 @@
   transition: all linear 0.3s;
 }
 .external-event {
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 0 1px rgba(0, 0, 0, 0.125),
+    0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
   cursor: move;
   font-weight: 700;
@@ -8619,9 +8623,18 @@ select.form-control-sm
   position: relative;
 }
 .mapael .mapTooltip {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -8857,7 +8870,9 @@ select.form-control-sm
   background: #007bff;
 }
 .pace-flash-primary .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #007bff, 0 0 5px #007bff;
+  box-shadow:
+    0 0 10px #007bff,
+    0 0 5px #007bff;
 }
 .pace-flash-primary .pace .pace-activity {
   border-top-color: #007bff;
@@ -8866,15 +8881,22 @@ select.form-control-sm
 .pace-loading-bar-primary .pace .pace-progress {
   background: #007bff;
   color: #007bff;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-primary .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #007bff, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #007bff,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-primary .pace .pace-progress {
   background-color: #007bff;
-  box-shadow: inset -1px 0 #007bff, inset 0 -1px #007bff,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #007bff,
+    inset 0 -1px #007bff,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-primary .pace .pace-activity {
   background-image: radial-gradient(
@@ -8973,7 +8995,9 @@ select.form-control-sm
   background: #6c757d;
 }
 .pace-flash-secondary .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #6c757d, 0 0 5px #6c757d;
+  box-shadow:
+    0 0 10px #6c757d,
+    0 0 5px #6c757d;
 }
 .pace-flash-secondary .pace .pace-activity {
   border-top-color: #6c757d;
@@ -8982,15 +9006,22 @@ select.form-control-sm
 .pace-loading-bar-secondary .pace .pace-progress {
   background: #6c757d;
   color: #6c757d;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-secondary .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #6c757d, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #6c757d,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-secondary .pace .pace-progress {
   background-color: #6c757d;
-  box-shadow: inset -1px 0 #6c757d, inset 0 -1px #6c757d,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #6c757d,
+    inset 0 -1px #6c757d,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-secondary .pace .pace-activity {
   background-image: radial-gradient(
@@ -9089,7 +9120,9 @@ select.form-control-sm
   background: #28a745;
 }
 .pace-flash-success .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #28a745, 0 0 5px #28a745;
+  box-shadow:
+    0 0 10px #28a745,
+    0 0 5px #28a745;
 }
 .pace-flash-success .pace .pace-activity {
   border-top-color: #28a745;
@@ -9098,15 +9131,22 @@ select.form-control-sm
 .pace-loading-bar-success .pace .pace-progress {
   background: #28a745;
   color: #28a745;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-success .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #28a745, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #28a745,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-success .pace .pace-progress {
   background-color: #28a745;
-  box-shadow: inset -1px 0 #28a745, inset 0 -1px #28a745,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #28a745,
+    inset 0 -1px #28a745,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-success .pace .pace-activity {
   background-image: radial-gradient(
@@ -9205,7 +9245,9 @@ select.form-control-sm
   background: #17a2b8;
 }
 .pace-flash-info .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #17a2b8, 0 0 5px #17a2b8;
+  box-shadow:
+    0 0 10px #17a2b8,
+    0 0 5px #17a2b8;
 }
 .pace-flash-info .pace .pace-activity {
   border-top-color: #17a2b8;
@@ -9214,15 +9256,22 @@ select.form-control-sm
 .pace-loading-bar-info .pace .pace-progress {
   background: #17a2b8;
   color: #17a2b8;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-info .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #17a2b8, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #17a2b8,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-info .pace .pace-progress {
   background-color: #17a2b8;
-  box-shadow: inset -1px 0 #17a2b8, inset 0 -1px #17a2b8,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #17a2b8,
+    inset 0 -1px #17a2b8,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-info .pace .pace-activity {
   background-image: radial-gradient(
@@ -9321,7 +9370,9 @@ select.form-control-sm
   background: #ffc107;
 }
 .pace-flash-warning .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #ffc107, 0 0 5px #ffc107;
+  box-shadow:
+    0 0 10px #ffc107,
+    0 0 5px #ffc107;
 }
 .pace-flash-warning .pace .pace-activity {
   border-top-color: #ffc107;
@@ -9330,15 +9381,22 @@ select.form-control-sm
 .pace-loading-bar-warning .pace .pace-progress {
   background: #ffc107;
   color: #ffc107;
-  box-shadow: 120px 0 #1f2d3d, 240px 0 #1f2d3d;
+  box-shadow:
+    120px 0 #1f2d3d,
+    240px 0 #1f2d3d;
 }
 .pace-loading-bar-warning .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #ffc107, inset 0 0 0 7px #1f2d3d;
+  box-shadow:
+    inset 0 0 0 2px #ffc107,
+    inset 0 0 0 7px #1f2d3d;
 }
 .pace-mac-osx-warning .pace .pace-progress {
   background-color: #ffc107;
-  box-shadow: inset -1px 0 #ffc107, inset 0 -1px #ffc107,
-    inset 0 2px rgba(31, 45, 61, 0.5), inset 0 6px rgba(31, 45, 61, 0.3);
+  box-shadow:
+    inset -1px 0 #ffc107,
+    inset 0 -1px #ffc107,
+    inset 0 2px rgba(31, 45, 61, 0.5),
+    inset 0 6px rgba(31, 45, 61, 0.3);
 }
 .pace-mac-osx-warning .pace .pace-activity {
   background-image: radial-gradient(
@@ -9437,7 +9495,9 @@ select.form-control-sm
   background: #dc3545;
 }
 .pace-flash-danger .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #dc3545, 0 0 5px #dc3545;
+  box-shadow:
+    0 0 10px #dc3545,
+    0 0 5px #dc3545;
 }
 .pace-flash-danger .pace .pace-activity {
   border-top-color: #dc3545;
@@ -9446,15 +9506,22 @@ select.form-control-sm
 .pace-loading-bar-danger .pace .pace-progress {
   background: #dc3545;
   color: #dc3545;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-danger .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #dc3545, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #dc3545,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-danger .pace .pace-progress {
   background-color: #dc3545;
-  box-shadow: inset -1px 0 #dc3545, inset 0 -1px #dc3545,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #dc3545,
+    inset 0 -1px #dc3545,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-danger .pace .pace-activity {
   background-image: radial-gradient(
@@ -9553,7 +9620,9 @@ select.form-control-sm
   background: #f8f9fa;
 }
 .pace-flash-light .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #f8f9fa, 0 0 5px #f8f9fa;
+  box-shadow:
+    0 0 10px #f8f9fa,
+    0 0 5px #f8f9fa;
 }
 .pace-flash-light .pace .pace-activity {
   border-top-color: #f8f9fa;
@@ -9562,15 +9631,22 @@ select.form-control-sm
 .pace-loading-bar-light .pace .pace-progress {
   background: #f8f9fa;
   color: #f8f9fa;
-  box-shadow: 120px 0 #1f2d3d, 240px 0 #1f2d3d;
+  box-shadow:
+    120px 0 #1f2d3d,
+    240px 0 #1f2d3d;
 }
 .pace-loading-bar-light .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #f8f9fa, inset 0 0 0 7px #1f2d3d;
+  box-shadow:
+    inset 0 0 0 2px #f8f9fa,
+    inset 0 0 0 7px #1f2d3d;
 }
 .pace-mac-osx-light .pace .pace-progress {
   background-color: #f8f9fa;
-  box-shadow: inset -1px 0 #f8f9fa, inset 0 -1px #f8f9fa,
-    inset 0 2px rgba(31, 45, 61, 0.5), inset 0 6px rgba(31, 45, 61, 0.3);
+  box-shadow:
+    inset -1px 0 #f8f9fa,
+    inset 0 -1px #f8f9fa,
+    inset 0 2px rgba(31, 45, 61, 0.5),
+    inset 0 6px rgba(31, 45, 61, 0.3);
 }
 .pace-mac-osx-light .pace .pace-activity {
   background-image: radial-gradient(
@@ -9669,7 +9745,9 @@ select.form-control-sm
   background: #343a40;
 }
 .pace-flash-dark .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #343a40, 0 0 5px #343a40;
+  box-shadow:
+    0 0 10px #343a40,
+    0 0 5px #343a40;
 }
 .pace-flash-dark .pace .pace-activity {
   border-top-color: #343a40;
@@ -9678,15 +9756,22 @@ select.form-control-sm
 .pace-loading-bar-dark .pace .pace-progress {
   background: #343a40;
   color: #343a40;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-dark .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #343a40, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #343a40,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-dark .pace .pace-progress {
   background-color: #343a40;
-  box-shadow: inset -1px 0 #343a40, inset 0 -1px #343a40,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #343a40,
+    inset 0 -1px #343a40,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-dark .pace .pace-activity {
   background-image: radial-gradient(
@@ -9785,7 +9870,9 @@ select.form-control-sm
   background: #3c8dbc;
 }
 .pace-flash-lightblue .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #3c8dbc, 0 0 5px #3c8dbc;
+  box-shadow:
+    0 0 10px #3c8dbc,
+    0 0 5px #3c8dbc;
 }
 .pace-flash-lightblue .pace .pace-activity {
   border-top-color: #3c8dbc;
@@ -9794,15 +9881,22 @@ select.form-control-sm
 .pace-loading-bar-lightblue .pace .pace-progress {
   background: #3c8dbc;
   color: #3c8dbc;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-lightblue .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #3c8dbc, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #3c8dbc,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-lightblue .pace .pace-progress {
   background-color: #3c8dbc;
-  box-shadow: inset -1px 0 #3c8dbc, inset 0 -1px #3c8dbc,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #3c8dbc,
+    inset 0 -1px #3c8dbc,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-lightblue .pace .pace-activity {
   background-image: radial-gradient(
@@ -9901,7 +9995,9 @@ select.form-control-sm
   background: #001f3f;
 }
 .pace-flash-navy .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #001f3f, 0 0 5px #001f3f;
+  box-shadow:
+    0 0 10px #001f3f,
+    0 0 5px #001f3f;
 }
 .pace-flash-navy .pace .pace-activity {
   border-top-color: #001f3f;
@@ -9910,15 +10006,22 @@ select.form-control-sm
 .pace-loading-bar-navy .pace .pace-progress {
   background: #001f3f;
   color: #001f3f;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-navy .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #001f3f, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #001f3f,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-navy .pace .pace-progress {
   background-color: #001f3f;
-  box-shadow: inset -1px 0 #001f3f, inset 0 -1px #001f3f,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #001f3f,
+    inset 0 -1px #001f3f,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-navy .pace .pace-activity {
   background-image: radial-gradient(
@@ -10017,7 +10120,9 @@ select.form-control-sm
   background: #3d9970;
 }
 .pace-flash-olive .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #3d9970, 0 0 5px #3d9970;
+  box-shadow:
+    0 0 10px #3d9970,
+    0 0 5px #3d9970;
 }
 .pace-flash-olive .pace .pace-activity {
   border-top-color: #3d9970;
@@ -10026,15 +10131,22 @@ select.form-control-sm
 .pace-loading-bar-olive .pace .pace-progress {
   background: #3d9970;
   color: #3d9970;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-olive .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #3d9970, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #3d9970,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-olive .pace .pace-progress {
   background-color: #3d9970;
-  box-shadow: inset -1px 0 #3d9970, inset 0 -1px #3d9970,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #3d9970,
+    inset 0 -1px #3d9970,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-olive .pace .pace-activity {
   background-image: radial-gradient(
@@ -10133,7 +10245,9 @@ select.form-control-sm
   background: #01ff70;
 }
 .pace-flash-lime .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #01ff70, 0 0 5px #01ff70;
+  box-shadow:
+    0 0 10px #01ff70,
+    0 0 5px #01ff70;
 }
 .pace-flash-lime .pace .pace-activity {
   border-top-color: #01ff70;
@@ -10142,15 +10256,22 @@ select.form-control-sm
 .pace-loading-bar-lime .pace .pace-progress {
   background: #01ff70;
   color: #01ff70;
-  box-shadow: 120px 0 #1f2d3d, 240px 0 #1f2d3d;
+  box-shadow:
+    120px 0 #1f2d3d,
+    240px 0 #1f2d3d;
 }
 .pace-loading-bar-lime .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #01ff70, inset 0 0 0 7px #1f2d3d;
+  box-shadow:
+    inset 0 0 0 2px #01ff70,
+    inset 0 0 0 7px #1f2d3d;
 }
 .pace-mac-osx-lime .pace .pace-progress {
   background-color: #01ff70;
-  box-shadow: inset -1px 0 #01ff70, inset 0 -1px #01ff70,
-    inset 0 2px rgba(31, 45, 61, 0.5), inset 0 6px rgba(31, 45, 61, 0.3);
+  box-shadow:
+    inset -1px 0 #01ff70,
+    inset 0 -1px #01ff70,
+    inset 0 2px rgba(31, 45, 61, 0.5),
+    inset 0 6px rgba(31, 45, 61, 0.3);
 }
 .pace-mac-osx-lime .pace .pace-activity {
   background-image: radial-gradient(
@@ -10249,7 +10370,9 @@ select.form-control-sm
   background: #f012be;
 }
 .pace-flash-fuchsia .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #f012be, 0 0 5px #f012be;
+  box-shadow:
+    0 0 10px #f012be,
+    0 0 5px #f012be;
 }
 .pace-flash-fuchsia .pace .pace-activity {
   border-top-color: #f012be;
@@ -10258,15 +10381,22 @@ select.form-control-sm
 .pace-loading-bar-fuchsia .pace .pace-progress {
   background: #f012be;
   color: #f012be;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-fuchsia .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #f012be, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #f012be,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-fuchsia .pace .pace-progress {
   background-color: #f012be;
-  box-shadow: inset -1px 0 #f012be, inset 0 -1px #f012be,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #f012be,
+    inset 0 -1px #f012be,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-fuchsia .pace .pace-activity {
   background-image: radial-gradient(
@@ -10365,7 +10495,9 @@ select.form-control-sm
   background: #d81b60;
 }
 .pace-flash-maroon .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #d81b60, 0 0 5px #d81b60;
+  box-shadow:
+    0 0 10px #d81b60,
+    0 0 5px #d81b60;
 }
 .pace-flash-maroon .pace .pace-activity {
   border-top-color: #d81b60;
@@ -10374,15 +10506,22 @@ select.form-control-sm
 .pace-loading-bar-maroon .pace .pace-progress {
   background: #d81b60;
   color: #d81b60;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-maroon .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #d81b60, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #d81b60,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-maroon .pace .pace-progress {
   background-color: #d81b60;
-  box-shadow: inset -1px 0 #d81b60, inset 0 -1px #d81b60,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #d81b60,
+    inset 0 -1px #d81b60,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-maroon .pace .pace-activity {
   background-image: radial-gradient(
@@ -10481,7 +10620,9 @@ select.form-control-sm
   background: #007bff;
 }
 .pace-flash-blue .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #007bff, 0 0 5px #007bff;
+  box-shadow:
+    0 0 10px #007bff,
+    0 0 5px #007bff;
 }
 .pace-flash-blue .pace .pace-activity {
   border-top-color: #007bff;
@@ -10490,15 +10631,22 @@ select.form-control-sm
 .pace-loading-bar-blue .pace .pace-progress {
   background: #007bff;
   color: #007bff;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-blue .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #007bff, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #007bff,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-blue .pace .pace-progress {
   background-color: #007bff;
-  box-shadow: inset -1px 0 #007bff, inset 0 -1px #007bff,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #007bff,
+    inset 0 -1px #007bff,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-blue .pace .pace-activity {
   background-image: radial-gradient(
@@ -10597,7 +10745,9 @@ select.form-control-sm
   background: #6610f2;
 }
 .pace-flash-indigo .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #6610f2, 0 0 5px #6610f2;
+  box-shadow:
+    0 0 10px #6610f2,
+    0 0 5px #6610f2;
 }
 .pace-flash-indigo .pace .pace-activity {
   border-top-color: #6610f2;
@@ -10606,15 +10756,22 @@ select.form-control-sm
 .pace-loading-bar-indigo .pace .pace-progress {
   background: #6610f2;
   color: #6610f2;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-indigo .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #6610f2, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #6610f2,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-indigo .pace .pace-progress {
   background-color: #6610f2;
-  box-shadow: inset -1px 0 #6610f2, inset 0 -1px #6610f2,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #6610f2,
+    inset 0 -1px #6610f2,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-indigo .pace .pace-activity {
   background-image: radial-gradient(
@@ -10713,7 +10870,9 @@ select.form-control-sm
   background: #6f42c1;
 }
 .pace-flash-purple .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #6f42c1, 0 0 5px #6f42c1;
+  box-shadow:
+    0 0 10px #6f42c1,
+    0 0 5px #6f42c1;
 }
 .pace-flash-purple .pace .pace-activity {
   border-top-color: #6f42c1;
@@ -10722,15 +10881,22 @@ select.form-control-sm
 .pace-loading-bar-purple .pace .pace-progress {
   background: #6f42c1;
   color: #6f42c1;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-purple .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #6f42c1, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #6f42c1,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-purple .pace .pace-progress {
   background-color: #6f42c1;
-  box-shadow: inset -1px 0 #6f42c1, inset 0 -1px #6f42c1,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #6f42c1,
+    inset 0 -1px #6f42c1,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-purple .pace .pace-activity {
   background-image: radial-gradient(
@@ -10829,7 +10995,9 @@ select.form-control-sm
   background: #e83e8c;
 }
 .pace-flash-pink .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #e83e8c, 0 0 5px #e83e8c;
+  box-shadow:
+    0 0 10px #e83e8c,
+    0 0 5px #e83e8c;
 }
 .pace-flash-pink .pace .pace-activity {
   border-top-color: #e83e8c;
@@ -10838,15 +11006,22 @@ select.form-control-sm
 .pace-loading-bar-pink .pace .pace-progress {
   background: #e83e8c;
   color: #e83e8c;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-pink .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #e83e8c, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #e83e8c,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-pink .pace .pace-progress {
   background-color: #e83e8c;
-  box-shadow: inset -1px 0 #e83e8c, inset 0 -1px #e83e8c,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #e83e8c,
+    inset 0 -1px #e83e8c,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-pink .pace .pace-activity {
   background-image: radial-gradient(
@@ -10945,7 +11120,9 @@ select.form-control-sm
   background: #dc3545;
 }
 .pace-flash-red .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #dc3545, 0 0 5px #dc3545;
+  box-shadow:
+    0 0 10px #dc3545,
+    0 0 5px #dc3545;
 }
 .pace-flash-red .pace .pace-activity {
   border-top-color: #dc3545;
@@ -10954,15 +11131,22 @@ select.form-control-sm
 .pace-loading-bar-red .pace .pace-progress {
   background: #dc3545;
   color: #dc3545;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-red .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #dc3545, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #dc3545,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-red .pace .pace-progress {
   background-color: #dc3545;
-  box-shadow: inset -1px 0 #dc3545, inset 0 -1px #dc3545,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #dc3545,
+    inset 0 -1px #dc3545,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-red .pace .pace-activity {
   background-image: radial-gradient(
@@ -11061,7 +11245,9 @@ select.form-control-sm
   background: #fd7e14;
 }
 .pace-flash-orange .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #fd7e14, 0 0 5px #fd7e14;
+  box-shadow:
+    0 0 10px #fd7e14,
+    0 0 5px #fd7e14;
 }
 .pace-flash-orange .pace .pace-activity {
   border-top-color: #fd7e14;
@@ -11070,15 +11256,22 @@ select.form-control-sm
 .pace-loading-bar-orange .pace .pace-progress {
   background: #fd7e14;
   color: #fd7e14;
-  box-shadow: 120px 0 #1f2d3d, 240px 0 #1f2d3d;
+  box-shadow:
+    120px 0 #1f2d3d,
+    240px 0 #1f2d3d;
 }
 .pace-loading-bar-orange .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #fd7e14, inset 0 0 0 7px #1f2d3d;
+  box-shadow:
+    inset 0 0 0 2px #fd7e14,
+    inset 0 0 0 7px #1f2d3d;
 }
 .pace-mac-osx-orange .pace .pace-progress {
   background-color: #fd7e14;
-  box-shadow: inset -1px 0 #fd7e14, inset 0 -1px #fd7e14,
-    inset 0 2px rgba(31, 45, 61, 0.5), inset 0 6px rgba(31, 45, 61, 0.3);
+  box-shadow:
+    inset -1px 0 #fd7e14,
+    inset 0 -1px #fd7e14,
+    inset 0 2px rgba(31, 45, 61, 0.5),
+    inset 0 6px rgba(31, 45, 61, 0.3);
 }
 .pace-mac-osx-orange .pace .pace-activity {
   background-image: radial-gradient(
@@ -11177,7 +11370,9 @@ select.form-control-sm
   background: #ffc107;
 }
 .pace-flash-yellow .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #ffc107, 0 0 5px #ffc107;
+  box-shadow:
+    0 0 10px #ffc107,
+    0 0 5px #ffc107;
 }
 .pace-flash-yellow .pace .pace-activity {
   border-top-color: #ffc107;
@@ -11186,15 +11381,22 @@ select.form-control-sm
 .pace-loading-bar-yellow .pace .pace-progress {
   background: #ffc107;
   color: #ffc107;
-  box-shadow: 120px 0 #1f2d3d, 240px 0 #1f2d3d;
+  box-shadow:
+    120px 0 #1f2d3d,
+    240px 0 #1f2d3d;
 }
 .pace-loading-bar-yellow .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #ffc107, inset 0 0 0 7px #1f2d3d;
+  box-shadow:
+    inset 0 0 0 2px #ffc107,
+    inset 0 0 0 7px #1f2d3d;
 }
 .pace-mac-osx-yellow .pace .pace-progress {
   background-color: #ffc107;
-  box-shadow: inset -1px 0 #ffc107, inset 0 -1px #ffc107,
-    inset 0 2px rgba(31, 45, 61, 0.5), inset 0 6px rgba(31, 45, 61, 0.3);
+  box-shadow:
+    inset -1px 0 #ffc107,
+    inset 0 -1px #ffc107,
+    inset 0 2px rgba(31, 45, 61, 0.5),
+    inset 0 6px rgba(31, 45, 61, 0.3);
 }
 .pace-mac-osx-yellow .pace .pace-activity {
   background-image: radial-gradient(
@@ -11293,7 +11495,9 @@ select.form-control-sm
   background: #28a745;
 }
 .pace-flash-green .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #28a745, 0 0 5px #28a745;
+  box-shadow:
+    0 0 10px #28a745,
+    0 0 5px #28a745;
 }
 .pace-flash-green .pace .pace-activity {
   border-top-color: #28a745;
@@ -11302,15 +11506,22 @@ select.form-control-sm
 .pace-loading-bar-green .pace .pace-progress {
   background: #28a745;
   color: #28a745;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-green .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #28a745, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #28a745,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-green .pace .pace-progress {
   background-color: #28a745;
-  box-shadow: inset -1px 0 #28a745, inset 0 -1px #28a745,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #28a745,
+    inset 0 -1px #28a745,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-green .pace .pace-activity {
   background-image: radial-gradient(
@@ -11409,7 +11620,9 @@ select.form-control-sm
   background: #20c997;
 }
 .pace-flash-teal .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #20c997, 0 0 5px #20c997;
+  box-shadow:
+    0 0 10px #20c997,
+    0 0 5px #20c997;
 }
 .pace-flash-teal .pace .pace-activity {
   border-top-color: #20c997;
@@ -11418,15 +11631,22 @@ select.form-control-sm
 .pace-loading-bar-teal .pace .pace-progress {
   background: #20c997;
   color: #20c997;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-teal .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #20c997, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #20c997,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-teal .pace .pace-progress {
   background-color: #20c997;
-  box-shadow: inset -1px 0 #20c997, inset 0 -1px #20c997,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #20c997,
+    inset 0 -1px #20c997,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-teal .pace .pace-activity {
   background-image: radial-gradient(
@@ -11525,7 +11745,9 @@ select.form-control-sm
   background: #17a2b8;
 }
 .pace-flash-cyan .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #17a2b8, 0 0 5px #17a2b8;
+  box-shadow:
+    0 0 10px #17a2b8,
+    0 0 5px #17a2b8;
 }
 .pace-flash-cyan .pace .pace-activity {
   border-top-color: #17a2b8;
@@ -11534,15 +11756,22 @@ select.form-control-sm
 .pace-loading-bar-cyan .pace .pace-progress {
   background: #17a2b8;
   color: #17a2b8;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-cyan .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #17a2b8, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #17a2b8,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-cyan .pace .pace-progress {
   background-color: #17a2b8;
-  box-shadow: inset -1px 0 #17a2b8, inset 0 -1px #17a2b8,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #17a2b8,
+    inset 0 -1px #17a2b8,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-cyan .pace .pace-activity {
   background-image: radial-gradient(
@@ -11641,7 +11870,9 @@ select.form-control-sm
   background: #fff;
 }
 .pace-flash-white .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #fff, 0 0 5px #fff;
+  box-shadow:
+    0 0 10px #fff,
+    0 0 5px #fff;
 }
 .pace-flash-white .pace .pace-activity {
   border-top-color: #fff;
@@ -11650,15 +11881,22 @@ select.form-control-sm
 .pace-loading-bar-white .pace .pace-progress {
   background: #fff;
   color: #fff;
-  box-shadow: 120px 0 #1f2d3d, 240px 0 #1f2d3d;
+  box-shadow:
+    120px 0 #1f2d3d,
+    240px 0 #1f2d3d;
 }
 .pace-loading-bar-white .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 7px #1f2d3d;
+  box-shadow:
+    inset 0 0 0 2px #fff,
+    inset 0 0 0 7px #1f2d3d;
 }
 .pace-mac-osx-white .pace .pace-progress {
   background-color: #fff;
-  box-shadow: inset -1px 0 #fff, inset 0 -1px #fff,
-    inset 0 2px rgba(31, 45, 61, 0.5), inset 0 6px rgba(31, 45, 61, 0.3);
+  box-shadow:
+    inset -1px 0 #fff,
+    inset 0 -1px #fff,
+    inset 0 2px rgba(31, 45, 61, 0.5),
+    inset 0 6px rgba(31, 45, 61, 0.3);
 }
 .pace-mac-osx-white .pace .pace-activity {
   background-image: radial-gradient(
@@ -11757,7 +11995,9 @@ select.form-control-sm
   background: #6c757d;
 }
 .pace-flash-gray .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #6c757d, 0 0 5px #6c757d;
+  box-shadow:
+    0 0 10px #6c757d,
+    0 0 5px #6c757d;
 }
 .pace-flash-gray .pace .pace-activity {
   border-top-color: #6c757d;
@@ -11766,15 +12006,22 @@ select.form-control-sm
 .pace-loading-bar-gray .pace .pace-progress {
   background: #6c757d;
   color: #6c757d;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-gray .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #6c757d, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #6c757d,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-gray .pace .pace-progress {
   background-color: #6c757d;
-  box-shadow: inset -1px 0 #6c757d, inset 0 -1px #6c757d,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #6c757d,
+    inset 0 -1px #6c757d,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-gray .pace .pace-activity {
   background-image: radial-gradient(
@@ -11873,7 +12120,9 @@ select.form-control-sm
   background: #343a40;
 }
 .pace-flash-gray-dark .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #343a40, 0 0 5px #343a40;
+  box-shadow:
+    0 0 10px #343a40,
+    0 0 5px #343a40;
 }
 .pace-flash-gray-dark .pace .pace-activity {
   border-top-color: #343a40;
@@ -11882,15 +12131,22 @@ select.form-control-sm
 .pace-loading-bar-gray-dark .pace .pace-progress {
   background: #343a40;
   color: #343a40;
-  box-shadow: 120px 0 #fff, 240px 0 #fff;
+  box-shadow:
+    120px 0 #fff,
+    240px 0 #fff;
 }
 .pace-loading-bar-gray-dark .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #343a40, inset 0 0 0 7px #fff;
+  box-shadow:
+    inset 0 0 0 2px #343a40,
+    inset 0 0 0 7px #fff;
 }
 .pace-mac-osx-gray-dark .pace .pace-progress {
   background-color: #343a40;
-  box-shadow: inset -1px 0 #343a40, inset 0 -1px #343a40,
-    inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  box-shadow:
+    inset -1px 0 #343a40,
+    inset 0 -1px #343a40,
+    inset 0 2px rgba(255, 255, 255, 0.5),
+    inset 0 6px rgba(255, 255, 255, 0.3);
 }
 .pace-mac-osx-gray-dark .pace .pace-activity {
   background-image: radial-gradient(
@@ -11912,7 +12168,9 @@ select.form-control-sm
   overflow: hidden;
   position: relative;
   text-align: left;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition:
+    border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

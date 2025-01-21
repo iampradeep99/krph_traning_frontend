@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AlertMessage } from "../../Framework/Components/Widgets/Notification/NotificationProvider";
-import "./Login.scss"; 
+import "./Login.scss";
 import logo from "./Assets/logo.png";
-import { authenticate , getUserByID} from "./Services/Methods";
-import {decodeJWTToken, setSessionStorage} from "../Login/Auth/auth";
-
+import { authenticate, getUserByID } from "./Services/Methods";
+import { decodeJWTToken, setEncryptSessionStorage, setSessionStorage } from "../Login/Auth/auth";
 
 const Login = () => {
   const setAlertMessage = AlertMessage();
-const[userId, setUserId] = useState();
-const[password, setPassword] = useState();
+  const [userId, setUserId] = useState();
+  const [password, setPassword] = useState();
 
   const navigate = useNavigate();
 
@@ -19,12 +18,25 @@ const[password, setPassword] = useState();
     debugger;
     try {
       const result = await authenticate(userId, password);
+      const decodetoken = decodeJWTToken(result.responseData);
+      const sessionToken = result.responseData[0].token;
+     
+
+
+      console.log("This is decodetoken rahul::::::"+ JSON.stringify(result.responseData[0].token));
+
       console.log("Login Successful:", result);
       if (result.responseCode === 1) {
+      setSessionStorage("token", sessionToken);
+
+        setAlertMessage({
+          type: "success",
+          message: "Login Successfully",
+        });
         const decodetoken = decodeJWTToken(result.responseData);
-        getUserAgentByID(decodetoken,result.responseData[0].token);
-        
-      }else{
+        console.log("This is decodetoken ::::::"+ decodetoken);
+        getUserAgentByID(decodetoken, result.responseData[0].token);
+      } else {
         setAlertMessage({
           type: "error",
           message: result.responseMessage,
@@ -38,33 +50,31 @@ const[password, setPassword] = useState();
     }
   };
 
-  const getUserAgentByID = async(decodetoken,token) => {
+  const getUserAgentByID = async (decodetoken, token) => {
     try {
-      const result = await getUserByID(decodetoken,token);
-      
+      const result = await getUserByID(decodetoken, token);
+
       if (result.responseCode === 1) {
         const user = {
           ...result.responseData,
-          token:decodetoken,
+       
         };
-        sessionStorage.clear();
+        // sessionStorage.clear();
         setSessionStorage("user", user);
         navigate("/home");
-        
-      }else{
+      } else {
         setAlertMessage({
           type: "error",
           message: result.responseMessage,
         });
       }
-     
     } catch (err) {
       setAlertMessage({
         type: "error",
         message: err,
       });
     }
-  }
+  };
 
   return (
     <div className="container-fluid login-container">
@@ -111,13 +121,12 @@ const[password, setPassword] = useState();
                 />
               </div>
 
-             
-
-              <button type="submit" className="btn btn-success btn-block mt-3">
+              <button type="submit" className="btn custom-button btn-block mt-3">
                 SIGN IN
               </button>
               <a href="/" className="d-block mt-3 text-muted">
-                Forgot Password? <span className="text-success">Click Here</span>
+                Forgot Password?{" "}
+                <span className="text-success">Click Here</span>
               </a>
             </form>
           </div>

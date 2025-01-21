@@ -94,7 +94,10 @@ const getPoint = (el, tt, placement, space) => {
     }
 
     if (recurCount < 3)
-      if ((pos.isHorizontal() && (pt.x < bdys.l || pt.x > bdys.r)) || (pos.isVertical() && (pt.y < bdys.t || pt.y > bdys.b))) {
+      if (
+        (pos.isHorizontal() && (pt.x < bdys.l || pt.x > bdys.r)) ||
+        (pos.isVertical() && (pt.y < bdys.t || pt.y > bdys.b))
+      ) {
         pt.reset(recursive(pos.negate()));
       }
     pt.restrictRect(bdys);
@@ -102,14 +105,26 @@ const getPoint = (el, tt, placement, space) => {
   })(placement);
 };
 
-function Tooltip({ text, placement = "bottom", space = 10, children, delay, bg }) {
+function Tooltip({
+  text,
+  placement = "bottom",
+  space = 10,
+  children,
+  delay,
+  bg,
+}) {
   const [show, setShow] = useState(0);
   const posRef = useRef({ x: 0, y: 0 });
   const tooltipRef = useRef();
 
   const handleMOver = (e) => {
     setShow(1);
-    posRef.current = getPoint(e.currentTarget, tooltipRef.current, placement, space);
+    posRef.current = getPoint(
+      e.currentTarget,
+      tooltipRef.current,
+      placement,
+      space,
+    );
   };
   const handleMOut = () => setShow(0);
 
@@ -122,7 +137,13 @@ function Tooltip({ text, placement = "bottom", space = 10, children, delay, bg }
           })
         : null}
       <Portal>
-        <StyledTooltip delay={delay} bg={bg} ref={tooltipRef} posRef={posRef} show={show}>
+        <StyledTooltip
+          delay={delay}
+          bg={bg}
+          ref={tooltipRef}
+          posRef={posRef}
+          show={show}
+        >
           {text}
         </StyledTooltip>
       </Portal>

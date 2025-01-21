@@ -603,7 +603,9 @@ a.disabled.mailbox-attachment-close {
   border-left: 0;
   border-top-right-radius: 0.25rem;
   color: #777;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 
 .login-box-msg,

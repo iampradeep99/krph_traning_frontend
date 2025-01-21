@@ -1,120 +1,176 @@
-import React from "react";
+import React, { useEffect } from "react";
 import newlogo from "../SideBar/Assets/logo-product.svg";
-import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
+import { getSessionStorage } from "../../Login/Auth/auth";
 
 
-function SideBar() {
-      const navigate = useNavigate();
-    
+
+function SideBar({ isSidebarOpen }) {
+  const navigate = useNavigate();
+  // const setAlertMessage = AlertMessage();
+
+   let data = getSessionStorage('useriInfo');
+   console.log("getting session storage", JSON.stringify(data));
+
+
+  // const signOut = async () => {
+  //   debugger;
+  //   try {
+  //     sessionStorage.clear();
+  //     navigate("/login");
+  //     setAlertMessage({
+  //       type: "success",
+  //       message: "You have been  succesfully logout",
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //     setAlertMessage({
+  //       type: "error",
+  //       message: error,
+  //     });
+  //   }
+  // };
+
+
+
+ 
   return (
     <aside
       className="main-sidebar sidebar-dark-primary elevation-4"
-      style={{ backgroundColor: "#075307", display: "flex", flexDirection: "column", height: "100vh" }}
+      style={{
+        backgroundColor: "#075307",
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+      }}
     >
-      {/* Logo */}
-      <a href="#" className="brand-link" style={{ height: "55px" }}>
-        <img
-          src={newlogo}
-          alt="Awards"
-          className="brand-image"
-          style={{ width: "40px", height: "58px" }}
-        />
-      </a>
 
-      {/* Sidebar Menu */}
-      <div className="sidebar" id="sidebarcolor" style={{ flex: "1" }}>
-        <nav className="mt-2 text-white">
-          <ul
-            className="nav nav-pills nav-sidebar flex-column"
-            data-widget="treeview"
-            role="menu"
-            data-accordion="false"
-          >
-                  <li class="nav-item">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                <i class="right fas fa-angle-left"></i>
-              </p>
+
+<img
+  src={newlogo}
+  alt="Awards"
+  className="brand-image"
+  style={{
+    width: isSidebarOpen ? "140px" : "40px", 
+    height: isSidebarOpen ? "80px" : "40px", 
+    transition: "all 0.3s ease", 
+    marginTop: isSidebarOpen ? "20px" : "10px", 
+    marginLeft: isSidebarOpen ? "50px" : "18px", 
+    marginRight: isSidebarOpen ? "20px" : "10px", 
+    marginBottom: isSidebarOpen ? "20px" : "10px"
+  }}
+  
+/>
+
+
+     
+
+<div className="sidebar" id="sidebarcolor" style={{ flex: "1" }}>
+  <nav className="mt-2 text-white">
+    <ul
+      className="nav nav-pills nav-sidebar flex-column"
+      data-widget="treeview"
+      role="menu"
+      data-accordion="false"
+    >
+      <li className="nav-item has-treeview" style={{ marginBottom: "10px" }}>
+        <a onClick={() => navigate("/TrainingDashboard")}className="nav-link active">
+          <i className="nav-icon fas fa-tachometer-alt"></i>
+          <p>
+            Dashboard
+            <i className="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul className="nav nav-treeview">
+          <li className="nav-item">
+            <a className="nav-link">
+              <i className="nav-icon fas fa-door-closed"></i>
+              <p>Training Dashboard</p>
             </a>
-            <ul class="nav nav-treeview" style={{display: "none"}}>
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
           </li>
-            <li
-              className="nav-item"
-              onClick={() => CategoryBrandClick("anchRefrigirator")}
-            >
-              <a href="#" className="nav-link" id="anchRefrigirator">
-                <i className="nav-icon fas fa-door-closed"></i>
-                <p>Training Calender</p>
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={() => CategoryBrandClick("anchAirConditioner")}
-            >
-              <a href="#" className="nav-link" id="anchAirConditioner">
-                <i className="nav-icon fas fa-snowflake"></i>
-                <p>Create New Agent</p>
-              </a>
-            </li>
-            <li
-              className="nav-item"
-              onClick={() => CategoryBrandClick("anchWashingMachine")}
-            >
-              <a href="#" className="nav-link" id="anchWashingMachine">
-                <i className="nav-icon fas fa-archive"></i>
-                <p>Modify Agent</p>
-              </a>
-            </li>
-            <li className="nav-item" onClick={() => CategoryBrandClick("anchCooler")}>
-              <a href="#" className="nav-link" id="anchCooler">
-                <i className="nav-icon fas fa-fan"></i>
-                <p>Report</p>
-              </a>
-            </li>
-            <li className="nav-item" onClick={() => CategoryBrandClick("anchHeater")}>
-              <a href="#" className="nav-link" id="anchHeater">
-                <i className="nav-icon fas fa-temperature-high"></i>
-                <p>Profile</p>
-              </a>
-            </li>
-            <div style={{ borderTop: "", padding: "0px" }}>
+        </ul>
+      </li>
+
+      <li className="nav-item has-treeview" style={{ marginBottom: "10px" }}>
+        <a onClick={() => navigate("/CreateNewTraining")} className="nav-link active">
+          <i className="nav-icon fas fa-calendar-alt"></i> {/* Updated icon for Training Calendar */}
+          <p>
+            Training Calendar
+            <i className="right fas fa-angle-left"></i>
+          </p>
+        </a>
+        <ul className="nav nav-treeview">
+          <li className="nav-item">
+            <a className="nav-link">
+              <i className="nav-icon fas fa-calendar-check"></i> {/* Icon for Upcoming Training */}
+              <p>Up-Coming Training</p>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link">
+              <i className="nav-icon fas fa-calendar-times"></i> {/* Icon for Completed Training */}
+              <p>Completed Training</p>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li className="nav-item" onClick={() => navigate("/CreateNewAgent")} style={{ marginBottom: "10px" }}>
+        <a className="nav-link" id="anchAirConditioner">
+          <i className="nav-icon fas fa-user-plus"></i> {/* Icon for creating a new agent */}
+          <p>Create New Agent</p>
+        </a>
+      </li>
+
+      <li className="nav-item" style={{ marginBottom: "10px" }} >
+        <a onClick={() => navigate("/ModifyAgent")} className="nav-link" id="anchWashingMachine">
+          <i className="nav-icon fas fa-user-edit"></i> {/* Icon for modifying agent */}
+          <p>Modify Agent</p>
+        </a>
+      </li>
+
+      <li className="nav-item" style={{ marginBottom: "10px" }} >
+        <a  onClick={() => navigate("/CompleteTrainingReport")} className="nav-link" id="anchCooler">
+          <i className="nav-icon fas fa-clipboard-list"></i> {/* Icon for reports */}
+          <p>Report</p>
+        </a>
+      </li>
+
+      <li className="nav-item" style={{ marginBottom: "10px" }}>
+        <a    className="nav-link" id="anchHeater">
+          <i className="nav-icon fas fa-user-circle"></i> {/* Icon for profile */}
+          <p>Profile</p>
+        </a>
+      </li>
+      <li className="nav-item" style={{ marginBottom: "10px" }}>
+        <a  onClick={() => navigate("/UserSetting")}   className="nav-link" id="anchHeater">
+          <i className="nav-icon fas fa-cog"></i> {/* Icon for profile */}
+          <p>Setting</p>
+        </a>
+      </li>
+
+      <div style={{ borderTop: "", padding: "0px" }}>
         <ul className="nav nav-pills nav-sidebar flex-column">
-          <li className="nav-item" >
-            <a href="#" className="nav-link" style={{ color: "white" }} onClick={() => navigate("/")}>
+          <li className="nav-item" style={{ marginBottom: "10px" }}>
+            <a
+              href="#"
+              className="nav-link"
+              style={{ color: "white" }}
+              onClick={() => signOut()}
+            >
               <i className="nav-icon fas fa-sign-out-alt" style={{ color: "white" }}></i>
               <p>Logout</p>
             </a>
           </li>
         </ul>
       </div>
-          </ul>
-        </nav>
-      </div>
+    </ul>
+  </nav>
+</div>
 
-      {/* Logout Button */}
-     
+
+  
     </aside>
   );
 }

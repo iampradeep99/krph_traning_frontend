@@ -26,12 +26,22 @@ function SelectPopup(props) {
 
   return (
     <React.Fragment>
-      <div onClick={toggleModalAnimOpen} className={isModalAnimOpen ? `${BizClass.overlay}` : `${BizClass.overlay} ${BizClass.AnimOn}`}></div>
+      <div
+        onClick={toggleModalAnimOpen}
+        className={
+          isModalAnimOpen
+            ? `${BizClass.overlay}`
+            : `${BizClass.overlay} ${BizClass.AnimOn}`
+        }
+      ></div>
       <Draggable handle="#handle">
         <div className={BizClass.toppopup}>
           <header id="handle" className={BizClass.Header}>
             <h2>{PopupTitle}</h2>
-            <a className={BizClass.HeaderCloseBtn} onClick={() => props.togglepopup()}>
+            <a
+              className={BizClass.HeaderCloseBtn}
+              onClick={() => props.togglepopup()}
+            >
               <FaTimes className={BizClass.Icon} />
             </a>
           </header>
@@ -110,7 +120,8 @@ export const SelectPopupContent = (props) => {
 };
 
 export const SelectAddressCard = (props) => {
-  const { children, AddressTitle, AddressBody, onClick, Focusref, ...rest } = props;
+  const { children, AddressTitle, AddressBody, onClick, Focusref, ...rest } =
+    props;
 
   // const firstChildRef = useRef();
 
@@ -123,7 +134,12 @@ export const SelectAddressCard = (props) => {
   return (
     <React.Fragment>
       <div className={BizClass.AddressMainBox}>
-        <input onClick={onClick} type="radio" name="DynBiz_RadioClick" {...rest} />
+        <input
+          onClick={onClick}
+          type="radio"
+          name="DynBiz_RadioClick"
+          {...rest}
+        />
         <div className={BizClass.AddressCard}>
           <h4>{AddressTitle}</h4>
           <p>{`${AddressBody}`}</p>
