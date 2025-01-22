@@ -46,11 +46,18 @@ export const getDecryptSessionStorage = (key) => {
 
 export const checkAuthExist = () => {
   debugger;
-  const userData = getSessionStorage("user");
-  console.log("This is UserData " + JSON.stringify(userData));
+  const userData = getDecryptSessionStorage("user");
+  const tokenData = getDecryptSessionStorage("token");
+  let decodeData;
+  if(tokenData){
+    decodeData = jwtDecode(tokenData);
+  }
+  
+  // const userDataro = getDecryptSessionStorage("user");
+  // console.log("This is UserData " + JSON.stringify(userData));
   if (userData) {
-    const expiryDate = userData.token.expiryTime;
-    const loginDate = userData.token.loginTime;
+    const expiryDate = decodeData.expiryTime;
+    const loginDate = decodeData.loginTime;
     if (expiryDate) {
       // const date1 = new Date(expiryDate * 1000);
       // const currentDate =  date1.toLocaleString(); 

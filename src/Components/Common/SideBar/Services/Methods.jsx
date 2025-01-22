@@ -4,7 +4,7 @@ import APIEndpoints from "./Endpoint";
 
 
 export const sidebar = async()=>{
-    let data = getSessionStorage('useriInfo');
+    let data = getSessionStorage('user');
     console.log("getting session", data);
 }
 

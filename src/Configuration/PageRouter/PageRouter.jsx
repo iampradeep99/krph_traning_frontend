@@ -9,6 +9,7 @@ import CreateNewTraining from "../../Components/Common/CreateNewTraining/CreateN
 import ModifyAgent from "../../Components/Common/AgentModify/AgentModify";
 import CompleteTrainingReport from "../../Components/Common/CompleteTrainingReport/CompleteTrainingReport";
 import UserSetting from "../../Components/Common/UserSetting/UserSetting";
+import Logout from "../../Components/Common/Logout/Logout";
 TrainingDashboard
 import TrainingDashboard from "../../Components/Common/TrainingDashboard/TrainingDashboard";
 
@@ -26,8 +27,21 @@ function PageRouter() {
         />
         <Route
           exact
+          path="/dashboard/TrainingDashboard"
+          element={<Page component={<TrainingDashboard />} title="Home" />}
+          
+        />
+
+        <Route
+          exact
           path="/CreateNewAgent"
           element={<Page component={<CreateNewAgent />} title="Create New Agent" />}
+          
+        />
+        <Route
+          exact
+          path="/reports"
+          element={<Page component={<CompleteTrainingReport />} title="Complete Training Report" />}
           
         />
         <Route
@@ -36,21 +50,22 @@ function PageRouter() {
           element={<Page component={<CreateNewTraining />} title="Create New Training" />}
           
         />
-         <Route
+
+          <Route
           exact
-          path="/ModifyAgent"
+          path="/agents/List"
           element={<Page component={<ModifyAgent />} title="Modify Agent" />}
           
         />
          <Route
           exact
-          path="/CompleteTrainingReport"
-          element={<Page component={<CompleteTrainingReport />} title="Complete Training Report" />}
+          path="/logout"
+          element={<Page component={<Logout />} title="logout" />}
           
         />
           <Route
           exact
-          path="/UserSetting"
+          path="/settings"
           element={<Page component={<UserSetting />} title="User Setting" />}
           
         />

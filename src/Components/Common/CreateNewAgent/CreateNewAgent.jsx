@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './CreateNewAgent.scss';  
+import { useNavigate } from "react-router-dom";
 import CommonHeader from "../CommonHeader/CommonHeader";
 import svgImage from '../SideBar/Assets/raster-img-overlay.svg';
 
 const CreateNewAgent = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -33,6 +35,11 @@ const CreateNewAgent = () => {
         });
     };
 
+    const handelBack = () => {
+        debugger;
+        navigate("/agents/List");
+      };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
@@ -60,6 +67,7 @@ const CreateNewAgent = () => {
             />
        
             <div className="container">
+          
                 <form className="agent-form" onSubmit={handleSubmit}>
                     <div className="form-row">
                     <div className="form-group">
@@ -321,8 +329,12 @@ const CreateNewAgent = () => {
                         </div> */}
                     </div>
 
-                    <button type="submit" className="submit-btn">Create New Agent</button>
+                    <button type="button" className="submit-btn">Create New Agent</button>
                 </form>
+                <button onClick={handelBack} className="back-btn"> 
+                        <i className="fas fas fa-arrow-left"></i> Back
+                    </button>
+
             </div>
             
         </div>

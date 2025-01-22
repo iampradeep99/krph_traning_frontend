@@ -36,6 +36,7 @@ export const authenticate = async (userName, password) => {
           responseMessage: result.responseMessage,
         };
       }
+
       return {
         responseCode: 0,
         responseData: result,

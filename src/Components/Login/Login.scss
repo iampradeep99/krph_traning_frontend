@@ -5,44 +5,70 @@
 
   .left-section {
     color: #fff;
-    padding: 20px;
+    padding: 10px; 
+    font-size: small;
+    .text-white{
+      font-size: 22px;
+    }
+    .logo_KRPH{
+      width: auto;
+      height: auto;
+    }
   }
 
   .right-section {
     .login-box {
-      max-width: 600px;
-      min-width: 480px;
-      border-radius: 10px;
+      max-width: 300px; // Reduced width
+      min-width: 360px; // Reduced width
+      border-radius: 8px; // Slightly smaller radius
       background-color: #fff;
-      padding: 30px;
+      padding: 20px; // Reduced padding
       color: black;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); // Slightly smaller shadow
     }
+
     .text {
       color: black;
       text-align: center;
-      font-weight: 600;
+      font-weight: 500; // Slightly less bold
+      font-size: 16px; // Reduced font size
     }
+    .text_sub{
+      color: black;
+      text-align: center;
+      font-weight: 600; 
+      font-size: 12px; 
+    }
+   .text-muted{
+    color: black;
+    text-align: center;
+    font-weight: 500; 
+    font-size: 12px; 
+   }
     .submit_color {
       color: #054a06;
+      font-size: 14px; // Reduced font size
     }
   }
 }
 
 .custom-button {
   background-color: #054a06;
-  border-color: #054a06; 
-  color: #fff; 
+  border-color: #054a06;
+  color: #fff;
+  font-size: 14px; // Reduced font size
+  padding: 5px 10px; // Smaller padding
 }
 
 .custom-button:hover {
-  background-color: green; 
+  background-color: green;
   color: white;
 }
+
+// Optional: Adjusted form-group styles for consistency
 // .form-group label {
 //   margin: 0;
-//   padding: 15px 10px 10px 0px; 
+//   padding: 10px 5px 5px 0; // Reduced padding
 //   display: block;
-//   font-size: 15px; 
+//   font-size: 13px; // Reduced font size
 // }
