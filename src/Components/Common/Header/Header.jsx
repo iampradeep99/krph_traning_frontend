@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getSessionStorage } from "../../Login/Auth/auth";
+import { changeToCapitalize } from "../../../Service/Utilities/Utils";
 
 function Header({ toggleSidebar }) {
   const navigate = useNavigate();
+  
+  const [name, setName] = useState(null);
+
+  useEffect(() => {
+    // Get the username from sessionStorage when the component mounts
+    const storedUserName = getSessionStorage("user");
+    if (storedUserName) {
+      setName(changeToCapitalize(storedUserName[0].firstName));
+    } else {
+      setName("User"); // Default if userName is not found in sessionStorage
+    }
+  }, []);
 
   const OpenPage = (type) => {
     if (type === "HO") {
-      // navigate("/index");
+      // Handle Home page navigation
     } else if (type === "AB") {
-      // navigate("/aboutus");
+      // Handle About page navigation
     } else if (type === "CO") {
-      // navigate("/contactus");
+      // Handle Contact page navigation
     }
   };
 
@@ -52,22 +66,13 @@ function Header({ toggleSidebar }) {
             <i className="fas fa-bars"></i>
           </a>
         </li>
-        <li
-          className="nav-item d-none d-sm-inline-block"
-          onClick={() => OpenPage("HO")}
-        >
+        <li className="nav-item d-none d-sm-inline-block" onClick={() => OpenPage("HO")}>
           {/* <a href="#" className="nav-link">Home</a> */}
         </li>
-        <li
-          className="nav-item d-none d-sm-inline-block"
-          onClick={() => OpenPage("AB")}
-        >
+        <li className="nav-item d-none d-sm-inline-block" onClick={() => OpenPage("AB")}>
           {/* <a href="#" className="nav-link">About Us</a> */}
         </li>
-        <li
-          className="nav-item d-none d-sm-inline-block"
-          onClick={() => OpenPage("CO")}
-        >
+        <li className="nav-item d-none d-sm-inline-block" onClick={() => OpenPage("CO")}>
           {/* <a href="#" className="nav-link">Contact Us</a> */}
         </li>
       </ul>
@@ -82,6 +87,12 @@ function Header({ toggleSidebar }) {
           padding: "0px 20px 0px 20px",
         }}
       >
+        <li className="nav-item">
+          <span className="nav-link" style={{ color: "#333", fontWeight: "bold" }}>
+            Hi, {name ? name : "User"}
+          </span>
+        </li>
+
         <li style={iconBoxStyle}>
           <i className="fas fa-bell"></i>
           <span style={badgeStyle}>2</span>

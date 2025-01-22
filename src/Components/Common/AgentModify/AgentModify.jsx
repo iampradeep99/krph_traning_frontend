@@ -8,6 +8,7 @@ import { FaEdit, FaBell, FaBan } from "react-icons/fa";
 import CommonHeader from "../CommonHeader/CommonHeader";
 import EditAgent from "../EditAgent/EditAgent";
 import { getAllAgent } from "./Services/Methods";
+import {changeToCapitalize} from '../../../Service/Utilities/Utils'
 
 const ModifyAgent = () => {
   const navigate = useNavigate();
@@ -21,27 +22,60 @@ const ModifyAgent = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [limit] = useState(10); // Number of records per page
 
+
+
   const [columnDefs] = useState([
     {
       headerName: "Agent Name",
       field: "fullName",
-      valueGetter: (params) => `${params.data.firstName || ""} ${params.data.lastName || ""}`,
+      valueGetter: (params) => `${ changeToCapitalize(params.data.firstName) ? changeToCapitalize(params.data.firstName) : "NA"} ${changeToCapitalize(params.data.lastName)?changeToCapitalize(params.data.lastName):"NA"}`,
       sortable: true,
       filter: true,
     },
-    { headerName: "User Name", field: "userID", sortable: true, filter: true },
-    { headerName: "Agent Email ID", field: "email", sortable: true, filter: true },
-    { headerName: "Mobile No.", field: "mobile", sortable: true, filter: true },
-    { headerName: "Designation", field: "designation", sortable: true, filter: true },
+    {
+      headerName: "User Name",
+      field: "userID",
+      valueGetter: (params) => params.data.userName ? params.data.userName : "NA",
+      sortable: true,
+      filter: true,
+    },
+    {
+      headerName: "Agent Email ID",
+      field: "email",
+      valueGetter: (params) =>  params.data.email ? params.data.email:"NA",
+      sortable: true,
+      filter: true,
+    },
+    {
+      headerName: "Mobile No.",
+      field: "mobile",
+      valueGetter: (params) => params.data.mobile ? params.data.mobile : "NA",
+      sortable: true,
+      filter: true,
+    },
+    {
+      headerName: "Designation",
+      field: "designation",
+      valueGetter: (params) =>  changeToCapitalize(params.data.designation) ? changeToCapitalize(params.data.designation) : "NA",
+      sortable: true,
+      filter: true,
+    },
+    {
+      headerName: "Region",
+      valueGetter: (params) => params.data.region.name ? params.data.region.name : "NA", 
+      sortable: true,
+      filter: true,
+    },
+    
     {
       headerName: "State",
-      valueGetter: (params) => params.data.state?.name || "",
+      valueGetter: (params) => params.data.state?.name ? params.data.state?.name  : "NA",
       sortable: true,
       filter: true,
     },
     {
       headerName: "City",
-      valueGetter: (params) => params.data.city?.name || "",
+      valueGetter: (params) => params.data.city?.name ? params.data.city?.name : "NA" ,
       sortable: true,
       filter: true,
     },
@@ -87,6 +121,7 @@ const ModifyAgent = () => {
       };
       const result = await getAllAgent(formData);
       if (result.response.responseCode === 1) {
+        console.log(result.response.responseData.agents, "result.response.responseData.agents")
         setRowData(result.response.responseData.agents);
         setFilteredData(result.response.responseData.agents); // Initialize filtered data
         setTotalPages(result.response.responseData.totalPages);
@@ -160,7 +195,7 @@ const ModifyAgent = () => {
   return (
     <>
       <div className="form-wrapper-agent">
-        <CommonHeader title="Modify Agent" />
+        <CommonHeader title="Agents" />
         <div className="modify-agent-container">
           <div className="top-actions">
             <div className="search-container">

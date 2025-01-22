@@ -7,7 +7,12 @@
     margin: 0px 10px 10px 10px;
     border-radius: 10px;
 
+    /* Left section: Welcome text and Title */
     .header-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align content to the left */
+
         .welcome-text {
             font-size: 12px;
             font-weight: 400;
@@ -25,8 +30,12 @@
         }
     }
 
+    /* Right section: Subtitle and Buttons */
     .header-right {
         text-align: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
 
         .subtitle {
             font-size: 10px;
@@ -83,6 +92,7 @@
         align-items: flex-start;
         padding: 10px;
 
+        /* Left section styles */
         .header-left {
             .welcome-text {
                 font-size: 10px;
@@ -93,6 +103,7 @@
             }
         }
 
+        /* Right section styles */
         .header-right {
             width: 100%;
             text-align: left;
@@ -118,6 +129,7 @@
     .common-header {
         padding: 8px;
 
+        /* Left section styles */
         .header-left {
             .welcome-text {
                 font-size: 9px;
@@ -128,6 +140,7 @@
             }
         }
 
+        /* Right section styles */
         .header-right {
             .subtitle {
                 font-size: 8px;
