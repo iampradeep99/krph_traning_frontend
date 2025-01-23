@@ -285,9 +285,9 @@ const handleChange = (e) => {
         <div className="container">
           <span className="spanClass">
             {" "}
-            <button classNames="back-btn" onClick={handleBack}>
+            {/* <button classNames="back-btn" onClick={handleBack}>
               <i className="fas fas fa-arrow-left"></i> Back
-            </button>
+            </button> */}
           </span>
           <form className="agent-form" onSubmit={handleSubmit}>
             <div className="form-row">
@@ -538,6 +538,9 @@ const handleChange = (e) => {
               </button>
               <button type="button" className="reset-btn" onClick={resetForm}>
                 Reset
+              </button>
+              <button type="button" className="reset-btn"  onClick={handleBack}>
+                Cancel
               </button>
             </div>
           </form>
