@@ -1,81 +1,87 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-enterprise/dist/styles/ag-grid.css";
 import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
-import "./AgentModify.scss";
+import "./AdminList.scss";
 import { FaEdit, FaBell, FaBan } from "react-icons/fa";
 import CommonHeader from "../CommonHeader/CommonHeader";
 import EditAgent from "../EditAgent/EditAgent";
 import { getAllAgent } from "./Services/Methods";
-import {changeToCapitalize} from '../../../Service/Utilities/Utils'
+import { changeToCapitalize } from "../../../Service/Utilities/Utils";
+import debounce from "lodash.debounce"; // Import debounce function
 
-const ModifyAgent = () => {
+const AdminList = () => {
   const navigate = useNavigate();
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [selectedAgent, setSelectedAgent] = useState(null);
   const [rowData, setRowData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);  // Always initialize as an array
   const [searchQuery, setSearchQuery] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [limit] = useState(10); // Number of records per page
 
-
-
   const [columnDefs] = useState([
     {
-      headerName: "Agent Name",
+      headerName: "Admin Name",
       field: "fullName",
-      valueGetter: (params) => `${ changeToCapitalize(params.data.firstName) ? changeToCapitalize(params.data.firstName) : "NA"} ${changeToCapitalize(params.data.lastName)?changeToCapitalize(params.data.lastName):"NA"}`,
+      valueGetter: (params) =>
+        `${
+          changeToCapitalize(params.data.firstName)
+            ? changeToCapitalize(params.data.firstName)
+            : "NA"
+        } ${changeToCapitalize(params.data.lastName) ? changeToCapitalize(params.data.lastName) : "NA"}`,
       sortable: true,
       filter: true,
     },
     {
-      headerName: "User Name",
-      field: "userID",
-      valueGetter: (params) => params.data.userName ? params.data.userName : "NA",
-      sortable: true,
-      filter: true,
-    },
-    {
-      headerName: "Agent Email ID",
+      headerName: "Admin Email ID",
       field: "email",
-      valueGetter: (params) =>  params.data.email ? params.data.email:"NA",
+      valueGetter: (params) => (params.data.email ? params.data.email : "NA"),
       sortable: true,
       filter: true,
     },
     {
       headerName: "Mobile No.",
       field: "mobile",
-      valueGetter: (params) => params.data.mobile ? params.data.mobile : "NA",
+      valueGetter: (params) => (params.data.mobile ? params.data.mobile : "NA"),
       sortable: true,
       filter: true,
     },
     {
       headerName: "Designation",
       field: "designation",
-      valueGetter: (params) =>  changeToCapitalize(params.data.designation) ? changeToCapitalize(params.data.designation) : "NA",
+      valueGetter: (params) => {
+        if (params.data.role === 1) {
+          return "Admin";
+        }
+        return changeToCapitalize(params.data.designation)
+          ? changeToCapitalize(params.data.designation)
+          : "NA";
+      },
       sortable: true,
       filter: true,
     },
     {
       headerName: "Region",
-      valueGetter: (params) => params.data.region.name ? params.data.region.name : "NA", 
+      valueGetter: (params) =>
+        params.data.region.name ? params.data.region.name : "NA",
       sortable: true,
       filter: true,
     },
-    
     {
       headerName: "State",
-      valueGetter: (params) => params.data.state?.name ? params.data.state?.name  : "NA",
+      valueGetter: (params) =>
+        params.data.state?.name ? params.data.state?.name : "NA",
       sortable: true,
       filter: true,
     },
     {
       headerName: "City",
-      valueGetter: (params) => params.data.city?.name ? params.data.city?.name : "NA" ,
+      valueGetter: (params) =>
+        params.data.city?.name ? params.data.city?.name : "NA",
       sortable: true,
       filter: true,
     },
@@ -107,27 +113,32 @@ const ModifyAgent = () => {
   };
 
   const handleCreateAgent = () => {
-    navigate("/CreateNewAgent");
+    navigate("/addAdmin");
   };
 
-  const getAllAgentData = async (page) => {
+  const getAllAgentData = async (page, searchQuery) => {
     try {
-      // const formData = { page, limit };
       const formData = {
-        page: page,
+        page,
         limit: 10,
-        searchQuery: "",
-        role: 3,
+        searchQuery,
+        role: 1,
       };
       const result = await getAllAgent(formData);
       if (result.response.responseCode === 1) {
-        console.log(result.response.responseData.agents, "result.response.responseData.agents")
-        setRowData(result.response.responseData.agents);
-        setFilteredData(result.response.responseData.agents); // Initialize filtered data
+        const agents = result.response.responseData.agents;
+        setRowData(agents);
+        setFilteredData(agents); // Initialize filtered data
+        
+        // If no records are found, display a message
+        if (agents.length === 0) {
+          setFilteredData([]);
+        }
+        
         setTotalPages(result.response.responseData.totalPages);
       } else {
         setRowData([]);
-        setFilteredData([]);
+        setFilteredData([]); // Reset filtered data if no agents found
         console.error(result.response.responseMessage);
       }
     } catch (error) {
@@ -135,35 +146,29 @@ const ModifyAgent = () => {
     }
   };
 
+  // Debounced function for API call
+  const debouncedSearch = useCallback(
+    debounce((query) => {
+      if (query.length >= 4) {
+        getAllAgentData(1, query); // Fetch data when 4 or more characters are entered
+      }
+    }, 300),
+    [] // This ensures the function is only created once
+  );
+
   useEffect(() => {
-    getAllAgentData(currentPage); // Fetch data for the current page
+    getAllAgentData(currentPage, ""); // Initial data fetch
   }, [currentPage]);
 
-  // Live search as user types
   const handleSearchInputChange = (query) => {
     setSearchQuery(query);
-    filterData(query);
-  };
-
-  // Search button functionality
-  const handleSearchButtonClick = () => {
-    filterData(searchQuery);
-  };
-
-  // Filter data logic
-  const filterData = (query) => {
-    const filtered = rowData.filter(
-      (agent) =>
-        agent.firstName.toLowerCase().includes(query.toLowerCase()) ||
-        agent.lastName.toLowerCase().includes(query.toLowerCase()) ||
-        agent.userID?.toLowerCase().includes(query.toLowerCase()) ||
-        agent.email?.toLowerCase().includes(query.toLowerCase()) ||
-        agent.designation?.toLowerCase().includes(query.toLowerCase()) ||
-        agent.mobile?.includes(query) ||
-        agent.state?.name.toLowerCase().includes(query.toLowerCase()) ||
-        agent.city?.name.toLowerCase().includes(query.toLowerCase()),
-    );
-    setFilteredData(filtered);
+    
+    if (query === "") {
+      // If the search query is empty, fetch all data and reset filtered data
+      getAllAgentData(1, ""); // Fetch all agents when the search query is empty
+    } else {
+      debouncedSearch(query); // Call the debounced search function
+    }
   };
 
   const handlePageChange = (newPage) => {
@@ -195,40 +200,43 @@ const ModifyAgent = () => {
   return (
     <>
       <div className="form-wrapper-agent">
-        <CommonHeader title="Agents" />
+        <CommonHeader title="Admins" />
         <div className="modify-agent-container">
           <div className="top-actions">
             <div className="search-container">
               <input
                 type="text"
                 className="search-input"
-                placeholder="Enter agent name or user ID to search..."
+                placeholder="Enter admin name or user ID to search..."
                 value={searchQuery}
                 onChange={(e) => handleSearchInputChange(e.target.value)}
               />
               <button
                 className="search-button-download"
-                onClick={handleSearchButtonClick}
+                onClick={() => debouncedSearch(searchQuery)}
               >
                 Search
               </button>
             </div>
             <button className="create-agent-button" onClick={handleCreateAgent}>
-              Create Agent &nbsp; <i className="fas fas fa-arrow-right"></i>
+              Create Admin
+              &nbsp; <i className="fas fas fa-arrow-right"></i>
             </button>
           </div>
           <div className="ag-theme-alpine ag-grid-container">
-            <AgGridReact rowData={filteredData} columnDefs={columnDefs} />
+            {filteredData?.length === 0 ? (
+              <div className="no-records-found">No records found</div> // Show message when no records are found
+            ) : (
+              <AgGridReact rowData={filteredData} columnDefs={columnDefs} />
+            )}
           </div>
           {renderPagination()}
         </div>
       </div>
 
-      {isPopupOpen && (
-        <EditAgent agentData={selectedAgent} onClose={handleClosePopup} />
-      )}
+      {isPopupOpen && <EditAgent agentData={selectedAgent} onClose={handleClosePopup} />}
     </>
   );
 };
 
-export default ModifyAgent;
+export default AdminList;
