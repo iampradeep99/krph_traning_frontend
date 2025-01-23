@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./TrainingDashboard.scss";
-import TrainingSummaryCommon from "./TrainingSummaryCommon/TrainingSummaryCommon"
+import TrainingSummaryCommon from "./TrainingSummaryCommon/TrainingSummaryCommon";
 
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -50,32 +50,35 @@ const TrainingDashboard = () => {
 
   return (
     <div className="form-wrapper-training">
-    <div className="training-dashboard">
-      {/* Summary Section */}
-      <div className="summary">
-        {[
-          { label: "Total Agents", value: dashboardData.totalAgents },
-          { label: "Active Agents", value: dashboardData.activeAgents },
-          { label: "Inactive Agents", value: dashboardData.inactiveAgents },
-          { label: "New Onboarding", value: dashboardData.newOnboarding },
-          { label: "Disabled Agents", value: dashboardData.disabledAgents },
-          { label: "Terminated Agents", value: dashboardData.terminatedAgents },
-        ].map((item, index) => (
-          <div className="card" key={index}>
-            <h3>{item.value}</h3>
-            <p>{item.label}</p>
-          </div>
-        ))}
-      </div>
+      <div className="training-dashboard">
+        {/* Summary Section */}
+        <div className="summary">
+          {[
+            { label: "Total Agents", value: dashboardData.totalAgents },
+            { label: "Active Agents", value: dashboardData.activeAgents },
+            { label: "Inactive Agents", value: dashboardData.inactiveAgents },
+            { label: "New Onboarding", value: dashboardData.newOnboarding },
+            { label: "Disabled Agents", value: dashboardData.disabledAgents },
+            {
+              label: "Terminated Agents",
+              value: dashboardData.terminatedAgents,
+            },
+          ].map((item, index) => (
+            <div className="card" key={index}>
+              <h3>{item.value}</h3>
+              <p>{item.label}</p>
+            </div>
+          ))}
+        </div>
 
-      {/* Current Status Section */}
-      <TrainingSummaryCommon/>
-      {/* <div className="current-status">
+        {/* Current Status Section */}
+        <TrainingSummaryCommon />
+        {/* <div className="current-status">
       <TrainingSummaryCommon/>
       </div> */}
 
-      {/* State-Wise Details Section */}
-      {/* <div className="state-wise-details">
+        {/* State-Wise Details Section */}
+        {/* <div className="state-wise-details">
         <h3>State Wise Agent Details</h3>
         {Object.entries(dashboardData.stateWiseDetails).map(([state, value], index) => (
           <div key={index} className="state-bar">
@@ -86,9 +89,7 @@ const TrainingDashboard = () => {
           </div>
         ))}
       </div> */}
-
-   
-    </div>
+      </div>
     </div>
   );
 };

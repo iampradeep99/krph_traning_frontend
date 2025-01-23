@@ -3,65 +3,80 @@ import { useNavigate } from "react-router-dom";
 import { AlertMessage } from "../../Framework/Components/Widgets/Notification/NotificationProvider";
 import "./Login.scss";
 import logo from "./Assets/logo.png";
+import KRPH_logo from "./Assets/KRPH_Logo90.png";
 import { authenticate, getUserByID } from "./Services/Methods";
 import { decodeJWTToken, setSessionStorage } from "../Login/Auth/auth";
 
 const Login = () => {
   const setAlertMessage = AlertMessage();
-  const [userId, setUserId] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [formData, setFormData] = useState({ userId: "", password: "" });
+  const [showResetPopup, setShowResetPopup] = useState(false);
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const { userId, password } = formData;
+
+    if (!userId || !password) {
+      showAlert("error", "Both User ID and Password are required.");
+      return;
+    }
 
     try {
       const result = await authenticate(userId, password);
       if (result.responseCode === 1) {
-        setAlertMessage({
-          type: "success",
-          message: "Login Successfully",
-        });
+        showAlert("success", "Login Successfully");
+        const decodedToken = decodeJWTToken(result.responseData);
+        const sessionToken = result.responseData[0]?.token;
 
-        const decodetoken = decodeJWTToken(result.responseData);
-        const sessionToken = result.responseData[0].token;
         setSessionStorage("token", sessionToken);
-        fetchUserDetails(decodetoken, sessionToken);
+        fetchUserDetails(decodedToken, sessionToken);
       } else {
-        setAlertMessage({
-          type: "error",
-          message: result.responseMessage,
-        });
+        showAlert("error", result.responseMessage);
       }
-    } catch (err) {
-      setAlertMessage({
-        type: "error",
-        message: "An error occurred during login",
-      });
+    } catch {
+      showAlert("error", "An error occurred during login.");
     }
   };
 
-  const fetchUserDetails = async (decodetoken, token) => {
+  const fetchUserDetails = async (decodedToken, token) => {
     try {
-      const result = await getUserByID(decodetoken, token);
+      const result = await getUserByID(decodedToken, token);
       if (result.responseCode === 1) {
-        const user = { ...result.responseData };
-        setSessionStorage("user", user);
+        setSessionStorage("user", result.responseData);
         navigate("/home");
       } else {
-        setAlertMessage({
-          type: "error",
-          message: result.responseMessage,
-        });
+        showAlert("error", result.responseMessage);
       }
-    } catch (err) {
-      setAlertMessage({
-        type: "error",
-        message: "An error occurred while fetching user details",
-      });
+    } catch {
+      showAlert("error", "An error occurred while fetching user details.");
     }
   };
+
+  const showAlert = (type, message) => {
+    setAlertMessage({ type, message });
+  };
+
+  // Handle Reset Password
+  // const handleResetPassword = () => {
+  //   if (!email) {
+  //     showAlert("error", "Please enter a valid email address.");
+  //     return;
+  //   }
+
+  //   // Simulate API call for password reset
+  //   setTimeout(() => {
+  //     showAlert("success", "Password reset link has been sent to your email.");
+  //     setShowResetPopup(false);
+  //     setEmail("");
+  //   }, 1000);
+  // };
 
   return (
     <div className="container-fluid login-container">
@@ -77,10 +92,15 @@ const Login = () => {
         {/* Right Section */}
         <div className="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center right-section">
           <div className="login-box">
-            <h3 className="text">
-              KRPH <br /> Agent Training Management
-            </h3>
-            <p className="text_sub">Please login to continue</p>
+          <div className="title-container">
+    <h3 className="text-center">KRPH</h3>
+    <img src={KRPH_logo} alt="Agent Training Logo" className="login-image" />
+  </div>
+       
+  
+            <h5 className="text-center">Agent Training Management</h5>
+            <p className="text_sub text-center">Please login to continue</p>
+
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="userId">User ID</label>
@@ -90,8 +110,8 @@ const Login = () => {
                   name="userId"
                   placeholder="Enter User ID"
                   className="form-control form-control-sm"
-                  value={userId}
-                  onChange={(e) => setUserId(e.target.value)}
+                  value={formData.userId}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -103,21 +123,60 @@ const Login = () => {
                   name="password"
                   placeholder="Enter Password"
                   className="form-control form-control-sm"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={formData.password}
+                  onChange={handleInputChange}
                 />
               </div>
 
-              <button type="submit" className="btn custom-button btn-block mt-3">
+              <button
+                type="submit"
+                className="btn custom-button btn-block mt-3"
+              >
                 SIGN IN
               </button>
-              <a href="/" className="d-block mt-2 text-muted">
-                Forgot Password? <span className="text-success">Click Here</span>
+              <a
+                href="#"
+                className="d-block mt-2 text-muted"
+              
+              >
+                Forgot Password?{" "}
+                <span className="text-success"   onClick={() => setShowResetPopup(true)}>Click Here</span>
               </a>
             </form>
           </div>
         </div>
       </div>
+
+      {/* Reset Password Popup */}
+      {showResetPopup && (
+        <div className="reset-popup">
+          <div className="reset-popup-content">
+            <h4>Reset Password</h4>
+            <p>Enter your email to receive a password reset link.</p>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="form-control"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div className="reset-popup-actions">
+              <button
+                className="btn btn-primary"
+                onClick={handleResetPassword}
+              >
+                Submit
+              </button>
+              <button
+                className="btn btn-secondary"
+                onClick={() => setShowResetPopup(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

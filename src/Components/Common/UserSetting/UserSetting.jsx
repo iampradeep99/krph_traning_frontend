@@ -22,14 +22,16 @@ const UserSetting = () => {
   }, {});
 
   // State for role permissions
-  const [rolePermissions, setRolePermissions] = useState(initialRolePermissions);
+  const [rolePermissions, setRolePermissions] = useState(
+    initialRolePermissions,
+  );
 
   // Toggle permission state
   const togglePermission = (role, index) => {
     setRolePermissions((prevPermissions) => ({
       ...prevPermissions,
       [role]: prevPermissions[role].map((perm, idx) =>
-        idx === index ? !perm : perm
+        idx === index ? !perm : perm,
       ),
     }));
   };

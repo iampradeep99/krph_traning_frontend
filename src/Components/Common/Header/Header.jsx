@@ -62,7 +62,13 @@ function Header({ toggleSidebar }) {
       {/* Left section */}
       <ul className="navbar-nav">
         <li className="nav-item text-white font-weight-normal">
-          <a onClick={toggleSidebar} className="nav-link" data-widget="pushmenu" href="#" role="button">
+          <a
+            onClick={toggleSidebar}
+            className="nav-link"
+            data-widget="pushmenu"
+            href="#"
+            role="button"
+          >
             <i className="fas fa-bars"></i>
           </a>
         </li>
