@@ -81,6 +81,7 @@ const CreateNewAgent = () => {
     if (!formData.region) newErrors.region = "Region is required";
     if (!formData.state) newErrors.state = "State is required";
     if (!formData.city) newErrors.city = "City is required";
+    if (!formData.location) newErrors.location = "Location is required";
     if (!formData.experience) {
         newErrors.experience = "Experience is required";
       } else if (!/^\d{1,2}$/.test(formData.experience)) {
