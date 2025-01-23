@@ -112,6 +112,8 @@ export const ApiCalling = async (requestApiData, apiPath) => {
     if (response && response.status === 200) {
       const result = response.data;
 
+      console.log("result", result)
+
       
       if (result.responseCode.toString() === "1") {
         const buff = Buffer.from(result.responseDynamic || "", "base64");

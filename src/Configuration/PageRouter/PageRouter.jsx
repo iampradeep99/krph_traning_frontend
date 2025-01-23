@@ -7,11 +7,14 @@ import Home from "../../Components/Common/Home/Home";
 import CreateNewAgent from "../../Components/Common/CreateNewAgent/CreateNewAgent";
 import CreateNewTraining from "../../Components/Common/CreateNewTraining/CreateNewTraining";
 import ModifyAgent from "../../Components/Common/AgentModify/AgentModify";
+import AdminList from "../../Components/Common/Admin/AdminList";
+
 import CompleteTrainingReport from "../../Components/Common/CompleteTrainingReport/CompleteTrainingReport";
 import UserSetting from "../../Components/Common/UserSetting/UserSetting";
 import Logout from "../../Components/Common/Logout/Logout";
 TrainingDashboard
 import TrainingDashboard from "../../Components/Common/TrainingDashboard/TrainingDashboard";
+import CreateNewAdmin from "../../Components/Common/CreateAdmin/CreateNewAdmin";
 
 function PageRouter() {
   return (
@@ -73,6 +76,18 @@ function PageRouter() {
           exact
           path="/TrainingDashboard"
           element={<Page component={<TrainingDashboard />} title="Training Dashboard" />}
+          
+        />
+        <Route
+          exact
+          path="/admins"
+          element={<Page component={<AdminList />} title="Admins" />}
+          
+        />
+         <Route
+          exact
+          path="/addAdmin"
+          element={<Page component={<CreateNewAdmin />} title="Admins" />}
           
         />
         
