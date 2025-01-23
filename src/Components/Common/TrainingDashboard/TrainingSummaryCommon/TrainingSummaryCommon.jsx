@@ -46,10 +46,12 @@ const TrainingSummaryCommon = () => {
           <h4>Status</h4>
           <div className="status">
             <p>
-              <span className="count">{trainingData.status.completed}</span> Completed
+              <span className="count">{trainingData.status.completed}</span>{" "}
+              Completed
             </p>
             <p>
-              <span className="count">{trainingData.status.pending}</span> Pending
+              <span className="count">{trainingData.status.pending}</span>{" "}
+              Pending
             </p>
           </div>
         </div>
@@ -78,7 +80,6 @@ const TrainingSummaryCommon = () => {
           </div>
         </div>
       </div>
-     
     </div>
   );
 };

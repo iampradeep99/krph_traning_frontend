@@ -2,7 +2,7 @@ import axios from "../../Configuration/axios/axios";
 import { Buffer } from "buffer";
 import publicIp from "public-ip";
 // import {getSessionStorage} from "../../../Login/Auth/auth";
-import {getSessionStorage} from "../../Components/Login/Auth/auth";
+import { getSessionStorage } from "../../Components/Login/Auth/auth";
 import Config from "../../Configuration/Config.json";
 
 const pako = require("pako");
@@ -93,14 +93,12 @@ export const IfnullApiCalling = async (requestApiData, apiPath, header) => {
 export const ApiCalling = async (requestApiData, apiPath) => {
   debugger;
   try {
-  
     const sessionToken = getSessionStorage("token");
 
     const requestData = {
       ...requestApiData.main,
     };
 
-  
     const response = await axios.post(Config.BaseUrl + apiPath, requestData, {
       headers: {
         "Content-Type": "application/json",
@@ -108,11 +106,9 @@ export const ApiCalling = async (requestApiData, apiPath) => {
       },
     });
 
-
     if (response && response.status === 200) {
       const result = response.data;
 
-      
       if (result.responseCode.toString() === "1") {
         const buff = Buffer.from(result.responseDynamic || "", "base64");
 
@@ -175,4 +171,3 @@ export const ApiCalling = async (requestApiData, apiPath) => {
     };
   }
 };
-

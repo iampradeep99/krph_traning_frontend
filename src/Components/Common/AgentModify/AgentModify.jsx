@@ -25,14 +25,25 @@ const ModifyAgent = () => {
     {
       headerName: "Agent Name",
       field: "fullName",
-      valueGetter: (params) => `${params.data.firstName || ""} ${params.data.lastName || ""}`,
+      valueGetter: (params) =>
+        `${params.data.firstName || ""} ${params.data.lastName || ""}`,
       sortable: true,
       filter: true,
     },
     { headerName: "User Name", field: "userID", sortable: true, filter: true },
-    { headerName: "Agent Email ID", field: "email", sortable: true, filter: true },
+    {
+      headerName: "Agent Email ID",
+      field: "email",
+      sortable: true,
+      filter: true,
+    },
     { headerName: "Mobile No.", field: "mobile", sortable: true, filter: true },
-    { headerName: "Designation", field: "designation", sortable: true, filter: true },
+    {
+      headerName: "Designation",
+      field: "designation",
+      sortable: true,
+      filter: true,
+    },
     {
       headerName: "State",
       valueGetter: (params) => params.data.state?.name || "",
@@ -78,12 +89,12 @@ const ModifyAgent = () => {
 
   const getAllAgentData = async (page) => {
     try {
-      // const formData = { page, limit }; 
-      const formData ={
-        "page": 1,
-        "limit": 10,
-        "searchQuery": "",
-        "role": 3
+      // const formData = { page, limit };
+      const formData = {
+        page: page,
+        limit: 10,
+        searchQuery: "",
+        role: 3,
       };
       const result = await getAllAgent(formData);
       if (result.response.responseCode === 1) {
@@ -126,7 +137,7 @@ const ModifyAgent = () => {
         agent.designation?.toLowerCase().includes(query.toLowerCase()) ||
         agent.mobile?.includes(query) ||
         agent.state?.name.toLowerCase().includes(query.toLowerCase()) ||
-        agent.city?.name.toLowerCase().includes(query.toLowerCase()) 
+        agent.city?.name.toLowerCase().includes(query.toLowerCase()),
     );
     setFilteredData(filtered);
   };
@@ -179,9 +190,7 @@ const ModifyAgent = () => {
               </button>
             </div>
             <button className="create-agent-button" onClick={handleCreateAgent}>
-           
-              Create Agent
-              &nbsp; <i className="fas fas fa-arrow-right"></i>
+              Create Agent &nbsp; <i className="fas fas fa-arrow-right"></i>
             </button>
           </div>
           <div className="ag-theme-alpine ag-grid-container">
@@ -191,7 +200,9 @@ const ModifyAgent = () => {
         </div>
       </div>
 
-      {isPopupOpen && <EditAgent agentData={selectedAgent} onClose={handleClosePopup} />}
+      {isPopupOpen && (
+        <EditAgent agentData={selectedAgent} onClose={handleClosePopup} />
+      )}
     </>
   );
 };

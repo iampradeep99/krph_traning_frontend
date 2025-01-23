@@ -1,8 +1,7 @@
 const APIEndpoints = {
-    Common: {
-      GetAllAgent: "agent/allAgent",
-    },
-  };
-  
-  export default APIEndpoints;
-  
+  Common: {
+    GetAllAgent: "agent/allAgent",
+  },
+};
+
+export default APIEndpoints;

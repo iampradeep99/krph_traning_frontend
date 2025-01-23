@@ -1,149 +1,149 @@
 .common-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f1f9e5;
-    padding: 10px;
-    margin: 0px 10px 10px 10px;
-    border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f9e5;
+  padding: 10px;
+  margin: 0px 10px 10px 10px;
+  border-radius: 10px;
 
-    .header-left {
-        .welcome-text {
-            font-size: 12px;
-            font-weight: 400;
-            margin: 0;
+  .header-left {
+    .welcome-text {
+      font-size: 12px;
+      font-weight: 400;
+      margin: 0;
 
-            .role {
-                font-weight: 600;
-            }
-        }
-
-        .title {
-            font-size: 18px;
-            font-weight: 600;
-            margin: 3px 0 0;
-        }
+      .role {
+        font-weight: 600;
+      }
     }
 
-    .header-right {
-        text-align: right;
-
-        .subtitle {
-            font-size: 10px;
-            margin: 0 0 5px;
-            color: #555;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 8px;
-
-            .btn {
-                padding: 8px 12px;
-                font-size: 10px;
-                font-weight: 600;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: background-color 0.3s ease;
-
-                &.default {
-                    background-color: #ddd;
-                    color: #000;
-                }
-
-                &.upload {
-                    background-color: #075307;
-                    color: #fff;
-
-                    &:hover {
-                        background-color: #054a06;
-                    }
-                }
-
-                &.download {
-                    background-color: transparent;
-                    color: #075307;
-                    border: 2px solid #075307;
-
-                    &:hover {
-                        background-color: #075307;
-                        color: #fff;
-                    }
-                }
-            }
-        }
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 3px 0 0;
     }
+  }
+
+  .header-right {
+    text-align: right;
+
+    .subtitle {
+      font-size: 10px;
+      margin: 0 0 5px;
+      color: #555;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 8px;
+
+      .btn {
+        padding: 8px 12px;
+        font-size: 10px;
+        font-weight: 600;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &.default {
+          background-color: #ddd;
+          color: #000;
+        }
+
+        &.upload {
+          background-color: #075307;
+          color: #fff;
+
+          &:hover {
+            background-color: #054a06;
+          }
+        }
+
+        &.download {
+          background-color: transparent;
+          color: #075307;
+          border: 2px solid #075307;
+
+          &:hover {
+            background-color: #075307;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .common-header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
+  .common-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
 
-        .header-left {
-            .welcome-text {
-                font-size: 10px;
-            }
+    .header-left {
+      .welcome-text {
+        font-size: 10px;
+      }
 
-            .title {
-                font-size: 16px;
-            }
-        }
-
-        .header-right {
-            width: 100%;
-            text-align: left;
-            margin-top: 10px;
-
-            .subtitle {
-                font-size: 9px;
-            }
-
-            .buttons {
-                gap: 6px;
-
-                .btn {
-                    padding: 6px 10px;
-                    font-size: 9px;
-                }
-            }
-        }
+      .title {
+        font-size: 16px;
+      }
     }
+
+    .header-right {
+      width: 100%;
+      text-align: left;
+      margin-top: 10px;
+
+      .subtitle {
+        font-size: 9px;
+      }
+
+      .buttons {
+        gap: 6px;
+
+        .btn {
+          padding: 6px 10px;
+          font-size: 9px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
-    .common-header {
-        padding: 8px;
+  .common-header {
+    padding: 8px;
 
-        .header-left {
-            .welcome-text {
-                font-size: 9px;
-            }
+    .header-left {
+      .welcome-text {
+        font-size: 9px;
+      }
 
-            .title {
-                font-size: 14px;
-            }
-        }
-
-        .header-right {
-            .subtitle {
-                font-size: 8px;
-            }
-
-            .buttons {
-                flex-direction: column;
-                gap: 4px;
-
-                .btn {
-                    width: 100%;
-                    text-align: center;
-                    padding: 5px 8px;
-                    font-size: 8px;
-                }
-            }
-        }
+      .title {
+        font-size: 14px;
+      }
     }
+
+    .header-right {
+      .subtitle {
+        font-size: 8px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        gap: 4px;
+
+        .btn {
+          width: 100%;
+          text-align: center;
+          padding: 5px 8px;
+          font-size: 8px;
+        }
+      }
+    }
+  }
 }

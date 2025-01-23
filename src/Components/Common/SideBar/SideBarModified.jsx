@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { getSessionStorage } from "../../Login/Auth/auth";
+import { getSessionStorage, setSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
-
+import { useNavigate } from "react-router-dom";
 
 const SideBarModified = ({ isSidebarOpen }) => {
-
   // Get session storage data with a fallback
   let dataMenu = getSessionStorage("user") || [];
+
+  const navigate = useNavigate();
   const menuPermission = dataMenu[0]?.assignedProfile?.menuPermission || [];
-  
+
   const [expandedMenu, setExpandedMenu] = useState(null);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const toggleMenu = (menuId) => {
@@ -17,6 +18,10 @@ const SideBarModified = ({ isSidebarOpen }) => {
   };
   const handleSubmenuClick = (submenuId) => {
     setActiveSubmenu(submenuId);
+  };
+  const handleLogout = () => {
+    sessionStorage.clear();
+    navigate("/");
   };
 
   return (
@@ -58,14 +63,14 @@ const SideBarModified = ({ isSidebarOpen }) => {
                 className={` nav-item has-treeview text-white ${
                   expandedMenu === menu._id ? "menu-open" : ""
                 }`}
-                style={{ marginBottom: "10px", color: "white", }}
+                style={{ marginBottom: "10px", color: "white" }}
               >
                 {/* Main menu item */}
                 {menu.submenus?.length > 0 ? (
                   <div
                     className={`nav-link ${expandedMenu === menu._id ? "active" : ""}`}
                     onClick={() => toggleMenu(menu._id)}
-                    style={{ cursor: "pointer" ,color: "white",}}
+                    style={{ cursor: "pointer", color: "white" }}
                   >
                     <i className={`nav-icon fas ${menu.icon}`}></i>
                     <p>
@@ -78,7 +83,11 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     </p>
                   </div>
                 ) : (
-                  <NavLink to={menu.url} className="nav-link"  style={{ color: "white" }}>
+                  <NavLink
+                    to={menu.url}
+                    className="nav-link"
+                    style={{ color: "white" }}
+                  >
                     <i className={`nav-icon fas ${menu.icon}`}></i>
                     <p>{menu.name}</p>
                   </NavLink>
@@ -89,13 +98,38 @@ const SideBarModified = ({ isSidebarOpen }) => {
                   <ul
                     className="nav nav-treeview"
                     style={{
-                      display: expandedMenu === menu._id ? "block" : "none", color: "white",
+                      display: expandedMenu === menu._id ? "block" : "none",
+                      color: "white",
                     }}
                   >
                     {menu.submenus.map((submenu) => (
-                      <li key={submenu._id}  onClick={() => handleSubmenuClick(submenu._id)} className="nav-item"  style={{ color: "white" , backgroundColor: activeSubmenu === submenu._id ? "#037003" : ""}} >
-                        <NavLink to={submenu.url} className="nav-link"   style={{ color: "white" , backgroundColor: activeSubmenu === submenu._id ? "#037003" : ""}}>
-                          <i className={`nav-icon fas ${submenu.icon}`} style={{ color: "white" , backgroundColor: activeSubmenu === submenu._id ? "#037003" : ""}}></i>
+                      <li
+                        key={submenu._id}
+                        onClick={() => handleSubmenuClick(submenu._id)}
+                        className="nav-item"
+                        style={{
+                          color: "white",
+                          backgroundColor:
+                            activeSubmenu === submenu._id ? "#037003" : "",
+                        }}
+                      >
+                        <NavLink
+                          to={submenu.url}
+                          className="nav-link"
+                          style={{
+                            color: "white",
+                            backgroundColor:
+                              activeSubmenu === submenu._id ? "#037003" : "",
+                          }}
+                        >
+                          <i
+                            className={`nav-icon fas ${submenu.icon}`}
+                            style={{
+                              color: "white",
+                              backgroundColor:
+                                activeSubmenu === submenu._id ? "#037003" : "",
+                            }}
+                          ></i>
                           <p>{submenu.name}</p>
                         </NavLink>
                       </li>
@@ -106,6 +140,33 @@ const SideBarModified = ({ isSidebarOpen }) => {
             ))}
           </ul>
         </nav>
+      </div>
+
+      <div
+        style={{
+          padding: "10px",
+          borderTop: "1px solid #ccc",
+          backgroundColor: "#064d06",
+          color: "white",
+        }}
+        className="nav nav-treeview"
+      >
+        <button
+          className="nav-link nav-item"
+          onClick={handleLogout}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+          }}
+        >
+          <i
+            className="nav-icon fas fa-sign-out-alt"
+            style={{ marginRight: "8px" }}
+          ></i>
+          {isSidebarOpen && <span>Logout</span>}
+        </button>
       </div>
     </aside>
   );

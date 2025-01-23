@@ -49,10 +49,10 @@ export const checkAuthExist = () => {
   const userData = getDecryptSessionStorage("user");
   const tokenData = getDecryptSessionStorage("token");
   let decodeData;
-  if(tokenData){
+  if (tokenData) {
     decodeData = jwtDecode(tokenData);
   }
-  
+
   // const userDataro = getDecryptSessionStorage("user");
   // console.log("This is UserData " + JSON.stringify(userData));
   if (userData) {
@@ -60,7 +60,7 @@ export const checkAuthExist = () => {
     const loginDate = decodeData.loginTime;
     if (expiryDate) {
       // const date1 = new Date(expiryDate * 1000);
-      // const currentDate =  date1.toLocaleString(); 
+      // const currentDate =  date1.toLocaleString();
       // const date = new Date(expiryDate);
       // const now = new Date();
       // Now.setMinutes(now.getMinutes() + 59);
@@ -77,11 +77,6 @@ export const checkAuthExist = () => {
   sessionStorage.removeItem("IsLoggedIn");
   return false;
 };
-
-
-
-
-
 
 // A export const checkAuthExist = () => {
 // A  debugger;
@@ -170,7 +165,6 @@ export const decryptStringData = (data) => {
 };
 
 export const decodeJWTToken = (token) => {
-  
   const decodedToken = jwtDecode(token[0].token);
   if (decodedToken) {
     return decodedToken;

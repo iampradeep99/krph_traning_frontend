@@ -5,7 +5,6 @@ import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
 import "./CompleteTrainingReport.scss";
 import CommonHeader from "../CommonHeader/CommonHeader";
 
-
 const CompleteTrainingReport = () => {
   const [rowData] = useState([
     {
@@ -48,14 +47,44 @@ const CompleteTrainingReport = () => {
   ]);
 
   const [columnDefs] = useState([
-    { headerName: "Agent Name", field: "agentName", sortable: true, filter: true },
+    {
+      headerName: "Agent Name",
+      field: "agentName",
+      sortable: true,
+      filter: true,
+    },
     { headerName: "Mobile No.", field: "mobile", sortable: true, filter: true },
-    { headerName: "Agent Mail ID", field: "email", sortable: true, filter: true },
+    {
+      headerName: "Agent Mail ID",
+      field: "email",
+      sortable: true,
+      filter: true,
+    },
     { headerName: "Location", field: "location", sortable: true, filter: true },
-    { headerName: "No. of Days", field: "noOfDays", sortable: true, filter: true },
-    { headerName: "No. of Month", field: "noOfMonths", sortable: true, filter: true },
-    { headerName: "Training Module", field: "trainingModule", sortable: true, filter: true },
-    { headerName: "Training Hrs Completed", field: "trainingHrsCompleted", sortable: true, filter: true },
+    {
+      headerName: "No. of Days",
+      field: "noOfDays",
+      sortable: true,
+      filter: true,
+    },
+    {
+      headerName: "No. of Month",
+      field: "noOfMonths",
+      sortable: true,
+      filter: true,
+    },
+    {
+      headerName: "Training Module",
+      field: "trainingModule",
+      sortable: true,
+      filter: true,
+    },
+    {
+      headerName: "Training Hrs Completed",
+      field: "trainingHrsCompleted",
+      sortable: true,
+      filter: true,
+    },
     {
       headerName: "Progress Bar",
       field: "progress",
@@ -65,7 +94,12 @@ const CompleteTrainingReport = () => {
             className="progress-bar"
             style={{
               width: `${params.value}%`,
-              backgroundColor: params.value > 70 ? "#16A34A" : params.value > 40 ? "#FFC107" : "#FF3B30",
+              backgroundColor:
+                params.value > 70
+                  ? "#16A34A"
+                  : params.value > 40
+                    ? "#FFC107"
+                    : "#FF3B30",
             }}
           ></div>
           <span>{params.value}%</span>
@@ -87,25 +121,21 @@ const CompleteTrainingReport = () => {
 
   return (
     <div className="form-wrapper-agent-Report">
+      <CommonHeader title="Complete Training Report" />
 
-<CommonHeader title="Complete Training Report" />
-    
-    <div className="completed-training-report">
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Enter agent name or user ID to search..."
-        />
-        <button className="search-button-download">Search</button>
+      <div className="completed-training-report">
+        <div className="search-container">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Enter agent name or user ID to search..."
+          />
+          <button className="search-button-download">Search</button>
+        </div>
+        <div className="ag-theme-alpine ag-grid-container">
+          <AgGridReact rowData={rowData} columnDefs={columnDefs} />
+        </div>
       </div>
-      <div className="ag-theme-alpine ag-grid-container">
-        <AgGridReact
-          rowData={rowData}
-          columnDefs={columnDefs}
-        />
-      </div>
-    </div>
     </div>
   );
 };

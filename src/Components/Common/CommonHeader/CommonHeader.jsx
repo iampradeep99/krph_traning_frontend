@@ -1,11 +1,7 @@
 import React from "react";
 import "./CommonHeader.scss";
 
-const CommonHeader = ({
-  title,
-  subtitle,
-  buttons = [], 
-}) => {
+const CommonHeader = ({ title, subtitle, buttons = [] }) => {
   return (
     <div className="common-header">
       <div className="header-left">
@@ -23,7 +19,6 @@ const CommonHeader = ({
               className={`btn ${button.type || "default"}`}
               onClick={button.onClick}
             >
-                
               {button.label}
             </button>
           ))}
