@@ -362,18 +362,18 @@ h6,
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1;
   color: inherit;
 }
 
 h1,
 .h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 h2,
 .h2 {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 h3,
@@ -14932,6 +14932,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   > .nav-link
   > .nav-icon {
   margin-left: calc(0.75rem - 3px);
+  height: 50px;
 }
 
 .sidebar-mini .nav-legacy > .nav-item .nav-link .nav-icon,
@@ -22052,6 +22053,7 @@ body.text-sm .control-sidebar {
 .navbar-white {
   background-color: #fff;
   color: #1f2d3d;
+  height: 45px;
 }
 
 .navbar-white.navbar-light .form-control-navbar::-webkit-input-placeholder {

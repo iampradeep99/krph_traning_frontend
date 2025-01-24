@@ -179,7 +179,7 @@ const SupervisorList = () => {
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        Previous
+       <i className="fas fas fa-arrow-left"></i>
       </button>
       <span>
         Page {currentPage} of {totalPages}
@@ -188,7 +188,7 @@ const SupervisorList = () => {
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        Next
+         <i className="fas fas fa-arrow-right"></i>
       </button>
     </div>
   );
@@ -196,7 +196,7 @@ const SupervisorList = () => {
   return (
     <>
       <div className="form-wrapper-agent">
-        <CommonHeader title="Supervisros" />
+        <CommonHeader title="Supervisor" />
         <div className="modify-agent-container">
           <div className="top-actions">
             <div className="search-container">
@@ -215,7 +215,7 @@ const SupervisorList = () => {
               </button>
             </div>
             <button className="create-agent-button" onClick={handleCreateAgent}>
-              Add
+            Add Supervisor
               &nbsp; <i className="fas fas fa-arrow-right"></i>
             </button>
           </div>

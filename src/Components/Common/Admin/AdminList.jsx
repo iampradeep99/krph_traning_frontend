@@ -183,7 +183,7 @@ const AdminList = () => {
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        Previous
+       <i className="fas fas fa-arrow-left"></i>
       </button>
       <span>
         Page {currentPage} of {totalPages}
@@ -192,7 +192,7 @@ const AdminList = () => {
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        Next
+         <i className="fas fas fa-arrow-right"></i>
       </button>
     </div>
   );
@@ -219,7 +219,7 @@ const AdminList = () => {
               </button>
             </div>
             <button className="create-agent-button" onClick={handleCreateAgent}>
-              Create Admin
+              Add Admin
               &nbsp; <i className="fas fas fa-arrow-right"></i>
             </button>
           </div>

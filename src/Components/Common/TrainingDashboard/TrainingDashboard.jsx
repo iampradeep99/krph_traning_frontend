@@ -50,8 +50,8 @@ const TrainingDashboard = () => {
 
   return (
     <div className="form-wrapper-training">
-      <div className="training-dashboard">
-        {/* Summary Section */}
+      {/* <div className="training-dashboard">
+        
         <div className="summary">
           {[
             { label: "Total Agents", value: dashboardData.totalAgents },
@@ -72,14 +72,14 @@ const TrainingDashboard = () => {
           ))}
         </div>
 
-        {/* Current Status Section */}
+        Current Status Section
         <TrainingSummaryCommon />
-        {/* <div className="current-status">
+        <div className="current-status">
       <TrainingSummaryCommon/>
-      </div> */}
+      </div>
 
-        {/* State-Wise Details Section */}
-        {/* <div className="state-wise-details">
+        State-Wise Details Section
+        <div className="state-wise-details">
         <h3>State Wise Agent Details</h3>
         {Object.entries(dashboardData.stateWiseDetails).map(([state, value], index) => (
           <div key={index} className="state-bar">
@@ -89,8 +89,8 @@ const TrainingDashboard = () => {
             </div>
           </div>
         ))}
-      </div> */}
       </div>
+      </div> */}
     </div>
   );
 };
