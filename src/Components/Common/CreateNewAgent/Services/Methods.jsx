@@ -104,3 +104,34 @@ export const getAdmins = async (formData) => {
     };
   }
 };
+
+export const getById = async (formData) => {
+  // debugger;
+  try {
+    const requestData = {
+      main: {
+        ...formData,
+      },
+    };
+    const result = await ApiCalling(
+      requestData,
+      APIEndpoints.Common.GetUserByID,
+    );
+    if (result.responseCode === 1) {
+      if (result.responseData) {
+        return { response: result };
+      }
+      return { response: result };
+    }
+    return { response: result };
+  } catch (error) {
+    console.log(error);
+    return {
+      response: { responseCode: 0, responseData: null, responseMessage: error },
+    };
+  }
+};
+
+
+
+

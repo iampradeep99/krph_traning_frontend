@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./CreateNewAgent.scss";
 import { useNavigate } from "react-router-dom";
 import CommonHeader from "../CommonHeader/CommonHeader";
-import { getAdmins, getAllRegion, getCreateAgent,getQualification } from "./Services/Methods";
+import { getAdmins, getAllRegion, getById, getCreateAgent,getQualification } from "./Services/Methods";
 import { getSessionStorage } from "../../Login/Auth/auth";
 import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
 import { jwtDecode } from "jwt-decode";
 import  Loader  from "./Loader/Loader";
+import { useLocation } from "react-router-dom";
 
 const CreateNewAgent = () => {
+  const location = useLocation(); 
+  const queryParams = new URLSearchParams(location.search);
+  const userId = queryParams.get("userId"); // Get the value of 'userId'
   const navigate = useNavigate();
   const setAlertMessage = AlertMessage();
   const token = getSessionStorage("token");
@@ -367,11 +371,56 @@ const CreateNewAgent = () => {
     }
   };
 
+  const getUserById = async (userId) => {
+    try {
+      const payload = {
+        userId: userId,
+      };
+      const response = await getById(payload);
+      if (response.response.responseCode === 1) {
+        const user = response.response.responseData[0];
+        setFormData((prevData) => ({
+          ...prevData,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+          mobile: user.mobile,
+          designation: user.designation,
+          region: user.country._id,
+          state: user.state._id,
+          city: user.city?._id,
+          gender: user.gender !== undefined ? user.gender : 6,
+          dob: user.dob ? formatDate(user.dob) : "",
+          qualification: user.qualification,
+          experience: user.experience,
+          location: user.location,
+          admin: user.adminId,
+          supervisor: user.supervisorId,
+        }));
+      } else {
+        console.log("Error fetching user by id");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const formatDate = (date) => {
+    const d = new Date(date);
+    const month = d.getMonth() + 1; // Months are zero-indexed
+    const day = d.getDate();
+    const year = d.getFullYear();
+  
+    return `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
+  };
+  
+
   useEffect(() => {
     fetchRegions();
     fetchQualification();
     fetchAdmin()
     fetchSupervisors()
+    getUserById(userId)
   }, []);
 
   return (
@@ -457,18 +506,19 @@ const CreateNewAgent = () => {
             </div>
 
             <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="email">Agent Email Id *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Enter Email-Id"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-                {errors.email && <p className="error-text">{errors.email}</p>}
-              </div>
+            <div className="form-group">
+  <label htmlFor="email">Agent Email Id *</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter Email-Id"
+    value={formData.email}
+    onChange={handleChange}
+    disabled={userId ? true : false} // Disable if userId is present
+  />
+  {errors.email && <p className="error-text">{errors.email}</p>}
+</div>
               <div className="form-group">
                 <label htmlFor="DOB">Date of Birth *</label>
                 <input
@@ -489,6 +539,7 @@ const CreateNewAgent = () => {
                   placeholder="Enter Mobile Number"
                   value={formData.mobile}
                   onChange={handleChange}
+                  disabled={userId ? true : false} 
                 />
                 {errors.mobile && <p className="error-text">{errors.mobile}</p>}
               </div>
@@ -674,16 +725,19 @@ const CreateNewAgent = () => {
             </div>
 
             <div className="form-actions">
-              <button type="submit" className="submit-btn">
-                Create New Agent
-              </button>
-              <button type="button" className="reset-btn" onClick={resetForm}>
-                Reset
-              </button>
-              <button type="button" className="reset-btn"  onClick={handleBack}>
-                Cancel
-              </button>
-            </div>
+  <button type="submit" className="submit-btn">
+    {userId ? "Update Agent" : "Add Agent"}
+  </button>
+
+  <button type="button" className="reset-btn" onClick={resetForm}>
+    Reset
+  </button>
+
+  <button type="button" className="reset-btn" onClick={handleBack}>
+    Cancel
+  </button>
+</div>
+
           </form>
         </div>
       </div>

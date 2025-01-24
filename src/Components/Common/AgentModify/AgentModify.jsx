@@ -137,7 +137,7 @@ const ModifyAgent = () => {
             <FaEdit
               className="icon edit-icon"
               title="Edit"
-              onClick={() => handleEdit(agent)}
+              onClick={() => handleEdit(agent._id)}
             />
             <FaBell className="icon notify-icon" title="Notify" />
             
@@ -178,9 +178,8 @@ const ModifyAgent = () => {
   };
   
 
-  const handleEdit = (agentData) => {
-    setPopupOpen(true);
-    setSelectedAgent(agentData);
+  const handleEdit = (userId) => {
+    navigate(`/CreateNewAgent?userId=${userId}`); 
   };
 
   const handleClosePopup = () => {
