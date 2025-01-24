@@ -4,7 +4,7 @@ import { AgGridReact } from "ag-grid-react";
 import "ag-grid-enterprise/dist/styles/ag-grid.css";
 import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
 import "./SupervisorList.scss";
-import { FaEdit, FaBell, FaBan } from "react-icons/fa";
+import { FaEdit, FaBan } from "react-icons/fa";
 import CommonHeader from "../CommonHeader/CommonHeader";
 import EditAgent from "../EditAgent/EditAgent";
 import { getAllAgent } from "./Services/Methods";
@@ -95,7 +95,7 @@ const SupervisorList = () => {
             title="Edit"
             onClick={() => handleEdit(params.data)}
           />
-          <FaBell className="icon notify-icon" title="Notify" />
+          
           <FaBan className="icon disable-icon" title="Disable" />
         </div>
       ),

@@ -12,12 +12,11 @@
   border-radius: 8px;
   box-shadow: 2px 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
 
-  /* For smaller screens, reduce padding and width */
   @media (max-width: 768px) {
     padding: 15px;
-    max-width: 90%; /* Reduce the width to fit smaller screens */
+    max-width: 90%; 
   }
 }
 
@@ -26,7 +25,7 @@
   flex-direction: column;
   gap: 10px;
 
-  /* Adjust gap and layout for small screens */
+
   @media (max-width: 768px) {
     gap: 8px;
   }
@@ -36,7 +35,7 @@
   display: flex;
   gap: 10px;
 
-  /* Stack form fields vertically on smaller screens */
+ 
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -47,7 +46,7 @@
   display: flex;
   flex-direction: column;
 
-  /* Adjust input and label spacing for small screens */
+  
   @media (max-width: 768px) {
     margin-bottom: 10px;
   }
@@ -59,7 +58,7 @@ label {
   color: #333;
 
   @media (max-width: 768px) {
-    font-size: 10px; /* Reduce font size on smaller screens */
+    font-size: 10px; 
   }
 }
 
@@ -72,7 +71,7 @@ select {
 
   @media (max-width: 768px) {
     padding: 6px;
-    font-size: 10px; /* Reduce font size on smaller screens */
+    font-size: 10px; 
   }
 }
 
@@ -91,7 +90,7 @@ input::placeholder {
   display: flex;
   gap: 12px;
 
-  /* Stack radio buttons vertically on smaller screens */
+ 
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 8px;
@@ -209,13 +208,13 @@ input::placeholder {
 
 .button-container {
   display: flex;
-  justify-content: end;  /* Aligns the buttons to the left and right ends */
-  align-items: center;  /* Vertically aligns the buttons */
-  gap: 10px;  /* Adds space between the buttons */
+  justify-content: end;  
+  align-items: center;  
+  gap: 10px; 
 }
 
 .submit-btn {
-  /* Customize your button styles here */
+
   padding: 10px 20px;
   background-color: #4CAF50;
   color: white;
@@ -225,14 +224,14 @@ input::placeholder {
 }
 
 .submit-btn:hover {
-  background-color: #45a049;
+  background-color: #054a06;
 }
 
 .back-btn {
   /* Customize your button styles here */
   padding: 10px 20px;
-  background-color: #f44336;
-  color: white;
+  background-color: #f0f0f0 ;
+  color: #075307;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -251,3 +250,34 @@ input::placeholder {
   margin-top: 5px;
 }
 
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3); 
+  border-top: 5px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

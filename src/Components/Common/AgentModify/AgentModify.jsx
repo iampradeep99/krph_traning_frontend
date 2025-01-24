@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AgGridReact } from "ag-grid-react";
 import "./AgentModify.scss";
-import { FaEdit, FaBell, FaBan } from "react-icons/fa";
+import { FaEdit, FaBan } from "react-icons/fa";
 import CommonHeader from "../CommonHeader/CommonHeader";
 import EditAgent from "../EditAgent/EditAgent";
 import { getAllAgent, statusUpdate } from "./Services/Methods";
@@ -139,7 +139,7 @@ const ModifyAgent = () => {
               title="Edit"
               onClick={() => handleEdit(agent._id)}
             />
-            <FaBell className="icon notify-icon" title="Notify" />
+          
             
             {/* Enable/Disable button */}
             <FaBan
@@ -287,7 +287,7 @@ const ModifyAgent = () => {
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        Previous
+       <i className="fas fas fa-arrow-left"></i>
       </button>
       <span>
         Page {currentPage} of {totalPages}
@@ -296,7 +296,7 @@ const ModifyAgent = () => {
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        Next
+      <i className="fas fas fa-arrow-right"></i>
       </button>
     </div>
   );
@@ -396,7 +396,7 @@ const ModifyAgent = () => {
                 className="create-agent-button"
                 onClick={() => handleFilterApply(selectedAdmin, selectedSupervisor)}
               >
-                Apply Filters &nbsp; <i className="fas fas fa-arrow-right"></i>
+                Apply Filters 
               </button>
             </div>
 
