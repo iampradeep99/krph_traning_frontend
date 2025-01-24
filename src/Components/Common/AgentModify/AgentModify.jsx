@@ -218,7 +218,7 @@ const ModifyAgent = () => {
         page: 1,
         limit: 100000,
         searchQuery: "",
-        role: 2, // Assuming role 2 is for supervisors
+        role: 2,
         adminId: adminId,
       });
       if (result.response.responseCode === 1) {

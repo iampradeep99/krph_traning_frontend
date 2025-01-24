@@ -4,8 +4,8 @@
   align-items: center;
   background-color: #f1f9e5;
   padding: 10px;
-  margin: 0px 10px 10px 10px;
-  border-radius: 10px;
+  // margin: 0px 10px 10px 10px;
+  // border-radius: 10px;
 
     /* Left section: Welcome text and Title */
     .header-left {
@@ -14,12 +14,15 @@
         align-items: flex-start; /* Align content to the left */
 
         .welcome-text {
-            font-size: 12px;
+            font-size: small;
             font-weight: 400;
             margin: 0;
 
       .role {
         font-weight: 600;
+      }
+      .title{
+        // font-size: 4px;
       }
     }
 

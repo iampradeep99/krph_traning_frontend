@@ -516,7 +516,7 @@ const AddSupervisor = () => {
               Add Supervisor
             </button>
             <button onClick={handelBack} className="back-btn">
-              <i className="fas fas fa-arrow-left"></i> Cancel
+              Cancel
             </button>
           </div>
         </div>

@@ -293,6 +293,9 @@ const CreateNewAdmin = () => {
                   <span className="error-message">{errors.lastName}</span>
                 )}
               </div>
+              <div className="form-group">
+            
+              </div>
             </div>
             
 
@@ -460,7 +463,7 @@ const CreateNewAdmin = () => {
               Add Admin
             </button>
             <button onClick={handelBack} className="back-btn">
-              <i className="fas fas fa-arrow-left"></i> Back
+               Back
             </button>
           </div>
         </div>

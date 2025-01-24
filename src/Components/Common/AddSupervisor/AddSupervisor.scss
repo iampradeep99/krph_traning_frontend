@@ -1,5 +1,5 @@
 .form-wrapper {
-  margin: 10px auto;
+  margin: 0px auto;
   background-color: white;
   height: 100vh;
 }
@@ -7,8 +7,8 @@
 .container {
   background: white;
   border: 2px solid #054a06;
-  margin: 30px auto;
-  padding: 25px;
+  margin: 10px auto;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 2px 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
   width: 100%;
@@ -217,7 +217,7 @@ input::placeholder {
 .submit-btn {
   /* Customize your button styles here */
   padding: 10px 20px;
-  background-color: #4CAF50;
+  background-color: #054a06;
   color: white;
   border: none;
   border-radius: 5px;
@@ -225,28 +225,28 @@ input::placeholder {
 }
 
 .submit-btn:hover {
-  background-color: #45a049;
+  background-color: #054a06;
 }
 
 .back-btn {
   /* Customize your button styles here */
   padding: 10px 20px;
-  background-color: #f44336;
-  color: white;
+  background-color: #E3F7B6;
+  color: #054a06;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .back-btn:hover {
-  background-color: #e53935;
+  background-color: #E3F7B6;
 }
 
 
 
 
 .error-message {
-  color: red;
+  color: #054a06;
   font-size: 12px;
   margin-top: 5px;
 }
