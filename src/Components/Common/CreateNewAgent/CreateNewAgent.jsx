@@ -2,17 +2,20 @@ import React, { useEffect, useState } from "react";
 import "./CreateNewAgent.scss";
 import { useNavigate } from "react-router-dom";
 import CommonHeader from "../CommonHeader/CommonHeader";
-import { getAllRegion, getCreateAgent,getQualification } from "./Services/Methods";
+import { getAllRegion, getCreateAgent, getQualification } from "./Services/Methods";
 import { getSessionStorage } from "../../Login/Auth/auth";
 import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
 import { jwtDecode } from "jwt-decode";
+import  Loader  from "./Loader/Loader";
 
 const CreateNewAgent = () => {
   const navigate = useNavigate();
   const setAlertMessage = AlertMessage();
   const token = getSessionStorage("token");
   const decodetoken = jwtDecode(token);
+  
   const UserRefID = decodetoken.userId;
+  const [isLoadingCreateAgent, setLoadingCreateAgent] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -52,17 +55,36 @@ const CreateNewAgent = () => {
   };
 
   const [regions, setRegions] = useState([]);
-  const [qualification , setqualification] = useState([]);
+  const [qualification, setqualification] = useState([]);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.firstName.trim())
+    if (!formData.firstName.trim()) {
       newErrors.firstName = "First Name is required";
-    if (!formData.lastName.trim()) newErrors.lastName = "Last Name is required";
-    if (!formData.gender) newErrors.gender = "Gender is required";
+    } else if (/\d/.test(formData.firstName)) {
+      newErrors.firstName = "Numbers are not allowed in First Name";
+    } else if (/[^A-Za-z]/.test(formData.firstName)) {
+      newErrors.firstName = "Special characters are not allowed";
+    }
+
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last Name is required";
+    } else if (/\d/.test(formData.lastName)) {
+      newErrors.lastName = "Numbers are not allowed in Last Name";
+    } else if (/[^A-Za-z]/.test(formData.lastName)) {
+      newErrors.lastName = "Special characters are not allowed";
+    }
+
+
+    if (formData.gender === 6) {
+      newErrors.gender = "Please select a valid gender";
+    }
+    
+
+
     if (
       !formData.email.trim() ||
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
@@ -83,37 +105,37 @@ const CreateNewAgent = () => {
     if (!formData.city) newErrors.city = "City is required";
     if (!formData.location) newErrors.location = "Location is required";
     if (!formData.experience) {
-        newErrors.experience = "Experience is required";
-      } else if (!/^\d{1,2}$/.test(formData.experience)) {
-        newErrors.experience = "Experience must be a 1 or 2-digit number";
-      } else if (parseInt(formData.experience, 10) < 1 || parseInt(formData.experience, 10) > 99) {
-        newErrors.experience = "Experience must be between 1 and 99";
-      }
+      newErrors.experience = "Experience is required";
+    } else if (!/^\d{1,2}$/.test(formData.experience)) {
+      newErrors.experience = "Experience must be a 1 or 2-digit number";
+    } else if (parseInt(formData.experience, 10) < 1 || parseInt(formData.experience, 10) > 99) {
+      newErrors.experience = "Experience must be between 1 and 99";
+    }
     return newErrors;
   };
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
+  //   const handleChange = (e) => {
+  //     const { name, value } = e.target;
 
-//     setFormData((prevData) => ({
-//       ...prevData,
-//       [name]: name === "gender" && value !== "" ? parseInt(value, 10) : value,
-//     }));
-//   };
+  //     setFormData((prevData) => ({
+  //       ...prevData,
+  //       [name]: name === "gender" && value !== "" ? parseInt(value, 10) : value,
+  //     }));
+  //   };
 
-const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-  
+
     setFormData((prevData) => ({
       ...prevData,
       [name]: name === "experience" || name === "mobile"
-        ? value.replace(/\D/g, "") 
+        ? value.replace(/\D/g, "")
         : name === "gender"
-        ? parseInt(value, 10) 
-        : value,
+          ? parseInt(value, 10)
+          : value,
     }));
   };
-  
+
   const handleBack = () => {
     navigate("/agents/List");
   };
@@ -139,14 +161,14 @@ const handleChange = (e) => {
   };
   const fetchQualification = async () => {
     const response = await getQualification({
-    
+
     });
 
     if (
       response.response.responseCode === 1 &&
       Array.isArray(response.response.responseData)
     ) {
-        setqualification(response.response.responseData);
+      setqualification(response.response.responseData);
     } else {
       console.error(
         "Error fetching qualification:",
@@ -233,10 +255,12 @@ const handleChange = (e) => {
       setErrors(validationErrors);
       return;
     }
+    setLoadingCreateAgent(true);
 
     try {
+    
       const response = await getCreateAgent(formData);
-
+     
       if (response?.response?.responseCode === 1) {
         setAlertMessage({
           type: "success",
@@ -254,6 +278,9 @@ const handleChange = (e) => {
         type: "error",
         message: error,
       });
+    }
+    finally {
+      setLoadingCreateAgent(false); 
     }
   };
 
@@ -281,6 +308,11 @@ const handleChange = (e) => {
             },
           ]}
         />
+         {isLoadingCreateAgent && (
+        <div className="loader-overlay">
+          <div className="spinner"></div>
+        </div>
+      )}
 
         <div className="container">
           <span className="spanClass">
@@ -289,7 +321,8 @@ const handleChange = (e) => {
               <i className="fas fas fa-arrow-left"></i> Back
             </button> */}
           </span>
-          <form className="agent-form" onSubmit={handleSubmit}>
+          <form className={`agent-form ${isLoadingCreateAgent ? "form-disabled" : ""}`}
+        onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="first-name">First Name *</label>
@@ -300,11 +333,12 @@ const handleChange = (e) => {
                   placeholder="Enter First Name"
                   value={formData.firstName}
                   onChange={handleChange}
+                  pattern="[A-Za-z]*"
+                  title="First Name should contain only letters"
                 />
-                {errors.firstName && (
-                  <p className="error-text">{errors.firstName}</p>
-                )}
+                {errors.firstName && <p className="error-text">{errors.firstName}</p>}
               </div>
+
               <div className="form-group">
                 <label htmlFor="last-name">Last Name *</label>
                 <input
@@ -314,11 +348,12 @@ const handleChange = (e) => {
                   placeholder="Enter Last Name"
                   value={formData.lastName}
                   onChange={handleChange}
+                  pattern="[A-Za-z]*"
+                  title="Last Name should contain only letters"
                 />
-                {errors.lastName && (
-                  <p className="error-text">{errors.lastName}</p>
-                )}
+                {errors.lastName && <p className="error-text">{errors.lastName}</p>}
               </div>
+
               <div className="form-group">
                 <label htmlFor="gender">Gender *</label>
                 <select
@@ -374,7 +409,7 @@ const handleChange = (e) => {
               </div>
             </div>
             <div className="form-row">
-            <div className="form-group">
+              <div className="form-group">
                 <label htmlFor="Qualification">Qualification *</label>
                 <select
                   id="qualification"
@@ -406,25 +441,25 @@ const handleChange = (e) => {
                 )}
               </div> */}
               <div className="form-group">
-  <label htmlFor="experience">Experience</label>
-  <input
-    type="number" 
-    id="experience"
-    name="experience"
-    placeholder="Enter Experience"
-    value={formData.experience}
-    onChange={handleChange}
-    onInput={(e) => {
+                <label htmlFor="experience">Experience</label>
+                <input
+                  type="number"
+                  id="experience"
+                  name="experience"
+                  placeholder="Enter Experience"
+                  value={formData.experience}
+                  onChange={handleChange}
+                  onInput={(e) => {
 
-      if (e.target.value.length > 2) {
-        e.target.value = e.target.value.slice(0, 2);
-      }
-    }}
-  />
-  {errors.experience && (
-    <p className="error-text">{errors.experience}</p>
-  )}
-</div>
+                    if (e.target.value.length > 2) {
+                      e.target.value = e.target.value.slice(0, 2);
+                    }
+                  }}
+                />
+                {errors.experience && (
+                  <p className="error-text">{errors.experience}</p>
+                )}
+              </div>
 
               <div className="form-group">
                 <label htmlFor="designation">Designation *</label>
@@ -539,7 +574,7 @@ const handleChange = (e) => {
               <button type="button" className="reset-btn" onClick={resetForm}>
                 Reset
               </button>
-              <button type="button" className="reset-btn"  onClick={handleBack}>
+              <button type="button" className="reset-btn" onClick={handleBack}>
                 Cancel
               </button>
             </div>

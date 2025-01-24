@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import "./TrainingDashboard.scss";
 import TrainingSummaryCommon from "./TrainingSummaryCommon/TrainingSummaryCommon";
-
+import logouser from "./Assets/Card_logo.svg";
 // Register Chart.js components
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -65,6 +65,7 @@ const TrainingDashboard = () => {
             },
           ].map((item, index) => (
             <div className="card" key={index}>
+              <img src={logouser}></img>
               <h3>{item.value}</h3>
               <p>{item.label}</p>
             </div>
