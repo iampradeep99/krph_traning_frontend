@@ -50,6 +50,7 @@ const TrainingDashboard = () => {
 
   return (
     <div className="form-wrapper-training">
+      <h1 style={{display: "flex",justifyContent: "center"}}>Training Dashboard Coming Soon !</h1>
       {/* <div className="training-dashboard">
         
         <div className="summary">

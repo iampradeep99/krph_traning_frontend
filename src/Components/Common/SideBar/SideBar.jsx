@@ -5,7 +5,6 @@ import newlogo from "../SideBar/Assets/logo-product.svg";
 import { useNavigate } from "react-router-dom";
 
 const SideBarModified = ({ isSidebarOpen }) => {
-  // Get session storage data with a fallback
   let dataMenu = getSessionStorage("user") || [];
 
   const navigate = useNavigate();

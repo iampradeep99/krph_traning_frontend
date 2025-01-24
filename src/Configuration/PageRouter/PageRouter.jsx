@@ -17,6 +17,9 @@ import TrainingDashboard from "../../Components/Common/TrainingDashboard/Trainin
 import CreateNewAdmin from "../../Components/Common/CreateAdmin/CreateNewAdmin";
 import SupervisorList from "../../Components/Common/Supervisors/SupervisorsList";
 import AddSupervisor from "../../Components/Common/AddSupervisor/AddSupervisor";
+import UpcomingTraining from "../../Components/Common/UpComingTraining/UpComingTraining";
+import CompletedTraining from "../../Components/CompletedTraining/CompletedTraining";
+import Profile from "../../Components/Common/Profile/Profile";
 
 function PageRouter() {
   return (
@@ -40,6 +43,27 @@ function PageRouter() {
           path="/CreateNewAgent"
           element={
             <Page component={<CreateNewAgent />} title="Create New Agent" />
+          }
+        />
+         <Route
+          exact
+          path="/training/UpcomingTraining"
+          element={
+            <Page component={<UpcomingTraining />} title="Upcoming Training" />
+          }
+        />
+         <Route
+          exact
+          path="/training/CompletedTraining"
+          element={
+            <Page component={<CompletedTraining />} title="Completed Training" />
+          }
+        />
+         <Route
+          exact
+          path="/profile"
+          element={
+            <Page component={<Profile />} title="Profile" />
           }
         />
         <Route
