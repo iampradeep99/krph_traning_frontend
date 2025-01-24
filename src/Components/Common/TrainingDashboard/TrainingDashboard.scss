@@ -21,7 +21,9 @@
       border-radius: 10px;
       text-align: center;
       padding: 20px;
-
+      img{
+        align-items: flex-end;
+      }
       h3 {
         font-size: 1.5rem;
         color: green;
@@ -93,3 +95,5 @@
     }
   }
 }
+
+

@@ -13,11 +13,15 @@ const SideBarModified = ({ isSidebarOpen }) => {
 
   const [expandedMenu, setExpandedMenu] = useState(null);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [activemenu, setActivemenu] = useState(null);
   const toggleMenu = (menuId) => {
     setExpandedMenu(expandedMenu === menuId ? null : menuId);
   };
   const handleSubmenuClick = (submenuId) => {
     setActiveSubmenu(submenuId);
+  };
+  const handlemenuClick = (menuId) => {
+    setActivemenu(menuId);
   };
   const handleLogout = () => {
     sessionStorage.clear();
@@ -39,8 +43,8 @@ const SideBarModified = ({ isSidebarOpen }) => {
         alt="Awards"
         className="brand-image"
         style={{
-          width: isSidebarOpen ? "140px" : "40px",
-          height: isSidebarOpen ? "80px" : "40px",
+          width: isSidebarOpen ? "95px" : "35px",
+          height: isSidebarOpen ? "70px" : "40px",
           transition: "all 0.3s ease",
           marginTop: isSidebarOpen ? "20px" : "10px",
           marginLeft: isSidebarOpen ? "50px" : "20px",
@@ -55,7 +59,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
             data-widget="treeview"
             role="menu"
             data-accordion="false"
-            style={{ color: "white" }}
+            style={{ color: "white", fontSize: "14px" }}
           >
             {menuPermission.map((menu) => (
               <li
@@ -63,14 +67,14 @@ const SideBarModified = ({ isSidebarOpen }) => {
                 className={` nav-item has-treeview text-white ${
                   expandedMenu === menu._id ? "menu-open" : ""
                 }`}
-                style={{ marginBottom: "10px", color: "white" }}
+                style={{ marginBottom: "8px", color: "white" }}
               >
                 {/* Main menu item */}
                 {menu.submenus?.length > 0 ? (
                   <div
                     className={`nav-link ${expandedMenu === menu._id ? "active" : ""}`}
                     onClick={() => toggleMenu(menu._id)}
-                    style={{ cursor: "pointer", color: "white" }}
+                    style={{ cursor: "pointer", color: "white", padding: "6px 12px" }}
                   >
                     <i className={`nav-icon fas ${menu.icon}`}></i>
                     <p>
@@ -86,7 +90,14 @@ const SideBarModified = ({ isSidebarOpen }) => {
                   <NavLink
                     to={menu.url}
                     className="nav-link"
-                    style={{ color: "white" }}
+                    onClick={() => handlemenuClick(menu._id)}
+                    style={{
+                      color: activemenu === menu._id ? "#075307" : "white",
+                      backgroundColor:
+                        activemenu === menu._id ? "#E3F7B6" : "#075307",
+                      borderRadius: "8px",
+                      padding: "6px 12px",
+                    }}
                   >
                     <i className={`nav-icon fas ${menu.icon}`}></i>
                     <p>{menu.name}</p>
@@ -100,6 +111,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     style={{
                       display: expandedMenu === menu._id ? "block" : "none",
                       color: "white",
+                      borderRadius: "8px",
                     }}
                   >
                     {menu.submenus.map((submenu) => (
@@ -110,7 +122,8 @@ const SideBarModified = ({ isSidebarOpen }) => {
                         style={{
                           color: "white",
                           backgroundColor:
-                            activeSubmenu === submenu._id ? "#037003" : "",
+                            activeSubmenu === submenu._id ? "#037003" : "white",
+                          borderRadius: "8px",
                         }}
                       >
                         <NavLink
@@ -119,18 +132,27 @@ const SideBarModified = ({ isSidebarOpen }) => {
                           style={{
                             color: "white",
                             backgroundColor:
-                              activeSubmenu === submenu._id ? "#037003" : "",
+                              activeSubmenu === submenu._id ? "#E3F7B6" : "white",
+                            borderRadius: "8px",
+                            padding: "6px 12px",
                           }}
                         >
                           <i
                             className={`nav-icon fas ${submenu.icon}`}
                             style={{
-                              color: "white",
+                              color: "#075307",
                               backgroundColor:
-                                activeSubmenu === submenu._id ? "#037003" : "",
+                                activeSubmenu === submenu._id ? "#E3F7B6" : "",
                             }}
                           ></i>
-                          <p>{submenu.name}</p>
+                          <p
+                            style={{
+                              color: "#075307",
+                              fontSize: "13px",
+                            }}
+                          >
+                            {submenu.name}
+                          </p>
                         </NavLink>
                       </li>
                     ))}
@@ -144,7 +166,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
 
       <div
         style={{
-          padding: "10px",
+          padding: "8px",
           borderTop: "1px solid #ccc",
           backgroundColor: "#064d06",
           color: "white",
@@ -159,13 +181,14 @@ const SideBarModified = ({ isSidebarOpen }) => {
             alignItems: "center",
             justifyContent: "center",
             color: "white",
+            padding: "6px 12px",
           }}
         >
           <i
             className="nav-icon fas fa-sign-out-alt"
-            style={{ marginRight: "8px" }}
+            style={{ marginRight: "6px" }}
           ></i>
-          {isSidebarOpen && <span>Logout</span>}
+          {isSidebarOpen && <span style={{ fontSize: "13px" }}>Logout</span>}
         </button>
       </div>
     </aside>

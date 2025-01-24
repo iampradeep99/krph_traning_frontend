@@ -1,33 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { getSessionStorage, setSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
 import { useNavigate } from "react-router-dom";
-import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
-import { getSessionStorage } from "../../Login/Auth/auth";
 
-function SideBar({ isSidebarOpen }) {
+const SideBarModified = ({ isSidebarOpen }) => {
+  // Get session storage data with a fallback
+  let dataMenu = getSessionStorage("user") || [];
+
   const navigate = useNavigate();
-  // const setAlertMessage = AlertMessage();
+  const menuPermission = dataMenu[0]?.assignedProfile?.menuPermission || [];
 
-  let data = getSessionStorage("useriInfo");
-  console.log("getting session storage", JSON.stringify(data));
-
-  // const signOut = async () => {
-  //   debugger;
-  //   try {
-  //     sessionStorage.clear();
-  //     navigate("/login");
-  //     setAlertMessage({
-  //       type: "success",
-  //       message: "You have been  succesfully logout",
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //     setAlertMessage({
-  //       type: "error",
-  //       message: error,
-  //     });
-  //   }
-  // };
+  const [expandedMenu, setExpandedMenu] = useState(null);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [activemenu, setActivemenu] = useState(null);
+  const toggleMenu = (menuId) => {
+    setExpandedMenu(expandedMenu === menuId ? null : menuId);
+  };
+  const handleSubmenuClick = (submenuId) => {
+    setActiveSubmenu(submenuId);
+  };
+  const handlemenuClick = (menuId) => {
+    setActivemenu(menuId);
+  };
+  const handleLogout = () => {
+    sessionStorage.clear();
+    navigate("/");
+  };
 
   return (
     <aside
@@ -44,16 +43,15 @@ function SideBar({ isSidebarOpen }) {
         alt="Awards"
         className="brand-image"
         style={{
-          width: isSidebarOpen ? "140px" : "40px",
-          height: isSidebarOpen ? "80px" : "40px",
+          width: isSidebarOpen ? "140px" : "35px",
+          height: isSidebarOpen ? "80px" : "35px",
           transition: "all 0.3s ease",
           marginTop: isSidebarOpen ? "20px" : "10px",
-          marginLeft: isSidebarOpen ? "50px" : "18px",
+          marginLeft: isSidebarOpen ? "50px" : "20px",
           marginRight: isSidebarOpen ? "20px" : "10px",
           marginBottom: isSidebarOpen ? "20px" : "10px",
         }}
       />
-
       <div className="sidebar" id="sidebarcolor" style={{ flex: "1" }}>
         <nav className="mt-2 text-white">
           <ul
@@ -61,141 +59,142 @@ function SideBar({ isSidebarOpen }) {
             data-widget="treeview"
             role="menu"
             data-accordion="false"
+            style={{ color: "white", fontSize: "6px" }}
           >
-            <li
-              className="nav-item has-treeview"
-              style={{ marginBottom: "10px" }}
-            >
-              <a
-                onClick={() => navigate("/TrainingDashboard")}
-                className="nav-link active"
+            {menuPermission.map((menu) => (
+              <li
+                key={menu._id}
+                className={` nav-item has-treeview text-white ${
+                  expandedMenu === menu._id ? "menu-open" : ""
+                }`}
+                style={{ marginBottom: "1px", color: "white" }}
               >
-                <i className="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Dashboard
-                  <i className="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul className="nav nav-treeview">
-                <li className="nav-item">
-                  <a className="nav-link">
-                    <i className="nav-icon fas fa-door-closed"></i>
-                    <p>Training Dashboard</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li
-              className="nav-item has-treeview"
-              style={{ marginBottom: "10px" }}
-            >
-              <a
-                onClick={() => navigate("/CreateNewTraining")}
-                className="nav-link active"
-              >
-                <i className="nav-icon fas fa-calendar-alt"></i>{" "}
-                {/* Updated icon for Training Calendar */}
-                <p>
-                  Training Calendar
-                  <i className="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul className="nav nav-treeview">
-                <li className="nav-item">
-                  <a className="nav-link">
-                    <i className="nav-icon fas fa-calendar-check"></i>{" "}
-                    {/* Icon for Upcoming Training */}
-                    <p>Up-Coming Training</p>
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link">
-                    <i className="nav-icon fas fa-calendar-times"></i>{" "}
-                    {/* Icon for Completed Training */}
-                    <p>Completed Training</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li
-              className="nav-item"
-              onClick={() => navigate("/CreateNewAgent")}
-              style={{ marginBottom: "10px" }}
-            >
-              <a className="nav-link" id="anchAirConditioner">
-                <i className="nav-icon fas fa-user-plus"></i>{" "}
-                {/* Icon for creating a new agent */}
-                <p>Create New Agent</p>
-              </a>
-            </li>
-
-            <li className="nav-item" style={{ marginBottom: "10px" }}>
-              <a
-                onClick={() => navigate("/ModifyAgent")}
-                className="nav-link"
-                id="anchWashingMachine"
-              >
-                <i className="nav-icon fas fa-user-edit"></i>{" "}
-                {/* Icon for modifying agent */}
-                <p>Modify Agent</p>
-              </a>
-            </li>
-
-            <li className="nav-item" style={{ marginBottom: "10px" }}>
-              <a
-                onClick={() => navigate("/CompleteTrainingReport")}
-                className="nav-link"
-                id="anchCooler"
-              >
-                <i className="nav-icon fas fa-clipboard-list"></i>{" "}
-                {/* Icon for reports */}
-                <p>Report</p>
-              </a>
-            </li>
-
-            <li className="nav-item" style={{ marginBottom: "10px" }}>
-              <a className="nav-link" id="anchHeater">
-                <i className="nav-icon fas fa-user-circle"></i>{" "}
-                {/* Icon for profile */}
-                <p>Profile</p>
-              </a>
-            </li>
-            <li className="nav-item" style={{ marginBottom: "10px" }}>
-              <a
-                onClick={() => navigate("/UserSetting")}
-                className="nav-link"
-                id="anchHeater"
-              >
-                <i className="nav-icon fas fa-cog"></i> {/* Icon for profile */}
-                <p>Setting</p>
-              </a>
-            </li>
-
-            <div style={{ borderTop: "", padding: "0px" }}>
-              <ul className="nav nav-pills nav-sidebar flex-column">
-                <li className="nav-item" style={{ marginBottom: "10px" }}>
-                  <a
-                    href="#"
-                    className="nav-link"
-                    style={{ color: "white" }}
-                    onClick={() => signOut()}
+                {/* Main menu item */}
+                {menu.submenus?.length > 0 ? (
+                  <div
+                    className={`nav-link ${expandedMenu === menu._id ? "active" : ""}`}
+                    onClick={() => toggleMenu(menu._id)}
+                    style={{ cursor: "pointer", color: "white", padding: "1px 4px" }}
                   >
-                    <i
-                      className="nav-icon fas fa-sign-out-alt"
-                      style={{ color: "white" }}
-                    ></i>
-                    <p>Logout</p>
-                  </a>
-                </li>
-              </ul>
-            </div>
+                    <i className={`nav-icon fas ${menu.icon}`}></i>
+                    <p>
+                      {menu.name}
+                      <i
+                        className={`right fas fa-angle-${
+                          expandedMenu === menu._id ? "down" : "down"
+                        }`}
+                      ></i>
+                    </p>
+                  </div>
+                ) : (
+                  <NavLink
+                    to={menu.url}
+                    className="nav-link"
+                    onClick={() => handlemenuClick(menu._id)}
+                    style={{
+                      color: activemenu === menu._id ? "#075307" : "white",
+                      backgroundColor:
+                        activemenu === menu._id ? "#E3F7B6" : "#075307",
+                      borderRadius: "8px",
+                      padding: "1px 4px",
+                    }}
+                  >
+                    <i className={`nav-icon fas ${menu.icon}`}></i>
+                    <p>{menu.name}</p>
+                  </NavLink>
+                )}
+
+                {/* Submenu items */}
+                {menu.submenus?.length > 0 && (
+                  <ul
+                    className="nav nav-treeview"
+                    style={{
+                      display: expandedMenu === menu._id ? "block" : "none",
+                      color: "white",
+                      borderRadius: "8px",
+                    }}
+                  >
+                    {menu.submenus.map((submenu) => (
+                      <li
+                        key={submenu._id}
+                        onClick={() => handleSubmenuClick(submenu._id)}
+                        className="nav-item"
+                        style={{
+                          color: "white",
+                          backgroundColor:
+                            activeSubmenu === submenu._id ? "#037003" : "white",
+                          borderRadius: "8px",
+                        }}
+                      >
+                        <NavLink
+                          to={submenu.url}
+                          className="nav-link"
+                          style={{
+                            color: "white",
+                            backgroundColor:
+                              activeSubmenu === submenu._id ? "#E3F7B6" : "white",
+                            borderRadius: "8px",
+                            padding: "1px 2px",
+                           
+                          }}
+                        >
+                          <i
+                            className={`nav-icon fas ${submenu.icon}`}
+                            style={{
+                              color: "#075307",
+                              backgroundColor:
+                                activeSubmenu === submenu._id ? "#E3F7B6" : "",
+                                fontSize: "small"
+                            }}
+                          ></i>
+                          <p
+                            style={{
+                              color: "#075307",
+                              fontSize: "2px",
+                            }}
+                          >
+                            {submenu.name}
+                          </p>
+                        </NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
+
+      <div
+        style={{
+          padding: "1px",
+          borderTop: "1px solid #ccc",
+          backgroundColor: "#064d06",
+          color: "white",
+        }}
+        className="nav nav-treeview"
+      >
+        <button
+          className="nav-link nav-item"
+          onClick={handleLogout}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: "white",
+            padding: "1px 4px",
+          }}
+        >
+          <i
+            className="nav-icon fas fa-sign-out-alt"
+            style={{ marginRight: "1px" }}
+          ></i>
+          {isSidebarOpen && <span style={{ fontSize: "5px" }}>Logout</span>}
+        </button>
+      </div>
     </aside>
   );
-}
+};
 
-export default SideBar;
+export default SideBarModified;

@@ -238,8 +238,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AgGridReact } from "ag-grid-react";
-import "ag-grid-enterprise/dist/styles/ag-grid.css";
-import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
+// import "ag-grid-enterprise/dist/styles/ag-grid.css";
+// import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
 import "./AgentModify.scss";
 import { FaEdit, FaBell, FaBan } from "react-icons/fa";
 import CommonHeader from "../CommonHeader/CommonHeader";
@@ -419,6 +419,27 @@ const ModifyAgent = () => {
     </div>
   );
 
+  const handleAdminFilterChange = (admin) => {
+    if (admin) {
+      const filtered = rowData.filter((agent) => agent.role === admin);
+      setFilteredData(filtered);
+    } else {
+      // Reset to original data if no admin is selected
+      setFilteredData(rowData);
+    }
+  };
+  
+  const handleSuperAdminFilterChange = (superadmin) => {
+    if (superadmin) {
+      const filtered = rowData.filter((agent) => agent.role === superadmin);
+      setFilteredData(filtered);
+    } else {
+      // Reset to original data if no superadmin is selected
+      setFilteredData(rowData);
+    }
+  };
+  
+
   return (
     <>
       <div className="form-wrapper-agent">
@@ -434,6 +455,34 @@ const ModifyAgent = () => {
                 onChange={(e) => handleSearchInputChange(e.target.value)}
               />
             </div>
+            <div className="role-filters">
+    <div className="admin-filter">
+   
+      <select
+        id="admin-filter"
+        className="role-dropdown"
+        onChange={(e) => handleAdminFilterChange(e.target.value)}
+      >
+        <option value="">All Admins</option>
+        <option value="Admin1">Admin 1</option>
+        <option value="Admin2">Admin 2</option>
+        {/* Add more admin options here */}
+      </select>
+    </div>
+    <div className="superadmin-filter">
+  
+      <select
+        id="superadmin-filter"
+        className="role-dropdown"
+        onChange={(e) => handleSuperAdminFilterChange(e.target.value)}
+      >
+        <option value="">All Superadmins</option>
+        <option value="Superadmin1">Superadmin 1</option>
+        <option value="Superadmin2">Superadmin 2</option>
+        {/* Add more superadmin options here */}
+      </select>
+    </div>
+  </div>
             <button className="create-agent-button" onClick={handleCreateAgent}>
               Create Agent &nbsp; <i className="fas fas fa-arrow-right"></i>
             </button>

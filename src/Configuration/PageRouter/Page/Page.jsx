@@ -26,10 +26,10 @@ function Page(props) {
 
   return (
     <>
-      <div class="wrapper">
+      <div className="wrapper">
         <Header toggleSidebar={toggleSidebar} />
         <SideBarModified isSidebarOpen={isSidebarOpen} />
-        <div class="content-wrapper">{component}</div>
+        <div className="content-wrapper">{component}</div>
       </div>
     </>
   );
