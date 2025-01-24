@@ -15,6 +15,8 @@ import Logout from "../../Components/Common/Logout/Logout";
 TrainingDashboard;
 import TrainingDashboard from "../../Components/Common/TrainingDashboard/TrainingDashboard";
 import CreateNewAdmin from "../../Components/Common/CreateAdmin/CreateNewAdmin";
+import SupervisorList from "../../Components/Common/Supervisors/SupervisorsList";
+import AddSupervisor from "../../Components/Common/AddSupervisor/AddSupervisor";
 
 function PageRouter() {
   return (
@@ -96,6 +98,19 @@ function PageRouter() {
           exact
           path="/addAdmin"
           element={<Page component={<CreateNewAdmin />} title="Admins" />}
+          
+        />
+        <Route
+          exact
+          path="/supervisors"
+          element={<Page component={<SupervisorList />} title="Supervisors" />}
+          
+        />
+
+        <Route
+          exact
+          path="/addSupervisor"
+          element={<Page component={<AddSupervisor />} title="Add Supervisor" />}
           
         />
         

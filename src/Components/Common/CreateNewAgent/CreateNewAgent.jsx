@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CreateNewAgent.scss";
 import { useNavigate } from "react-router-dom";
 import CommonHeader from "../CommonHeader/CommonHeader";
-import { getAllRegion, getCreateAgent, getQualification } from "./Services/Methods";
+import { getAllRegion, getCreateAgent,getQualification } from "./Services/Methods";
 import { getSessionStorage } from "../../Login/Auth/auth";
 import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
 import { jwtDecode } from "jwt-decode";
@@ -32,6 +32,8 @@ const CreateNewAgent = () => {
     experience: 0,
     location: "",
     refId: UserRefID,
+    admin: "", // Add admin field to the state
+    supervisor: "" // Add supervisor field to the state
   });
 
   const resetForm = () => {
@@ -51,6 +53,8 @@ const CreateNewAgent = () => {
       location: "",
       refId: UserRefID,
       role: 3,
+      admin: "", // Add admin field to the state
+      supervisor: "" // Add supervisor field to the state
     });
   };
 
@@ -58,6 +62,10 @@ const CreateNewAgent = () => {
   const [qualification, setqualification] = useState([]);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
+  const [admin, setAdmin] = useState([]);
+  const [allSupervisors, setAllSupervisors] = useState([]);
+
+
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -157,6 +165,56 @@ const CreateNewAgent = () => {
         response.response.responseMessage,
       );
       setRegions([]);
+    }
+  };
+
+  const fetchAdmin = async() =>{
+    const payload = {
+      page: '',
+      limit: 1000000,
+      searchQuery: '',
+      role: 1,
+    }
+    const result = await getAdmins(payload)
+    console.log(result, "testing result")
+    if(result.response.responseCode == 1 && Array.isArray(result.response.responseData.agents)){
+      setAdmin(result.response.responseData.agents);
+
+    }else{
+      console.error(
+        "Error fetching admins:",
+        result.response.responseMessage,
+      );
+      setAdmin([]);
+    }
+  }
+
+  const fetchSupervisors = async () => {
+    const payload = {
+      page: '',
+      limit: 1000000,
+      searchQuery: '',
+      role: 2, // Assuming role 2 represents supervisors
+    };
+  
+    try {
+      const result = await getAdmins(payload);
+  
+      if (result.response.responseCode === 1 && Array.isArray(result.response.responseData.agents)) {
+        setAllSupervisors(result.response.responseData.agents);
+      } else {
+        console.error(
+          "Error fetching supervisors:",
+          result.response.responseMessage || "Unexpected response format"
+        );
+        setAllSupervisors([]);
+      }
+    } catch (error) {
+      console.error("Error fetching supervisors:", error);
+      setAlertMessage({
+        type: "error",
+        message: "Failed to fetch supervisors. Please try again later.",
+      });
     }
   };
   const fetchQualification = async () => {
@@ -287,6 +345,8 @@ const CreateNewAgent = () => {
   useEffect(() => {
     fetchRegions();
     fetchQualification();
+    fetchAdmin()
+    fetchSupervisors()
   }, []);
 
   return (
@@ -547,19 +607,40 @@ const CreateNewAgent = () => {
               </div>
 
               <div className="form-group">
-                {/* <label htmlFor="city">Agent Status *</label>
-                            <select
-                                id="city"
-                                name="city"
-                                value={formData.city}
-                                onChange={handleChange}
-                            >
-                                <option value="">Choose Status</option>
-                              
-                            </select>
-                            {errors.city && <p className="error-text">{errors.city}</p>} */}
+                <label htmlFor="Qualification">Admins *</label>
+                <select
+                  id="admoin"
+                  name="admin"
+                  value={formData.admin}
+                  onChange={handleChange}
+                >
+                  <option value="">Choose Admin</option>
+                  {admin.map((ele) => (
+                    <option key={ele._id} value={ele._id}>
+                      {`${ele.firstName} ${ele.lastName}`}
+                    </option>
+                  ))}
+                </select>
+                {errors.qualification && <p className="error-text">{errors.qualification}</p>}
               </div>
-              <div className="form-group"></div>
+             
+              <div className="form-group">
+                <label htmlFor="Qualification">Supervisors *</label>
+                <select
+                  id="qualification"
+                  name="qualification"
+                  value={formData.supervisor}
+                  onChange={handleChange}
+                >
+                  <option value="">Choose Supervisor</option>
+                  {allSupervisors.map((ele) => (
+                    <option key={ele._id} value={ele._id}>
+                      {`${ele.firstName} ${ele.lastName}`}
+                    </option>
+                  ))}
+                </select>
+                {errors.supervisor && <p className="error-text">{errors.supervisor}</p>}
+              </div>
             </div>
 
             <div className="form-row">
@@ -574,7 +655,7 @@ const CreateNewAgent = () => {
               <button type="button" className="reset-btn" onClick={resetForm}>
                 Reset
               </button>
-              <button type="button" className="reset-btn" onClick={handleBack}>
+              <button type="button" className="reset-btn"  onClick={handleBack}>
                 Cancel
               </button>
             </div>
