@@ -64,6 +64,8 @@ const CreateNewAgent = () => {
   const [cities, setCities] = useState([]);
   const [admin, setAdmin] = useState([]);
   const [allSupervisors, setAllSupervisors] = useState([]);
+  const [selectedAdmin, setSelectedAdmin] = useState("");
+    const [selectedSupervisor, setSelectedSupervisor] = useState("");
 
 
   const [errors, setErrors] = useState({});
@@ -105,7 +107,6 @@ const CreateNewAgent = () => {
     if (!formData.dob) newErrors.dob = "DOB is required";
     if (!formData.qualification)
       newErrors.qualification = "Qualification is required";
-    // if (!formData.experience) newErrors.experience = "Experience is required";
     if (!formData.designation)
       newErrors.designation = "Designation is required";
     if (!formData.region) newErrors.region = "Region is required";
@@ -122,18 +123,10 @@ const CreateNewAgent = () => {
     return newErrors;
   };
 
-  //   const handleChange = (e) => {
-  //     const { name, value } = e.target;
-
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       [name]: name === "gender" && value !== "" ? parseInt(value, 10) : value,
-  //     }));
-  //   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
+  
     setFormData((prevData) => ({
       ...prevData,
       [name]: name === "experience" || name === "mobile"
@@ -142,6 +135,36 @@ const CreateNewAgent = () => {
           ? parseInt(value, 10)
           : value,
     }));
+    if (name === "admin" && value !== "") {
+      fetchSupervisorsByAdmin(value);  // Fetch Supervisors based on the selected Admin
+    }
+  };
+
+  const fetchSupervisorsByAdmin = async (adminId) => {
+    const payload = {
+      page: "",
+      limit: 1000000,
+      searchQuery: "",
+      role: 2, 
+      adminId,  
+    };
+  
+    try {
+      const result = await getAdmins(payload);
+  
+      if (result.response.responseCode === 1 && Array.isArray(result.response.responseData.agents)) {
+        setAllSupervisors(result.response.responseData.agents);
+      } else {
+        console.error("Error fetching supervisors:", result.response.responseMessage || "Unexpected response format");
+        setAllSupervisors([]);
+      }
+    } catch (error) {
+      console.error("Error fetching supervisors:", error);
+      setAlertMessage({
+        type: "error",
+        message: "Failed to fetch supervisors. Please try again later.",
+      });
+    }
   };
 
   const handleBack = () => {
@@ -323,7 +346,9 @@ const CreateNewAgent = () => {
         setAlertMessage({
           type: "success",
           message: response.response.responseMessage,
+         
         });
+        navigate('/agents/list')
       } else {
         setAlertMessage({
           type: "error",
@@ -627,8 +652,8 @@ const CreateNewAgent = () => {
               <div className="form-group">
                 <label htmlFor="Qualification">Supervisors *</label>
                 <select
-                  id="qualification"
-                  name="qualification"
+                  id="supervisor"
+                  name="supervisor"
                   value={formData.supervisor}
                   onChange={handleChange}
                 >
