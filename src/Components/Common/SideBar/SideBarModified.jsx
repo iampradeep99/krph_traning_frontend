@@ -93,12 +93,11 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     onClick={() => handlemenuClick(menu._id)}
                     style={{
                       color: activemenu === menu._id ? "#075307" : "white",
-                      backgroundColor:
-                        activemenu === menu._id ? "#E3F7B6" : "#075307",
-                      borderRadius: "2px",
+                      backgroundColor: activemenu === menu._id ? "#E3F7B6" : "#075307",
+                      borderRadius: activemenu === menu._id ? "8px" : "2px", // Change border radius here
                       padding: "6px 12px",
                     }}
-                  >
+                    >
                     <i className={`nav-icon fas ${menu.icon}`}></i>
                     <p>{menu.name}</p>
                   </NavLink>

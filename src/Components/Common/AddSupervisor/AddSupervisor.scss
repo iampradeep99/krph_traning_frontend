@@ -12,7 +12,7 @@
   border-radius: 8px;
   box-shadow: 2px 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
 
   /* For smaller screens, reduce padding and width */
   @media (max-width: 768px) {
@@ -251,3 +251,34 @@ input::placeholder {
   margin-top: 5px;
 }
 
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; 
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3); 
+  border-top: 5px solid #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

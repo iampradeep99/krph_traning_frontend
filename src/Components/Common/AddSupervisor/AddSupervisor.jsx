@@ -39,6 +39,7 @@ const AddSupervisor = () => {
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
     const [admin, setAdmin] = useState([]);
+    const [isLoadingCreateSupervisor, setisLoadingCreateSupervisor] = useState(false);
   
 
   const fetchRegions = async () => {
@@ -237,6 +238,7 @@ const AddSupervisor = () => {
       delete formData.designation;
       delete formData.username;
       delete formData.password;
+      setisLoadingCreateSupervisor(true);
       try{
         const data = await addSupervisor(formData)
 
@@ -266,6 +268,8 @@ const AddSupervisor = () => {
           type: "error",
         });
         return;
+      }finally{
+        setisLoadingCreateSupervisor(false);
       }
 
     }
@@ -298,8 +302,15 @@ const AddSupervisor = () => {
             },
           ]}
         />
+
+{isLoadingCreateSupervisor && (
+        <div className="loader-overlay">
+          <div className="spinner"></div>
+        </div>
+      )}
         <div className="container">
-          <form className="agent-form" onSubmit={handleSubmit}>
+          <form  className={`agent-form ${isLoadingCreateSupervisor ? "form-disabled" : ""}`}
+        onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="first-name">First Name *</label>

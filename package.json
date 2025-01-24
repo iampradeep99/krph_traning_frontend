@@ -1,7 +1,7 @@
 {
   "name": "farmer_grievance_management_system",
   "version": "0.1.0",
-  "homepage": "/krph/",
+  "homepage": "",
   "private": true,
   "dependencies": {
     "@canvasjs/charts": "^3.10.19",

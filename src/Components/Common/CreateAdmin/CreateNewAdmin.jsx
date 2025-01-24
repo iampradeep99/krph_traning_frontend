@@ -36,7 +36,8 @@ const CreateNewAdmin = () => {
   const [regions, setRegions] = useState([]);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
-
+  const [isLoadingCreateAdmin, setisLoadingCreateAdmin] = useState(false);
+  isLoadingCreateAdmin
   const fetchRegions = async () => {
     try {
       const formData = { mode: "region" };
@@ -201,6 +202,7 @@ const CreateNewAdmin = () => {
       delete formData.designation;
       delete formData.username;
       delete formData.password;
+      setisLoadingCreateAdmin(true);
       try{
         const data = await addAdmins(formData)
         if(data?.response.responseCode == "1"){
@@ -228,6 +230,8 @@ const CreateNewAdmin = () => {
           type: "error",
         });
         return;
+      }finally{
+        setisLoadingCreateAdmin(false);
       }
 
     }
@@ -260,8 +264,14 @@ const CreateNewAdmin = () => {
             },
           ]}
         />
+           {isLoadingCreateAdmin && (
+        <div className="loader-overlay">
+          <div className="spinner"></div>
+        </div>
+      )}
         <div className="container">
-          <form className="agent-form" onSubmit={handleSubmit}>
+          <form className={`agent-form ${isLoadingCreateAdmin ? "form-disabled" : ""}`}
+        onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="first-name">First Name *</label>

@@ -3,7 +3,8 @@ const APIEndpoints = {
     GetRegion: "common/getCountryStateCity",
     GetCreatRegion: "agent/create",
     GetQualification: "common/getQualification",
-    GetAdmins:"agent/allAgent"
+    GetAdmins:"agent/allAgent",
+    GetUserByID : "agent/getById"
   },
 };
 
