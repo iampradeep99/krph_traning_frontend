@@ -67,7 +67,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                 className={` nav-item has-treeview text-white ${
                   expandedMenu === menu._id ? "menu-open" : ""
                 }`}
-                style={{ marginBottom: "8px", color: "white" }}
+                style={{ marginBottom: "2px", color: "white" }}
               >
                 {/* Main menu item */}
                 {menu.submenus?.length > 0 ? (
@@ -95,7 +95,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                       color: activemenu === menu._id ? "#075307" : "white",
                       backgroundColor:
                         activemenu === menu._id ? "#E3F7B6" : "#075307",
-                      borderRadius: "8px",
+                      borderRadius: "2px",
                       padding: "6px 12px",
                     }}
                   >

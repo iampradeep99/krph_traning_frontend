@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CreateNewAgent.scss";
 import { useNavigate } from "react-router-dom";
 import CommonHeader from "../CommonHeader/CommonHeader";
-import { getAllRegion, getCreateAgent,getQualification } from "./Services/Methods";
+import { getAdmins, getAllRegion, getCreateAgent,getQualification } from "./Services/Methods";
 import { getSessionStorage } from "../../Login/Auth/auth";
 import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
 import { jwtDecode } from "jwt-decode";

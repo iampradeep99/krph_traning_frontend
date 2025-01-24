@@ -1,252 +1,13 @@
-// import React, { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import { AgGridReact } from "ag-grid-react";
-// import "ag-grid-enterprise/dist/styles/ag-grid.css";
-// import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
-// import "./AgentModify.scss";
-// import { FaEdit, FaBell, FaBan } from "react-icons/fa";
-// import CommonHeader from "../CommonHeader/CommonHeader";
-// import EditAgent from "../EditAgent/EditAgent";
-// import { getAllAgent } from "./Services/Methods";
-// import {changeToCapitalize} from '../../../Service/Utilities/Utils'
-
-// const ModifyAgent = () => {
-//   const navigate = useNavigate();
-//   const [isPopupOpen, setPopupOpen] = useState(false);
-//   const [selectedAgent, setSelectedAgent] = useState(null);
-//   const [rowData, setRowData] = useState([]);
-//   const [filteredData, setFilteredData] = useState([]);
-//   const [searchQuery, setSearchQuery] = useState("");
-
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const [totalPages, setTotalPages] = useState(1);
-//   const [limit] = useState(10); // Number of records per page
-
-
-
-//   const [columnDefs] = useState([
-//     {
-//       headerName: "Agent Name",
-//       field: "fullName",
-//       valueGetter: (params) => `${ changeToCapitalize(params.data.firstName) ? changeToCapitalize(params.data.firstName) : "NA"} ${changeToCapitalize(params.data.lastName)?changeToCapitalize(params.data.lastName):"NA"}`,
-//       sortable: true,
-//       filter: true,
-//     },
-//     {
-//       headerName: "User Name",
-//       field: "userID",
-//       valueGetter: (params) => params.data.userName ? params.data.userName : "NA",
-//       sortable: true,
-//       filter: true,
-//     },
-//     {
-//       headerName: "Agent Email ID",
-//       field: "email",
-//       valueGetter: (params) =>  params.data.email ? params.data.email:"NA",
-//       sortable: true,
-//       filter: true,
-//     },
-//     {
-//       headerName: "Mobile No.",
-//       field: "mobile",
-//       valueGetter: (params) => params.data.mobile ? params.data.mobile : "NA",
-//       sortable: true,
-//       filter: true,
-//     },
-//     {
-//       headerName: "Designation",
-//       field: "designation",
-//       valueGetter: (params) =>  changeToCapitalize(params.data.designation) ? changeToCapitalize(params.data.designation) : "NA",
-//       sortable: true,
-//       filter: true,
-//     },
-//     {
-//       headerName: "Region",
-//       valueGetter: (params) => params.data.region.name ? params.data.region.name : "NA", 
-//       sortable: true,
-//       filter: true,
-//     },
-    
-//     {
-//       headerName: "State",
-//       valueGetter: (params) => params.data.state?.name ? params.data.state?.name  : "NA",
-//       sortable: true,
-//       filter: true,
-//     },
-//     {
-//       headerName: "City",
-//       valueGetter: (params) => params.data.city?.name ? params.data.city?.name : "NA" ,
-//       sortable: true,
-//       filter: true,
-//     },
-//     {
-//       headerName: "Action",
-//       field: "action",
-//       cellRendererFramework: (params) => (
-//         <div className="action-icons">
-//           <FaEdit
-//             className="icon edit-icon"
-//             title="Edit"
-//             onClick={() => handleEdit(params.data)}
-//           />
-//           <FaBell className="icon notify-icon" title="Notify" />
-//           <FaBan className="icon disable-icon" title="Disable" />
-//         </div>
-//       ),
-//     },
-//   ]);
-
-//   const handleEdit = (agentData) => {
-//     setPopupOpen(true);
-//     setSelectedAgent(agentData);
-//   };
-
-//   const handleClosePopup = () => {
-//     setPopupOpen(false);
-//     setSelectedAgent(null);
-//   };
-
-//   const handleCreateAgent = () => {
-//     navigate("/CreateNewAgent");
-//   };
-
-//   const getAllAgentData = async (page) => {
-//     try {
-//       // const formData = { page, limit };
-//       const formData = {
-//         page: page,
-//         limit: 10,
-//         searchQuery: "",
-//         role: 3,
-//       };
-//       const result = await getAllAgent(formData);
-//       if (result.response.responseCode === 1) {
-//         console.log(result.response.responseData.agents, "result.response.responseData.agents")
-//         setRowData(result.response.responseData.agents);
-//         setFilteredData(result.response.responseData.agents); // Initialize filtered data
-//         setTotalPages(result.response.responseData.totalPages);
-//       } else {
-//         setRowData([]);
-//         setFilteredData([]);
-//         console.error(result.response.responseMessage);
-//       }
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     getAllAgentData(currentPage); // Fetch data for the current page
-//   }, [currentPage]);
-
-//   // Live search as user types
-//   const handleSearchInputChange = (query) => {
-//     setSearchQuery(query);
-//     filterData(query);
-//   };
-
-//   // Search button functionality
-//   const handleSearchButtonClick = () => {
-//     filterData(searchQuery);
-//   };
-
-//   // Filter data logic
-//   const filterData = (query) => {
-//     const filtered = rowData.filter(
-//       (agent) =>
-//         agent.firstName.toLowerCase().includes(query.toLowerCase()) ||
-//         agent.lastName.toLowerCase().includes(query.toLowerCase()) ||
-//         agent.userID?.toLowerCase().includes(query.toLowerCase()) ||
-//         agent.email?.toLowerCase().includes(query.toLowerCase()) ||
-//         agent.designation?.toLowerCase().includes(query.toLowerCase()) ||
-//         agent.mobile?.includes(query) ||
-//         agent.state?.name.toLowerCase().includes(query.toLowerCase()) ||
-//         agent.city?.name.toLowerCase().includes(query.toLowerCase()),
-//     );
-//     setFilteredData(filtered);
-//   };
-
-//   const handlePageChange = (newPage) => {
-//     if (newPage > 0 && newPage <= totalPages) {
-//       setCurrentPage(newPage);
-//     }
-//   };
-
-//   const renderPagination = () => (
-//     <div className="pagination-container">
-//       <button
-//         onClick={() => handlePageChange(currentPage - 1)}
-//         disabled={currentPage === 1}
-//       >
-//         Previous
-//       </button>
-//       <span>
-//         Page {currentPage} of {totalPages}
-//       </span>
-//       <button
-//         onClick={() => handlePageChange(currentPage + 1)}
-//         disabled={currentPage === totalPages}
-//       >
-//         Next
-//       </button>
-//     </div>
-//   );
-
-//   return (
-//     <>
-//       <div className="form-wrapper-agent">
-//         <CommonHeader title="Agents" />
-//         <div className="modify-agent-container">
-//           <div className="top-actions">
-//             <div className="search-container">
-//               <input
-//                 type="text"
-//                 className="search-input"
-//                 placeholder="Enter agent name or user ID to search..."
-//                 value={searchQuery}
-//                 onChange={(e) => handleSearchInputChange(e.target.value)}
-//               />
-//               <button
-//                 className="search-button-download"
-//                 onClick={handleSearchButtonClick}
-//               >
-//                 Search
-//               </button>
-//             </div>
-//             <button className="create-agent-button" onClick={handleCreateAgent}>
-//               Create Agent &nbsp; <i className="fas fas fa-arrow-right"></i>
-//             </button>
-//           </div>
-//           <div className="ag-theme-alpine ag-grid-container">
-//             <AgGridReact rowData={filteredData} columnDefs={columnDefs} />
-//           </div>
-//           {renderPagination()}
-//         </div>
-//       </div>
-
-//       {isPopupOpen && (
-//         <EditAgent agentData={selectedAgent} onClose={handleClosePopup} />
-//       )}
-//     </>
-//   );
-// };
-
-// export default ModifyAgent;
-
-
-
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AgGridReact } from "ag-grid-react";
-// import "ag-grid-enterprise/dist/styles/ag-grid.css";
-// import "ag-grid-enterprise/dist/styles/ag-theme-alpine.css";
 import "./AgentModify.scss";
 import { FaEdit, FaBell, FaBan } from "react-icons/fa";
 import CommonHeader from "../CommonHeader/CommonHeader";
 import EditAgent from "../EditAgent/EditAgent";
-import { getAllAgent } from "./Services/Methods";
+import { getAllAgent, statusUpdate } from "./Services/Methods";
 import { changeToCapitalize } from "../../../Service/Utilities/Utils";
-import _ from "lodash"; // Import lodash for debouncing
+import _ from "lodash"; 
 
 const ModifyAgent = () => {
   const navigate = useNavigate();
@@ -255,10 +16,13 @@ const ModifyAgent = () => {
   const [rowData, setRowData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-
+  const [adminList, setAdminList] = useState([]);
+  const [selectedAdmin, setSelectedAdmin] = useState("");
+  const [selectedSupervisor, setSelectedSupervisor] = useState("");
+  const [supervisorList, setSupervisorList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [limit] = useState(10); // Number of records per page
+  const [limit] = useState(10);
 
   const [columnDefs] = useState([
     {
@@ -295,8 +59,12 @@ const ModifyAgent = () => {
     {
       headerName: "Designation",
       field: "designation",
-      valueGetter: (params) =>
-        changeToCapitalize(params.data.designation) || "NA",
+      valueGetter: (params) => {
+        if (params.data.role === 3) {
+          return "Agent";
+        }
+        return changeToCapitalize(params.data.designation) || "NA";
+      },
       sortable: true,
       filter: true,
     },
@@ -319,21 +87,96 @@ const ModifyAgent = () => {
       filter: true,
     },
     {
+      headerName: "Status",
+      valueGetter: (params) => params?.data?.status || "NA", 
+      sortable: true,
+      filter: true,
+      cellRendererFramework: (params) => {
+        const status = params?.data?.status;
+
+        let circleColor = "gray"; 
+        let statusText = "NA"; 
+
+        if (status == 0) {
+          circleColor = "green"; 
+          statusText = "Enabled";
+        } else if (status == 1) {
+          circleColor = "red"; 
+          statusText = "Disabled";
+        }
+
+        return (
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                backgroundColor: circleColor,
+              }}
+            ></div>
+            <span>{statusText}</span>
+          </div>
+        );
+      },
+    },
+    {
       headerName: "Action",
       field: "action",
-      cellRendererFramework: (params) => (
-        <div className="action-icons">
-          <FaEdit
-            className="icon edit-icon"
-            title="Edit"
-            onClick={() => handleEdit(params.data)}
-          />
-          <FaBell className="icon notify-icon" title="Notify" />
-          <FaBan className="icon disable-icon" title="Disable" />
-        </div>
-      ),
+      cellRendererFramework: (params) => {
+        const agent = params.data;
+        const status = agent.status;
+  
+        // Handle Enable/Disable action
+        const handleStatusToggle = () => {
+          toggleAgentStatus(agent._id, status); // Use the function defined in the component
+        };
+  
+        return (
+          <div className="action-icons">
+            <FaEdit
+              className="icon edit-icon"
+              title="Edit"
+              onClick={() => handleEdit(agent)}
+            />
+            <FaBell className="icon notify-icon" title="Notify" />
+            
+            {/* Enable/Disable button */}
+            <FaBan
+              className={`icon disable-icon ${status === 0 ? "enabled" : "disabled"}`}
+              title={status === 0 ? "Disable" : "Enable"}
+              onClick={handleStatusToggle}
+            />
+          </div>
+        );
+      },
     },
+    
   ]);
+
+  const handleFilterApply = async (adminId, supervisorId) => {
+    try {
+      const formData = {
+        page: 1,  
+        limit: 10, 
+        adminId: adminId,
+        supervisorId: supervisorId,
+        role:3
+      };
+  
+      const result = await getAllAgent(formData); 
+      if (result.response.responseCode === 1) {
+        setFilteredData(result.response.responseData.agents);
+        setTotalPages(result.response.responseData.totalPages); 
+      } else {
+        setFilteredData([]);
+        console.error(result.response.responseMessage);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
 
   const handleEdit = (agentData) => {
     setPopupOpen(true);
@@ -349,6 +192,46 @@ const ModifyAgent = () => {
     navigate("/CreateNewAgent");
   };
 
+  const getAllAdmins = async () => {
+    try {
+      const formData = {
+        page: 1,
+        limit: 10000000,
+        searchQuery: "",
+        role: 1,
+      };
+      const result = await getAllAgent(formData);
+      if (result.response.responseCode === 1) {
+        setAdminList(result.response.responseData.agents);
+      } else {
+        setAdminList([]);
+        console.error(result.response.responseMessage);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const getSupervisorsByAdmin = async (adminId) => {
+    try {
+      const result = await getAllAgent({
+        page: 1,
+        limit: 100000,
+        searchQuery: "",
+        role: 2,
+        adminId: adminId,
+      });
+      if (result.response.responseCode === 1) {
+        setSupervisorList(result.response.responseData.agents);
+      } else {
+        setSupervisorList([]);
+        console.error(result.response.responseMessage);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const getAllAgentData = async (page, query = "") => {
     try {
       const formData = {
@@ -359,12 +242,12 @@ const ModifyAgent = () => {
       };
       const result = await getAllAgent(formData);
       if (result.response.responseCode === 1) {
-        setRowData(result.response.responseData.agents); 
-        setFilteredData(result.response.responseData.agents); // Update filteredData on initial load
+        setRowData(result.response.responseData.agents);
+        setFilteredData(result.response.responseData.agents);
         setTotalPages(result.response.responseData.totalPages);
       } else {
         setRowData([]);
-        setFilteredData([]); // Update filteredData on error
+        setFilteredData([]);
         console.error(result.response.responseMessage);
       }
     } catch (error) {
@@ -374,18 +257,18 @@ const ModifyAgent = () => {
 
   useEffect(() => {
     getAllAgentData(currentPage);
+    getAllAdmins();
   }, [currentPage]);
 
-  // Debounce logic for API call
   const debounceSearch = useCallback(
     _.debounce((query) => {
       if (query.length >= 4) {
-        getAllAgentData(1, query); // Fetch data from API for search query
+        getAllAgentData(1, query);
       } else {
-        getAllAgentData(1); // Fetch all data when query is empty or less than 4 characters
+        getAllAgentData(1);
       }
     }, 500),
-    [] // Dependencies
+    []
   );
 
   const handleSearchInputChange = (query) => {
@@ -419,25 +302,46 @@ const ModifyAgent = () => {
     </div>
   );
 
-  const handleAdminFilterChange = (admin) => {
-    if (admin) {
-      const filtered = rowData.filter((agent) => agent.role === admin);
-      setFilteredData(filtered);
+  const handleAdminFilterChange = (adminId) => {
+    if (adminId) {
+      getSupervisorsByAdmin(adminId);
     } else {
-      // Reset to original data if no admin is selected
-      setFilteredData(rowData);
+      setSupervisorList([]);
+      setSelectedSupervisor("");
     }
   };
+
+  const toggleAgentStatus = async (agentId, currentStatus) => {
+    try {
+      const newStatus = currentStatus === 0 ? 1 : 0;
   
-  const handleSuperAdminFilterChange = (superadmin) => {
-    if (superadmin) {
-      const filtered = rowData.filter((agent) => agent.role === superadmin);
-      setFilteredData(filtered);
-    } else {
-      // Reset to original data if no superadmin is selected
-      setFilteredData(rowData);
+      const result = await statusUpdate({ agentId, status: newStatus });
+  
+      if (result.success) {
+        setFilteredData((prevData) =>
+          prevData.map((agent) =>
+            agent._id === agentId ? { ...agent, status: newStatus } : agent
+          )
+        );
+      } else {
+        console.error('Failed to update agent status');
+      }
+    } catch (error) {
+      console.error('Error updating agent status:', error);
     }
   };
+
+  const handleAdminChange = (e) => {
+    const adminId = e.target.value;
+    setSelectedAdmin(adminId);
+    handleAdminFilterChange(adminId);
+  };
+
+  const handleSupervisorChange = (e) => {
+    setSelectedSupervisor(e.target.value);
+  };
+
+  
   
 
   return (
@@ -455,34 +359,48 @@ const ModifyAgent = () => {
                 onChange={(e) => handleSearchInputChange(e.target.value)}
               />
             </div>
+
             <div className="role-filters">
-    <div className="admin-filter">
-   
-      <select
-        id="admin-filter"
-        className="role-dropdown"
-        onChange={(e) => handleAdminFilterChange(e.target.value)}
-      >
-        <option value="">All Admins</option>
-        <option value="Admin1">Admin 1</option>
-        <option value="Admin2">Admin 2</option>
-        {/* Add more admin options here */}
-      </select>
-    </div>
-    <div className="superadmin-filter">
-  
-      <select
-        id="superadmin-filter"
-        className="role-dropdown"
-        onChange={(e) => handleSuperAdminFilterChange(e.target.value)}
-      >
-        <option value="">All Superadmins</option>
-        <option value="Superadmin1">Superadmin 1</option>
-        <option value="Superadmin2">Superadmin 2</option>
-        {/* Add more superadmin options here */}
-      </select>
-    </div>
-  </div>
+              <div className="admin-filter">
+                <select
+                  id="admin-filter"
+                  className="role-dropdown"
+                  value={selectedAdmin}
+                  onChange={handleAdminChange}
+                >
+                  <option value="">--Select Admin--</option>
+                  {adminList?.map((ele) => (
+                    <option key={ele._id} value={ele._id}>
+                      {`${ele.firstName} ${ele.lastName}`}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="supervisor-filter">
+                <select
+                  id="supervisor-filter"
+                  className="role-dropdown"
+                  value={selectedSupervisor}
+                  onChange={handleSupervisorChange}
+                >
+                  <option value="">--Select Supervisor--</option>
+                  {supervisorList?.map((supervisor) => (
+                    <option key={supervisor._id} value={supervisor._id}>
+                      {`${supervisor.firstName} ${supervisor.lastName}`}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <button
+                className="create-agent-button"
+                onClick={() => handleFilterApply(selectedAdmin, selectedSupervisor)}
+              >
+                Apply Filters &nbsp; <i className="fas fas fa-arrow-right"></i>
+              </button>
+            </div>
+
             <button className="create-agent-button" onClick={handleCreateAgent}>
               Create Agent &nbsp; <i className="fas fas fa-arrow-right"></i>
             </button>
@@ -502,4 +420,3 @@ const ModifyAgent = () => {
 };
 
 export default ModifyAgent;
-

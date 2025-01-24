@@ -32,8 +32,8 @@ function Header({ toggleSidebar }) {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "40px",
-    height: "40px",
+    width: "30px",
+    height: "30px",
     border: "1px solid #ccc",
     borderRadius: "5px",
     margin: "0 5px",
@@ -101,11 +101,11 @@ function Header({ toggleSidebar }) {
 
         <li style={iconBoxStyle}>
           <i className="fas fa-bell"></i>
-          <span style={badgeStyle}>2</span>
+          {/* <span style={badgeStyle}>2</span> */}
         </li>
         <li style={iconBoxStyle}>
           <i className="fas fa-envelope"></i>
-          <span style={badgeStyle}>5</span>
+          {/* <span style={badgeStyle}>5</span> */}
         </li>
         <li style={iconBoxStyle}>
           <i className="fas fa-user"></i>

@@ -1,6 +1,6 @@
 // Existing SCSS file
 .form-wrapper {
-  margin: 10px;
+  margin: 0px;
   background-color: white;
   overflow: scroll;
   height: 100%;
@@ -11,8 +11,8 @@
   height: auto;
   background: white;
   border: 2px solid #054a06;
-  margin: 15px auto;
-  padding: 20px;
+  margin: 10px auto;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 2px 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
   width: 100%;
@@ -186,8 +186,8 @@ input::placeholder {
 .reset-btn {
   padding: 10px;
   margin-top: 10px;
-  background-color: rgb(116, 113, 242);
-  color: #fff;
+  background-color: #E3F7B6;
+  color: #054a06;
   border: none;
   border-radius: 4px;
   font-size: 14px;
@@ -200,8 +200,8 @@ input::placeholder {
 .cancel-btn {
   padding: 10px;
   margin-top: 10px;
-  background-color: rgb(250, 70, 85);
-  color: #fff;
+  background-color: #E3F7B6;
+  color: #054a06;
   border: none;
   border-radius: 4px;
   font-size: 14px;
