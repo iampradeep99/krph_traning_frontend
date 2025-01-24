@@ -167,3 +167,16 @@
   flex-direction: column;
   font-size: 14px;
 }
+
+.icon.disable-icon {
+  cursor: pointer;
+}
+
+.icon.disable-icon.enabled {
+  color: green;
+}
+
+.icon.disable-icon.disabled {
+  color: red;
+}
+
