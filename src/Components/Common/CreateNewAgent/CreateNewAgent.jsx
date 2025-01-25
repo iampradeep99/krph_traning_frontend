@@ -172,7 +172,7 @@ const CreateNewAgent = () => {
   };
 
   const handleBack = () => {
-    navigate("/agents/List");
+    navigate("/agents");
   };
 
   const fetchRegions = async () => {

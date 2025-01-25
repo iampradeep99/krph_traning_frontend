@@ -1,28 +1,34 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { getSessionStorage, setSessionStorage } from "../../Login/Auth/auth";
+import { getSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
 import { useNavigate } from "react-router-dom";
 
 const SideBarModified = ({ isSidebarOpen }) => {
   // Get session storage data with a fallback
   let dataMenu = getSessionStorage("user") || [];
-
   const navigate = useNavigate();
   const menuPermission = dataMenu[0]?.assignedProfile?.menuPermission || [];
+
+  // Sort the menu items based on the 'order' property
+  const sortedMenu = menuPermission.sort((a, b) => a.order - b.order);
 
   const [expandedMenu, setExpandedMenu] = useState(null);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [activemenu, setActivemenu] = useState(null);
+
   const toggleMenu = (menuId) => {
     setExpandedMenu(expandedMenu === menuId ? null : menuId);
   };
+
   const handleSubmenuClick = (submenuId) => {
     setActiveSubmenu(submenuId);
   };
+
   const handlemenuClick = (menuId) => {
     setActivemenu(menuId);
   };
+
   const handleLogout = () => {
     sessionStorage.clear();
     navigate("/");
@@ -61,10 +67,10 @@ const SideBarModified = ({ isSidebarOpen }) => {
             data-accordion="false"
             style={{ color: "white", fontSize: "14px" }}
           >
-            {menuPermission.map((menu) => (
+            {sortedMenu.map((menu) => (
               <li
                 key={menu._id}
-                className={` nav-item has-treeview text-white ${
+                className={`nav-item has-treeview text-white ${
                   expandedMenu === menu._id ? "menu-open" : ""
                 }`}
                 style={{ marginBottom: "2px", color: "white" }}
@@ -80,9 +86,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     <p>
                       {menu.name}
                       <i
-                        className={`right fas fa-angle-${
-                          expandedMenu === menu._id ? "down" : "down"
-                        }`}
+                        className={`right fas fa-angle-${expandedMenu === menu._id ? "down" : "down"}`}
                       ></i>
                     </p>
                   </div>
@@ -97,7 +101,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                       borderRadius: activemenu === menu._id ? "8px" : "2px", // Change border radius here
                       padding: "6px 12px",
                     }}
-                    >
+                  >
                     <i className={`nav-icon fas ${menu.icon}`}></i>
                     <p>{menu.name}</p>
                   </NavLink>

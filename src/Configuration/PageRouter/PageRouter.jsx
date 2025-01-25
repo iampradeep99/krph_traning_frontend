@@ -208,7 +208,7 @@ function PageRouter() {
         />
         <Route
           exact
-          path="/agents/List"
+          path="/agents"
           element={<Page component={<ModifyAgent />} title="Modify Agent" />}
         />
         <Route

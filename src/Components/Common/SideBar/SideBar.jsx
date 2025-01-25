@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { getSessionStorage, setSessionStorage } from "../../Login/Auth/auth";
+import { getSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,10 @@ const SideBarModified = ({ isSidebarOpen }) => {
 
   const navigate = useNavigate();
   const menuPermission = dataMenu[0]?.assignedProfile?.menuPermission || [];
+
+  // Sort the menu items based on the 'order' property
+  const sortedMenu = menuPermission.sort((a, b) => a.order - b.order);
+alert("test")
 
   const [expandedMenu, setExpandedMenu] = useState(null);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -60,10 +64,10 @@ const SideBarModified = ({ isSidebarOpen }) => {
             data-accordion="false"
             style={{ color: "white", fontSize: "6px" }}
           >
-            {menuPermission.map((menu) => (
+            {sortedMenu.map((menu) => (
               <li
                 key={menu._id}
-                className={` nav-item has-treeview text-white ${
+                className={`nav-item has-treeview text-white ${
                   expandedMenu === menu._id ? "menu-open" : ""
                 }`}
                 style={{ marginBottom: "1px", color: "white" }}
@@ -79,9 +83,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     <p>
                       {menu.name}
                       <i
-                        className={`right fas fa-angle-${
-                          expandedMenu === menu._id ? "down" : "down"
-                        }`}
+                        className={`right fas fa-angle-${expandedMenu === menu._id ? "down" : "down"}`}
                       ></i>
                     </p>
                   </div>
@@ -134,7 +136,6 @@ const SideBarModified = ({ isSidebarOpen }) => {
                               activeSubmenu === submenu._id ? "#E3F7B6" : "white",
                             borderRadius: "8px",
                             padding: "1px 2px",
-                           
                           }}
                         >
                           <i
@@ -143,7 +144,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                               color: "#075307",
                               backgroundColor:
                                 activeSubmenu === submenu._id ? "#E3F7B6" : "",
-                                fontSize: "small"
+                              fontSize: "small",
                             }}
                           ></i>
                           <p
