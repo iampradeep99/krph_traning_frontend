@@ -18,10 +18,15 @@ function Page(props) {
       : "KRPH Training Management";
   }, [title]);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+  const savedSidebarState = localStorage.getItem("isSidebarOpen");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(
+    savedSidebarState !== null ? JSON.parse(savedSidebarState) : true
+  );
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+    localStorage.setItem("isSidebarOpen", JSON.stringify(!isSidebarOpen));
   };
 
   return (

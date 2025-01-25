@@ -42,18 +42,22 @@ const SideBarModified = ({ isSidebarOpen }) => {
         display: "flex",
         flexDirection: "column",
         height: "100vh",
+ 
       }}
     >
+       <style>
+
+  </style>
       <img
         src={newlogo}
         alt="Awards"
         className="brand-image"
         style={{
           width: isSidebarOpen ? "95px" : "35px",
-          height: isSidebarOpen ? "70px" : "40px",
+          height: isSidebarOpen ? "60px" : "40px",
           transition: "all 0.3s ease",
           marginTop: isSidebarOpen ? "20px" : "10px",
-          marginLeft: isSidebarOpen ? "50px" : "20px",
+          marginLeft: isSidebarOpen ? "50px" : "12px",
           marginRight: isSidebarOpen ? "20px" : "10px",
           marginBottom: isSidebarOpen ? "20px" : "10px",
         }}
@@ -98,7 +102,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     style={{
                       color: activemenu === menu._id ? "#075307" : "white",
                       backgroundColor: activemenu === menu._id ? "#E3F7B6" : "#075307",
-                      borderRadius: activemenu === menu._id ? "8px" : "2px", // Change border radius here
+                      borderRadius: activemenu === menu._id ? "24px" : "24px", // Change border radius here
                       padding: "6px 12px",
                     }}
                   >
@@ -114,7 +118,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     style={{
                       display: expandedMenu === menu._id ? "block" : "none",
                       color: "white",
-                      borderRadius: "8px",
+                      // borderRadius: "24px",
                     }}
                   >
                     {menu.submenus.map((submenu) => (
@@ -126,7 +130,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                           color: "white",
                           backgroundColor:
                             activeSubmenu === submenu._id ? "#037003" : "white",
-                          borderRadius: "8px",
+                          borderRadius: "24px",
                         }}
                       >
                         <NavLink
@@ -136,7 +140,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                             color: "white",
                             backgroundColor:
                               activeSubmenu === submenu._id ? "#E3F7B6" : "white",
-                            borderRadius: "8px",
+                            borderRadius: "24px",
                             padding: "6px 12px",
                           }}
                         >

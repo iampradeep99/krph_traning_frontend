@@ -12,11 +12,11 @@
   .search-container {
     display: flex;
     gap: 10px;
-    // margin-bottom: 10px;
+    margin-bottom: 10px;
 
     .search-input {
       flex: 0.3;
-      padding: 10px;
+      padding: 9px;
       width: 50px;
       font-size: 10px;
       border: 1px solid #075307;
@@ -27,13 +27,17 @@
         border-color: #075307;
       }
     }
+    .search-input::placeholder {
+      color: #075307; 
+      opacity: 0.6; 
+    }
 
     .search-button-download {
-      padding: 10px 20px;
+      padding: 8px;
       background-color: transparent;
       color: #075307;
       border-radius: 4px;
-      font-size: 16px;
+      font-size: 12px;
       font-weight: bold;
       cursor: pointer;
 
@@ -45,39 +49,55 @@
   }
 
   .ag-grid-container {
-    height: 60vh;
+    height: 65vh;
     color: white;
     border: 2px solid #006400;
+    border-radius: 5px;
+  
+    // Header styles
     .ag-header {
       background-color: #006400;
       color: white;
       font-weight: bold;
+      font-size: 12px; // Set smaller font size for the header
     }
-
+  
+    // Cell styles
+    .ag-row {
+      font-size: 12px; // Smaller font size for row content
+    }
+  
+    .ag-cell {
+      font-size: 12px; // Ensure cell content is smaller
+      padding: 4px; // Reduce padding inside cells if needed
+    }
+  
+    // Action icons
     .action-icons {
       display: flex;
-      gap: 10px;
-      justify-content: center;
+      gap: 8px; // Adjust gap between icons
+      justify-content: left;
       align-items: center;
-
+  
       .icon {
-        font-size: 16px;
+        margin: 3px; // Reduce margin for icons
+        font-size: 12px; // Smaller icon size
         cursor: pointer;
-
+  
         &.edit-icon {
           color: #4caf50;
         }
-
+  
         &.notify-icon {
           color: #ff9800;
         }
-
+  
         &.delete-icon {
           color: #f44336;
         }
-
+  
         &:hover {
-          transform: scale(1.2);
+          transform: scale(1.1); // Slight hover effect
           transition: transform 0.2s ease-in-out;
         }
       }

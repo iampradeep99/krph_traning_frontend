@@ -6,6 +6,8 @@ import "./CompleteTrainingReport.scss";
 import CommonHeader from "../CommonHeader/CommonHeader";
 
 const CompleteTrainingReport = () => {
+    const [currentPage, setCurrentPage] = useState(1);
+   const [totalPages, setTotalPages] = useState(1);
   const [rowData] = useState([
     {
       agentName: "Rohit Kumar",
@@ -118,6 +120,31 @@ const CompleteTrainingReport = () => {
       ),
     },
   ]);
+  const handlePageChange = (newPage) => {
+    if (newPage > 0 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
+  const renderPagination = () => (
+    <div className="pagination-container">
+      <button
+        onClick={() => handlePageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+       <i className="fas fas fa-arrow-left"></i>
+      </button>
+      <span>
+        Page {currentPage} of {totalPages}
+      </span>
+      <button
+        onClick={() => handlePageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      >
+      <i className="fas fas fa-arrow-right"></i>
+      </button>
+    </div>
+  );
 
   return (
     <div className="form-wrapper-agent-Report">
@@ -133,8 +160,24 @@ const CompleteTrainingReport = () => {
           <button className="search-button-download">Search</button>
         </div>
         <div className="ag-theme-alpine ag-grid-container">
-          <AgGridReact rowData={rowData} columnDefs={columnDefs} />
+         <AgGridReact
+          // rowData={filteredData}
+          rowData={rowData}
+          columnDefs={[
+            { 
+              headerName: "S.No", 
+              valueGetter: (params) => params.node.rowIndex + 1, 
+              width: 80 ,
+              cellStyle: { marginLeft: '20px' } 
+            }, ...columnDefs,
+        
+           
+          ]}
+          defaultColDef={{ resizable: true, sortable: true, cellStyle: { marginLeft: '15px' }  }}
+          rowHeight={30} 
+        />
         </div>
+        {renderPagination()}
       </div>
     </div>
   );
