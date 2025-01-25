@@ -63,20 +63,19 @@ const Login = () => {
     setAlertMessage({ type, message });
   };
 
-  // Handle Reset Password
-  // const handleResetPassword = () => {
-  //   if (!email) {
-  //     showAlert("error", "Please enter a valid email address.");
-  //     return;
-  //   }
+  const handleResetPassword = () => {
+    if (!email) {
+      showAlert("error", "Please enter a valid email address.");
+      return;
+    }
 
-  //   // Simulate API call for password reset
-  //   setTimeout(() => {
-  //     showAlert("success", "Password reset link has been sent to your email.");
-  //     setShowResetPopup(false);
-  //     setEmail("");
-  //   }, 1000);
-  // };
+    // Simulate API call for password reset
+    // setTimeout(() => {
+    //   showAlert("success", "Password reset link has been sent to your email.");
+    //   setShowResetPopup(false);
+    //   setEmail("");
+    // }, 1000);
+  };
 
   return (
     <div className="container-fluid login-container">

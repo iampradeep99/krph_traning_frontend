@@ -6,7 +6,6 @@ import { getAdmins, getAllRegion, getById, getCreateAgent,getQualification } fro
 import { getSessionStorage } from "../../Login/Auth/auth";
 import { AlertMessage } from "../../../Framework/Components/Widgets/Notification/NotificationProvider";
 import { jwtDecode } from "jwt-decode";
-import  Loader  from "./Loader/Loader";
 import { useLocation } from "react-router-dom";
 
 const CreateNewAgent = () => {
@@ -426,22 +425,31 @@ const CreateNewAgent = () => {
   return (
     <>
       <div className="form-wrapper">
-        <CommonHeader
-          title="Create New Agent"
-          subtitle="Manage agents by filling out the details below"
-          buttons={[
-            {
-              label: "Upload Excel Sheet",
-              onClick: () => console.log("Upload clicked!"),
-              type: "upload",
-            },
-            {
-              label: "Download Sample",
-              onClick: () => console.log("Download clicked!"),
-              type: "download",
-            },
-          ]}
-        />
+      <CommonHeader
+  title="Create New Agent"
+  buttons={[
+    {
+      label: (
+        <>
+          <i className="fas fa-cloud-upload-alt custom-icon"></i> &nbsp;Upload Excel Sheet
+        </>
+      ),
+      onClick: () => console.log("Upload clicked!"),
+      type: "upload",
+    },
+    {
+      label: (
+        <>
+          <i className="fas fa-cloud-download-alt custom-icon"></i>&nbsp; Download Sample
+        </>
+      ),
+      onClick: () => console.log("Download clicked!"),
+      type: "download",
+    },
+  ]}
+/>
+
+
          {isLoadingCreateAgent && (
         <div className="loader-overlay">
           <div className="spinner"></div>

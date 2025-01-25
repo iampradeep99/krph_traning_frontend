@@ -5,8 +5,20 @@ import { changeToCapitalize } from "../../../Service/Utilities/Utils";
 
 function Header({ toggleSidebar }) {
   const navigate = useNavigate();
+
+  const currentHour = new Date().getHours();
+  let greeting;
+
+  if (currentHour < 12) {
+    greeting = "Good Morning";
+  } else if (currentHour < 18) {
+    greeting = "Good Afternoon";
+  } else {
+    greeting = "Good Evening";
+  }
   
   const [name, setName] = useState(null);
+  const [role, setRole] = useState(null);
 
   useEffect(() => {
     // Get the username from sessionStorage when the component mounts
@@ -28,6 +40,15 @@ function Header({ toggleSidebar }) {
     }
   };
 
+  const bellIconStyle = {
+    color: "#D57616", 
+    fontSize: "20px",
+  };
+  
+  const envelopeIconStyle = {
+    color: "#006400", 
+    fontSize: "20px",
+  };
   const iconBoxStyle = {
     display: "flex",
     alignItems: "center",
@@ -58,7 +79,7 @@ function Header({ toggleSidebar }) {
   };
 
   return (
-    <nav className="main-header navbar navbar-expand navbar-white navbar-light">
+    <nav className="main-header navbar navbar-expand navbar-white navbar-light" >
       {/* Left section */}
       <ul className="navbar-nav">
         <li className="nav-item text-white font-weight-normal">
@@ -69,7 +90,8 @@ function Header({ toggleSidebar }) {
             href="#"
             role="button"
           >
-            <i className="fas fa-bars"></i>
+            <i className="fas fa-bars" style={{ color: "#004d00" }}></i>
+     
           </a>
         </li>
         <li className="nav-item d-none d-sm-inline-block" onClick={() => OpenPage("HO")}>
@@ -89,27 +111,42 @@ function Header({ toggleSidebar }) {
         style={{
           display: "flex",
           alignItems: "center",
-          marginRight: "5px",
           padding: "0px 20px 0px 20px",
         }}
       >
         <li className="nav-item">
-          <span className="nav-link" style={{ color: "#333", fontWeight: "bold" }}>
-            Hi, {name ? name : "User"}
-          </span>
-        </li>
-
-        <li style={iconBoxStyle}>
-          <i className="fas fa-bell"></i>
-          {/* <span style={badgeStyle}>2</span> */}
-        </li>
-        <li style={iconBoxStyle}>
-          <i className="fas fa-envelope"></i>
-          {/* <span style={badgeStyle}>5</span> */}
+        {/* <span className="nav-link" style={{ color: "#333", fontWeight: "500", fontSize: "xx-small" }}>
+            Hi, <h6>Rahul</h6><br/>{name ? name : "User"}
+          </span> */}
+         <span
+      className="nav-link"
+      style={{
+        color: "#333",
+        fontWeight: "500",
+        fontSize: "x-small",
+        textAlign: "right",
+        display: "inline-block",
+      }}
+    >
+      {greeting}, {role || "Rahul Gupta"} <br />
+      <span style={{ fontSize: "x-small", color: "#555"}}>
+        {name || "Guest"}
+      </span>
+    </span>
         </li>
         <li style={iconBoxStyle}>
           <i className="fas fa-user"></i>
         </li>
+
+        <li style={iconBoxStyle}>
+        <i className="fas fa-bell" style={bellIconStyle}></i>
+          {/* <span style={badgeStyle}>2</span> */}
+        </li>
+        <li style={iconBoxStyle}>
+        <i className="fas fa-envelope" style={envelopeIconStyle}></i>
+          {/* <span style={badgeStyle}>5</span> */}
+        </li>
+      
       </ul>
     </nav>
   );

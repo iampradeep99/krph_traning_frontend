@@ -12,7 +12,7 @@
   border-radius: 8px;
   box-shadow: 2px 4px 6px rgba(0.1, 0.1, 0.1, 0.2);
   width: 100%;
-  max-width: 900px;
+  max-width: 850px;
 
   /* For smaller screens, reduce padding and width */
   @media (max-width: 768px) {
@@ -66,7 +66,7 @@ label {
 input,
 select {
   padding: 8px;
-  font-size: 12px;
+  font-size: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
 
@@ -120,7 +120,7 @@ input::placeholder {
   input {
     width: 100%;
     padding-right: 100px;
-    font-size: 12px;
+    font-size: 10px;
 
     @media (max-width: 768px) {
       padding-right: 70px;
@@ -216,7 +216,7 @@ input::placeholder {
 
 .submit-btn {
   /* Customize your button styles here */
-  padding: 10px 20px;
+  padding: 10px;
   background-color: #054a06;
   color: white;
   border: none;
@@ -226,6 +226,7 @@ input::placeholder {
 
 .submit-btn:hover {
   background-color: #054a06;
+  color: white;
 }
 
 .back-btn {

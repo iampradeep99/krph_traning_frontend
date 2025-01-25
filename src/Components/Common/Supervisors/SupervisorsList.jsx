@@ -25,6 +25,22 @@ const SupervisorList = () => {
 
   const [columnDefs] = useState([
     {
+      headerName: "Action",
+      field: "action",
+      width: 100,
+      cellRendererFramework: (params) => (
+        <div className="action-icons">
+          <FaEdit
+            className="icon edit-icon"
+            title="Edit"
+            onClick={() => handleEdit(params.data)}
+          />
+          
+          <FaBan className="icon disable-icon" title="Disable" />
+        </div>
+      ),
+    },
+    {
       headerName: "Supervisor Name",
       field: "fullName",
       valueGetter: (params) =>
@@ -85,21 +101,7 @@ const SupervisorList = () => {
       sortable: true,
       filter: true,
     },
-    {
-      headerName: "Action",
-      field: "action",
-      cellRendererFramework: (params) => (
-        <div className="action-icons">
-          <FaEdit
-            className="icon edit-icon"
-            title="Edit"
-            onClick={() => handleEdit(params.data)}
-          />
-          
-          <FaBan className="icon disable-icon" title="Disable" />
-        </div>
-      ),
-    },
+
   ]);
 
   const handleEdit = (agentData) => {
@@ -223,7 +225,21 @@ const SupervisorList = () => {
             {filteredData?.length === 0 ? (
               <div className="no-records-found">No records found</div>
             ) : (
-              <AgGridReact rowData={filteredData} columnDefs={columnDefs} />
+                       <AgGridReact
+                rowData={filteredData}
+                columnDefs={[
+                  { 
+                    headerName: "S.No", 
+                    valueGetter: (params) => params.node.rowIndex + 1, 
+                    width: 80 ,
+                    cellStyle: { marginLeft: '20px' } 
+                  }, ...columnDefs,
+               
+                ]}
+                defaultColDef={{ resizable: true, sortable: true, cellStyle: { marginLeft: '15px' }  }}
+                rowHeight={30} 
+                 className="ag-theme-alpine"
+              />
             )}
           </div>
           {renderPagination()}
