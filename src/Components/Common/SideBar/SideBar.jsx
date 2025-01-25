@@ -12,9 +12,9 @@ const SideBarModified = ({ isSidebarOpen }) => {
   const navigate = useNavigate();
   const menuPermission = dataMenu[0]?.assignedProfile?.menuPermission || [];
 
-  const [expandedMenu, setExpandedMenu] = useState(null);
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
-  const [activemenu, setActivemenu] = useState(null);
+  const [expandedMenu, setExpandedMenu] = useState(menuId);
+  const [activeSubmenu, setActiveSubmenu] = useState(submenuId);
+  const [activemenu, setActivemenu] = useState(menuId);
   const toggleMenu = (menuId) => {
     setExpandedMenu(expandedMenu === menuId ? null : menuId);
   };
@@ -56,7 +56,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
             {menuPermission.map((menu) => (
               <li
                 key={menu._id}
-                className={` nav-item has-treeview text-white ${expandedMenu === menu._id ? "menu-open" : ""
+                className={` nav-item has-treeview text-white ${expandedMenu === menu._id ? "menu-open" : "menu-close"
                   }`}
                 style={{ marginBottom: "1px", color: "white" }}
               >
@@ -99,7 +99,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                   <ul
                     className="nav nav-treeview"
                     style={{
-                      display: expandedMenu === menu._id ? "block" : "none",
+                      display: expandedMenu === menu._id ? "block" : "block",
                     }}
                   >
                     {menu.submenus.map((submenu) => (
