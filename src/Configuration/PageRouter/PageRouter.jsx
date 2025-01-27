@@ -141,6 +141,7 @@ import AddSupervisor from "../../Components/Common/AddSupervisor/AddSupervisor";
 import UpcomingTraining from "../../Components/Common/UpComingTraining/UpComingTraining";
 import CompletedTraining from "../../Components/CompletedTraining/CompletedTraining";
 import Profile from "../../Components/Common/Profile/Profile";
+import ResetPassword from "../../Components/Common/ResetPassword/ResetPassword";
 
 function PageRouter() {
   return (
@@ -180,6 +181,13 @@ function PageRouter() {
           }
         />
          <Route
+          exact
+          path="/reset-password"
+          element={
+            <Page component={<ResetPassword />} title="reset password" />
+          }
+        />
+          <Route
           exact
           path="/profile"
           element={

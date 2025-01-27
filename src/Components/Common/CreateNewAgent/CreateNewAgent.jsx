@@ -139,7 +139,7 @@ const CreateNewAgent = () => {
           : value,
     }));
     if (name === "admin" && value !== "") {
-      fetchSupervisorsByAdmin(value);  // Fetch Supervisors based on the selected Admin
+      fetchSupervisorsByAdmin(value);  
     }
   };
 
