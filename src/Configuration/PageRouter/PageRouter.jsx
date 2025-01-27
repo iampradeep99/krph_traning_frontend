@@ -144,6 +144,7 @@ import Profile from "../../Components/Common/Profile/Profile";
 import ForgetPassword from "../../Components/ForgetPassword/ForgetPassword";
 import ResetPassword from "../../Components/ResetPassword/ResetPassword";
 
+import updatePassword from "../../Components/Common/ResetPassword/ResetPassword";
 
 function PageRouter() {
   return (
@@ -186,6 +187,13 @@ function PageRouter() {
           }
         />
          <Route
+          exact
+          path="/update-password"
+          element={
+            <Page component={<updatePassword />} title="reset password" />
+          }
+        />
+          <Route
           exact
           path="/profile"
           element={

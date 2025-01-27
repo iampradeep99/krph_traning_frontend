@@ -60,7 +60,7 @@ alert("test")
             {sortedMenu.map((menu) => (
               <li
                 key={menu._id}
-                className={` nav-item has-treeview text-white ${expandedMenu === menu._id ? "menu-open" : ""
+                className={` nav-item has-treeview text-white ${expandedMenu === menu._id ? "menu-open" : "menu-close"
                   }`}
                 style={{ marginBottom: "1px", color: "white" }}
               >
@@ -103,7 +103,7 @@ alert("test")
                   <ul
                     className="nav nav-treeview"
                     style={{
-                      display: expandedMenu === menu._id ? "block" : "none",
+                      display: expandedMenu === menu._id ? "block" : "block",
                     }}
                   >
                     {menu.submenus.map((submenu) => (

@@ -4,7 +4,7 @@ import { getSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
 import { useNavigate } from "react-router-dom";
 
-const SideBarModified = ({ isSidebarOpen }) => {
+const SideBarModified = ({ isSidebarOpen,setIsSidebarOpen }) => {
   // Get session storage data with a fallback
   let dataMenu = getSessionStorage("user") || [];
   const navigate = useNavigate();
@@ -30,6 +30,8 @@ const SideBarModified = ({ isSidebarOpen }) => {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem("isSidebarOpen"); 
+    setIsSidebarOpen(true); 
     sessionStorage.clear();
     navigate("/");
   };
@@ -124,7 +126,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     {menu.submenus.map((submenu) => (
                       <li
                         key={submenu._id}
-                        onClick={() => handleSubmenuClick(submenu._id)}
+                       
                         className="nav-item"
                         style={{
                           color: "white",
@@ -136,6 +138,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                         <NavLink
                           to={submenu.url}
                           className="nav-link"
+                          onClick={() => handleSubmenuClick(submenu._id)}
                           style={{
                             color: "white",
                             backgroundColor:
