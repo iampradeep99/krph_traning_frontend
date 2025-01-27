@@ -257,7 +257,7 @@ const Profile = () => {
 
         <div className="form-row">
           <div className="form-group">
-            <label htmlFor="email">Agent Email Id *</label>
+            <label htmlFor="email">Email Id *</label>
             <input
               type="email"
               id="email"
@@ -270,7 +270,7 @@ const Profile = () => {
           </div>
           <div className="form-group">
             <button className="reset-btn" onClick={resetForm}>
-              Modify Agent
+             Update
             </button>
           </div>
         </div>
