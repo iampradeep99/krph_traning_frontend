@@ -139,7 +139,9 @@ const Login = () => {
               
               >
                 Forgot Password?{" "}
-                <span className="text-success"   onClick={() => setShowResetPopup(true)}>Click Here</span>
+                <span className="text-success" onClick={() => navigate("/forget-password")}>
+  Click Here
+</span>
               </a>
             </form>
           </div>

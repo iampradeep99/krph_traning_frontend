@@ -141,6 +141,9 @@ import AddSupervisor from "../../Components/Common/AddSupervisor/AddSupervisor";
 import UpcomingTraining from "../../Components/Common/UpComingTraining/UpComingTraining";
 import CompletedTraining from "../../Components/CompletedTraining/CompletedTraining";
 import Profile from "../../Components/Common/Profile/Profile";
+import ForgetPassword from "../../Components/ForgetPassword/ForgetPassword";
+import ResetPassword from "../../Components/ResetPassword/ResetPassword";
+
 
 function PageRouter() {
   return (
@@ -148,6 +151,9 @@ function PageRouter() {
       <Routes>
         <Route exact path="/" element={<PageAuthenticator />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/forget-password" element={<ForgetPassword/>} />
+        <Route exact path="/reset-password" element={<ResetPassword/>} />
+
         <Route
           exact
           path="/home"

@@ -59,6 +59,42 @@ const ModifyAgent = () => {
     },
     
     {
+      headerName: "Status",
+      valueGetter: (params) => params?.data?.status || "NA", 
+      sortable: true,
+      filter: true,
+     width:"100%",
+      cellRendererFramework: (params) => {
+        const status = params?.data?.status;
+
+        let circleColor = "gray"; 
+        let statusText = "NA"; 
+
+        if (status == 0) {
+          circleColor = "green"; 
+          statusText = "Enabled";
+        } else if (status == 1) {
+          circleColor = "red"; 
+          statusText = "Disabled";
+        }
+
+        return (
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                backgroundColor: circleColor,
+              }}
+            ></div>
+            <span>{statusText}</span>
+          </div>
+        );
+      },
+      
+    },
+    {
       headerName: "Agent Name",
       field: "fullName",
       valueGetter: (params) =>
@@ -81,6 +117,7 @@ const ModifyAgent = () => {
       valueGetter: (params) => params.data.email || "NA",
       sortable: true,
       filter: true,
+      
     },
     {
       headerName: "Mobile No.",
@@ -112,6 +149,7 @@ const ModifyAgent = () => {
       valueGetter: (params) => params.data.state?.name || "NA",
       sortable: true,
       filter: true,
+      
     },
     {
       headerName: "City",
@@ -119,40 +157,7 @@ const ModifyAgent = () => {
       sortable: true,
       filter: true,
     },
-    {
-      headerName: "Status",
-      valueGetter: (params) => params?.data?.status || "NA", 
-      sortable: true,
-      filter: true,
-      cellRendererFramework: (params) => {
-        const status = params?.data?.status;
-
-        let circleColor = "gray"; 
-        let statusText = "NA"; 
-
-        if (status == 0) {
-          circleColor = "green"; 
-          statusText = "Enabled";
-        } else if (status == 1) {
-          circleColor = "red"; 
-          statusText = "Disabled";
-        }
-
-        return (
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                backgroundColor: circleColor,
-              }}
-            ></div>
-            <span>{statusText}</span>
-          </div>
-        );
-      },
-    },
+   
   
   ]);
 
