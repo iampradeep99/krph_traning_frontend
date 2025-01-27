@@ -1,0 +1,18 @@
+.main-sidebar {
+    .brand-image {
+      transition: all 0.3s ease;
+  
+      &.sidebar-open {
+        width: 95px;
+        height: 70px;
+        margin: 20px 20px 20px 50px;
+      }
+  
+      &.sidebar-closed {
+        width: 35px;
+        height: 40px;
+        margin: 10px 10px 10px 20px !important;
+      }
+    }
+  }
+  

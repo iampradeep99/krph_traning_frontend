@@ -5,28 +5,47 @@ import { changeToCapitalize } from "../../../Service/Utilities/Utils";
 
 function Header({ toggleSidebar }) {
   const navigate = useNavigate();
-  
+
+
+  const [role, setRole] = useState(null);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
+
+  const handleToggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
+  const handleNavigateToProfile = () => {
+    navigate("/profile");
+  };
+
+  const handleResetPassword = () => {
+    navigate("/reset-password");
+  };
+
+  const currentHour = new Date().getHours();
+  let greeting;
+
+  if (currentHour < 12) {
+    greeting = "Good Morning";
+  } else if (currentHour < 18) {
+    greeting = "Good Afternoon";
+  } else {
+    greeting = "Good Evening";
+  }
+
   const [name, setName] = useState(null);
+  const [roleName, setRoleName] = useState(null);
 
   useEffect(() => {
-    // Get the username from sessionStorage when the component mounts
     const storedUserName = getSessionStorage("user");
     if (storedUserName) {
       setName(changeToCapitalize(storedUserName[0].firstName));
+      setRoleName(changeToCapitalize(storedUserName[0].assignedProfile.profileName))
     } else {
-      setName("User"); // Default if userName is not found in sessionStorage
+      setName("User");
+      setRoleName('') // Default if userName is not found in sessionStorage
     }
   }, []);
-
-  const OpenPage = (type) => {
-    if (type === "HO") {
-      // Handle Home page navigation
-    } else if (type === "AB") {
-      // Handle About page navigation
-    } else if (type === "CO") {
-      // Handle Contact page navigation
-    }
-  };
 
   const iconBoxStyle = {
     display: "flex",
@@ -42,19 +61,26 @@ function Header({ toggleSidebar }) {
     cursor: "pointer",
   };
 
-  const badgeStyle = {
+  const dropdownMenuStyle = {
     position: "absolute",
-    top: "5px",
-    right: "5px",
-    backgroundColor: "#075307",
-    color: "#fff",
-    borderRadius: "50%",
-    width: "18px",
-    height: "18px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "12px",
+    top: "40px",
+    left: "-25px",
+    backgroundColor: "#fff",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    width: "150px",
+    zIndex: 10,
+    display: dropdownVisible ? "flex" : "none", // Controlled by state
+    flexDirection: "column",
+  };
+
+  const dropdownItemStyle = {
+    padding: "10px",
+    fontSize: "14px",
+    color: "#333",
+    cursor: "pointer",
+    textAlign: "left",
   };
 
   return (
@@ -69,17 +95,8 @@ function Header({ toggleSidebar }) {
             href="#"
             role="button"
           >
-            <i className="fas fa-bars"></i>
+            <i className="fas fa-bars" style={{ color: "#004d00" }}></i>
           </a>
-        </li>
-        <li className="nav-item d-none d-sm-inline-block" onClick={() => OpenPage("HO")}>
-          {/* <a href="#" className="nav-link">Home</a> */}
-        </li>
-        <li className="nav-item d-none d-sm-inline-block" onClick={() => OpenPage("AB")}>
-          {/* <a href="#" className="nav-link">About Us</a> */}
-        </li>
-        <li className="nav-item d-none d-sm-inline-block" onClick={() => OpenPage("CO")}>
-          {/* <a href="#" className="nav-link">Contact Us</a> */}
         </li>
       </ul>
 
@@ -89,26 +106,59 @@ function Header({ toggleSidebar }) {
         style={{
           display: "flex",
           alignItems: "center",
-          marginRight: "5px",
           padding: "0px 20px 0px 20px",
         }}
       >
-        <li className="nav-item">
-          <span className="nav-link" style={{ color: "#333", fontWeight: "bold" }}>
-            Hi, {name ? name : "User"}
-          </span>
+             <li className="nav-item">
+        {/* <span className="nav-link" style={{ color: "#333", fontWeight: "500", fontSize: "xx-small" }}>
+            Hi, <h6>Rahul</h6><br/>{name ? name : "User"}
+          </span> */}
+         <span
+      className="nav-link"
+      style={{
+        color: "#333",
+        fontWeight: "500",
+        fontSize: "x-small",
+        textAlign: "right",
+        display: "inline-block",
+      }}
+    >
+      {greeting}, {name || "Rahul Gupta"} <br />
+      <span style={{ fontSize: "x-small", color: "#555"}}>
+        {roleName || "Guest"}
+      </span>
+    </span>
+        </li>
+        <li
+          className="nav-item"
+          style={{
+            ...iconBoxStyle,
+            position: "relative",
+          }}
+          onClick={handleToggleDropdown}
+        >
+          <i className="fas fa-user"></i>
+          <div className="dropdown-menu" style={dropdownMenuStyle}>
+            <div
+              style={dropdownItemStyle}
+              onClick={handleNavigateToProfile}
+            >
+              Profile
+            </div>
+            <div
+              style={dropdownItemStyle}
+              onClick={handleResetPassword}
+            >
+              Reset Password
+            </div>
+          </div>
         </li>
 
         <li style={iconBoxStyle}>
-          <i className="fas fa-bell"></i>
-          {/* <span style={badgeStyle}>2</span> */}
+          <i className="fas fa-bell" style={{ color: "#D57616", fontSize: "20px" }}></i>
         </li>
         <li style={iconBoxStyle}>
-          <i className="fas fa-envelope"></i>
-          {/* <span style={badgeStyle}>5</span> */}
-        </li>
-        <li style={iconBoxStyle}>
-          <i className="fas fa-user"></i>
+          <i className="fas fa-envelope" style={{ color: "#006400", fontSize: "20px" }}></i>
         </li>
       </ul>
     </nav>

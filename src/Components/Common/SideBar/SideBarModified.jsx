@@ -1,29 +1,37 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { getSessionStorage, setSessionStorage } from "../../Login/Auth/auth";
+import { getSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
 import { useNavigate } from "react-router-dom";
 
-const SideBarModified = ({ isSidebarOpen }) => {
+const SideBarModified = ({ isSidebarOpen,setIsSidebarOpen }) => {
   // Get session storage data with a fallback
   let dataMenu = getSessionStorage("user") || [];
-
   const navigate = useNavigate();
   const menuPermission = dataMenu[0]?.assignedProfile?.menuPermission || [];
+
+  // Sort the menu items based on the 'order' property
+  const sortedMenu = menuPermission.sort((a, b) => a.order - b.order);
 
   const [expandedMenu, setExpandedMenu] = useState(null);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
   const [activemenu, setActivemenu] = useState(null);
+
   const toggleMenu = (menuId) => {
     setExpandedMenu(expandedMenu === menuId ? null : menuId);
   };
+
   const handleSubmenuClick = (submenuId) => {
     setActiveSubmenu(submenuId);
   };
+
   const handlemenuClick = (menuId) => {
     setActivemenu(menuId);
   };
+
   const handleLogout = () => {
+    localStorage.removeItem("isSidebarOpen"); 
+    setIsSidebarOpen(true); 
     sessionStorage.clear();
     navigate("/");
   };
@@ -36,18 +44,22 @@ const SideBarModified = ({ isSidebarOpen }) => {
         display: "flex",
         flexDirection: "column",
         height: "100vh",
+ 
       }}
     >
+       <style>
+
+  </style>
       <img
         src={newlogo}
         alt="Awards"
         className="brand-image"
         style={{
           width: isSidebarOpen ? "95px" : "35px",
-          height: isSidebarOpen ? "70px" : "40px",
+          height: isSidebarOpen ? "60px" : "40px",
           transition: "all 0.3s ease",
           marginTop: isSidebarOpen ? "20px" : "10px",
-          marginLeft: isSidebarOpen ? "50px" : "20px",
+          marginLeft: isSidebarOpen ? "50px" : "12px",
           marginRight: isSidebarOpen ? "20px" : "10px",
           marginBottom: isSidebarOpen ? "20px" : "10px",
         }}
@@ -61,10 +73,10 @@ const SideBarModified = ({ isSidebarOpen }) => {
             data-accordion="false"
             style={{ color: "white", fontSize: "14px" }}
           >
-            {menuPermission.map((menu) => (
+            {sortedMenu.map((menu) => (
               <li
                 key={menu._id}
-                className={` nav-item has-treeview text-white ${
+                className={`nav-item has-treeview text-white ${
                   expandedMenu === menu._id ? "menu-open" : ""
                 }`}
                 style={{ marginBottom: "2px", color: "white" }}
@@ -80,9 +92,7 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     <p>
                       {menu.name}
                       <i
-                        className={`right fas fa-angle-${
-                          expandedMenu === menu._id ? "down" : "down"
-                        }`}
+                        className={`right fas fa-angle-${expandedMenu === menu._id ? "down" : "down"}`}
                       ></i>
                     </p>
                   </div>
@@ -94,10 +104,10 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     style={{
                       color: activemenu === menu._id ? "#075307" : "white",
                       backgroundColor: activemenu === menu._id ? "#E3F7B6" : "#075307",
-                      borderRadius: activemenu === menu._id ? "8px" : "2px", // Change border radius here
+                      borderRadius: activemenu === menu._id ? "24px" : "24px", // Change border radius here
                       padding: "6px 12px",
                     }}
-                    >
+                  >
                     <i className={`nav-icon fas ${menu.icon}`}></i>
                     <p>{menu.name}</p>
                   </NavLink>
@@ -110,29 +120,30 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     style={{
                       display: expandedMenu === menu._id ? "block" : "none",
                       color: "white",
-                      borderRadius: "8px",
+                      // borderRadius: "24px",
                     }}
                   >
                     {menu.submenus.map((submenu) => (
                       <li
                         key={submenu._id}
-                        onClick={() => handleSubmenuClick(submenu._id)}
+                       
                         className="nav-item"
                         style={{
                           color: "white",
                           backgroundColor:
                             activeSubmenu === submenu._id ? "#037003" : "white",
-                          borderRadius: "8px",
+                          borderRadius: "24px",
                         }}
                       >
                         <NavLink
                           to={submenu.url}
                           className="nav-link"
+                          onClick={() => handleSubmenuClick(submenu._id)}
                           style={{
                             color: "white",
                             backgroundColor:
                               activeSubmenu === submenu._id ? "#E3F7B6" : "white",
-                            borderRadius: "8px",
+                            borderRadius: "24px",
                             padding: "6px 12px",
                           }}
                         >

@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { getSessionStorage, setSessionStorage } from "../../Login/Auth/auth";
+import { getSessionStorage } from "../../Login/Auth/auth";
 import newlogo from "../SideBar/Assets/logo-product.svg";
 import { useNavigate } from "react-router-dom";
+import "./SideBar.scss";
 
 const SideBarModified = ({ isSidebarOpen }) => {
+  // Get session storage data with a fallback
   let dataMenu = getSessionStorage("user") || [];
 
   const navigate = useNavigate();
   const menuPermission = dataMenu[0]?.assignedProfile?.menuPermission || [];
+
+  // Sort the menu items based on the 'order' property
+  const sortedMenu = menuPermission.sort((a, b) => a.order - b.order);
+alert("test")
 
   const [expandedMenu, setExpandedMenu] = useState(null);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
@@ -37,20 +43,11 @@ const SideBarModified = ({ isSidebarOpen }) => {
         height: "100vh",
       }}
     >
-      <img
-        src={newlogo}
-        alt="Awards"
-        className="brand-image"
-        style={{
-          width: isSidebarOpen ? "140px" : "35px",
-          height: isSidebarOpen ? "80px" : "35px",
-          transition: "all 0.3s ease",
-          marginTop: isSidebarOpen ? "20px" : "10px",
-          marginLeft: isSidebarOpen ? "50px" : "20px",
-          marginRight: isSidebarOpen ? "20px" : "10px",
-          marginBottom: isSidebarOpen ? "20px" : "10px",
-        }}
-      />
+  <img
+  src={newlogo}
+  alt="Awards"
+  className={`brand-image ${isSidebarOpen ? "sidebar-open" : "sidebar-closed"}`}
+/>
       <div className="sidebar" id="sidebarcolor" style={{ flex: "1" }}>
         <nav className="mt-2 text-white">
           <ul
@@ -60,12 +57,11 @@ const SideBarModified = ({ isSidebarOpen }) => {
             data-accordion="false"
             style={{ color: "white", fontSize: "6px" }}
           >
-            {menuPermission.map((menu) => (
+            {sortedMenu.map((menu) => (
               <li
                 key={menu._id}
-                className={` nav-item has-treeview text-white ${
-                  expandedMenu === menu._id ? "menu-open" : ""
-                }`}
+                className={` nav-item has-treeview text-white ${expandedMenu === menu._id ? "menu-open" : "menu-close"
+                  }`}
                 style={{ marginBottom: "1px", color: "white" }}
               >
                 {/* Main menu item */}
@@ -79,9 +75,8 @@ const SideBarModified = ({ isSidebarOpen }) => {
                     <p>
                       {menu.name}
                       <i
-                        className={`right fas fa-angle-${
-                          expandedMenu === menu._id ? "down" : "down"
-                        }`}
+                        className={`right fas fa-angle-${expandedMenu === menu._id ? "down" : "down"
+                          }`}
                       ></i>
                     </p>
                   </div>
@@ -108,52 +103,22 @@ const SideBarModified = ({ isSidebarOpen }) => {
                   <ul
                     className="nav nav-treeview"
                     style={{
-                      display: expandedMenu === menu._id ? "block" : "none",
-                      color: "white",
-                      borderRadius: "8px",
+                      display: expandedMenu === menu._id ? "block" : "block",
                     }}
                   >
                     {menu.submenus.map((submenu) => (
                       <li
                         key={submenu._id}
                         onClick={() => handleSubmenuClick(submenu._id)}
-                        className="nav-item"
-                        style={{
-                          color: "white",
-                          backgroundColor:
-                            activeSubmenu === submenu._id ? "#037003" : "white",
-                          borderRadius: "8px",
-                        }}
+                        className={`nav-item ${activeSubmenu === submenu._id ? "active-submenu" : ""
+                          }`}
                       >
                         <NavLink
                           to={submenu.url}
                           className="nav-link"
-                          style={{
-                            color: "white",
-                            backgroundColor:
-                              activeSubmenu === submenu._id ? "#E3F7B6" : "white",
-                            borderRadius: "8px",
-                            padding: "1px 2px",
-                           
-                          }}
                         >
-                          <i
-                            className={`nav-icon fas ${submenu.icon}`}
-                            style={{
-                              color: "#075307",
-                              backgroundColor:
-                                activeSubmenu === submenu._id ? "#E3F7B6" : "",
-                                fontSize: "small"
-                            }}
-                          ></i>
-                          <p
-                            style={{
-                              color: "#075307",
-                              fontSize: "2px",
-                            }}
-                          >
-                            {submenu.name}
-                          </p>
+                          <i className={`nav-icon fas ${submenu.icon}`}></i>
+                          <p>{submenu.name}</p>
                         </NavLink>
                       </li>
                     ))}

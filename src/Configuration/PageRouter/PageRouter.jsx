@@ -141,6 +141,10 @@ import AddSupervisor from "../../Components/Common/AddSupervisor/AddSupervisor";
 import UpcomingTraining from "../../Components/Common/UpComingTraining/UpComingTraining";
 import CompletedTraining from "../../Components/CompletedTraining/CompletedTraining";
 import Profile from "../../Components/Common/Profile/Profile";
+import ForgetPassword from "../../Components/ForgetPassword/ForgetPassword";
+import ResetPassword from "../../Components/ResetPassword/ResetPassword";
+
+import updatePassword from "../../Components/Common/ResetPassword/ResetPassword";
 
 function PageRouter() {
   return (
@@ -148,6 +152,9 @@ function PageRouter() {
       <Routes>
         <Route exact path="/" element={<PageAuthenticator />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/forget-password" element={<ForgetPassword/>} />
+        <Route exact path="/reset-password" element={<ResetPassword/>} />
+
         <Route
           exact
           path="/home"
@@ -181,6 +188,13 @@ function PageRouter() {
         />
          <Route
           exact
+          path="/update-password"
+          element={
+            <Page component={<updatePassword />} title="reset password" />
+          }
+        />
+          <Route
+          exact
           path="/profile"
           element={
             <Page component={<Profile />} title="Profile" />
@@ -208,7 +222,7 @@ function PageRouter() {
         />
         <Route
           exact
-          path="/agents/List"
+          path="/agents"
           element={<Page component={<ModifyAgent />} title="Modify Agent" />}
         />
         <Route

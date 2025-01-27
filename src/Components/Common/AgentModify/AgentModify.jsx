@@ -26,6 +26,75 @@ const ModifyAgent = () => {
 
   const [columnDefs] = useState([
     {
+      headerName: "Action",
+      field: "action",
+      width: 100,
+      cellRendererFramework: (params) => {
+        const agent = params.data;
+        const status = agent.status;
+  
+        // Handle Enable/Disable action
+        const handleStatusToggle = () => {
+          toggleAgentStatus(agent._id, status); // Use the function defined in the component
+        };
+  
+        return (
+          <div className="action-icons">
+            <FaEdit
+              className="icon edit-icon"
+              title="Edit"
+              onClick={() => handleEdit(agent._id)}
+            />
+          
+            
+            {/* Enable/Disable button */}
+            <FaBan
+              className={`icon disable-icon ${status === 0 ? "enabled" : "disabled"}`}
+              title={status === 0 ? "Disable" : "Enable"}
+              onClick={handleStatusToggle}
+            />
+          </div>
+        );
+      },
+    },
+    
+    {
+      headerName: "Status",
+      valueGetter: (params) => params?.data?.status || "NA", 
+      sortable: true,
+      filter: true,
+     width:"100%",
+      cellRendererFramework: (params) => {
+        const status = params?.data?.status;
+
+        let circleColor = "gray"; 
+        let statusText = "NA"; 
+
+        if (status == 0) {
+          circleColor = "green"; 
+          statusText = "Enabled";
+        } else if (status == 1) {
+          circleColor = "red"; 
+          statusText = "Disabled";
+        }
+
+        return (
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div
+              style={{
+                width: "12px",
+                height: "12px",
+                borderRadius: "50%",
+                backgroundColor: circleColor,
+              }}
+            ></div>
+            <span>{statusText}</span>
+          </div>
+        );
+      },
+      
+    },
+    {
       headerName: "Agent Name",
       field: "fullName",
       valueGetter: (params) =>
@@ -48,6 +117,7 @@ const ModifyAgent = () => {
       valueGetter: (params) => params.data.email || "NA",
       sortable: true,
       filter: true,
+      
     },
     {
       headerName: "Mobile No.",
@@ -79,6 +149,7 @@ const ModifyAgent = () => {
       valueGetter: (params) => params.data.state?.name || "NA",
       sortable: true,
       filter: true,
+      
     },
     {
       headerName: "City",
@@ -86,72 +157,8 @@ const ModifyAgent = () => {
       sortable: true,
       filter: true,
     },
-    {
-      headerName: "Status",
-      valueGetter: (params) => params?.data?.status || "NA", 
-      sortable: true,
-      filter: true,
-      cellRendererFramework: (params) => {
-        const status = params?.data?.status;
-
-        let circleColor = "gray"; 
-        let statusText = "NA"; 
-
-        if (status == 0) {
-          circleColor = "green"; 
-          statusText = "Enabled";
-        } else if (status == 1) {
-          circleColor = "red"; 
-          statusText = "Disabled";
-        }
-
-        return (
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                backgroundColor: circleColor,
-              }}
-            ></div>
-            <span>{statusText}</span>
-          </div>
-        );
-      },
-    },
-    {
-      headerName: "Action",
-      field: "action",
-      cellRendererFramework: (params) => {
-        const agent = params.data;
-        const status = agent.status;
+   
   
-        // Handle Enable/Disable action
-        const handleStatusToggle = () => {
-          toggleAgentStatus(agent._id, status); // Use the function defined in the component
-        };
-  
-        return (
-          <div className="action-icons">
-            <FaEdit
-              className="icon edit-icon"
-              title="Edit"
-              onClick={() => handleEdit(agent._id)}
-            />
-          
-            
-            {/* Enable/Disable button */}
-            <FaBan
-              className={`icon disable-icon ${status === 0 ? "enabled" : "disabled"}`}
-              title={status === 0 ? "Disable" : "Enable"}
-              onClick={handleStatusToggle}
-            />
-          </div>
-        );
-      },
-    },
-    
   ]);
 
   const handleFilterApply = async (adminId, supervisorId) => {
@@ -367,7 +374,7 @@ const ModifyAgent = () => {
                   value={selectedAdmin}
                   onChange={handleAdminChange}
                 >
-                  <option value="">--Select Admin--</option>
+                  <option value="">Select Admin</option>
                   {adminList?.map((ele) => (
                     <option key={ele._id} value={ele._id}>
                       {`${ele.firstName} ${ele.lastName}`}
@@ -383,7 +390,7 @@ const ModifyAgent = () => {
                   value={selectedSupervisor}
                   onChange={handleSupervisorChange}
                 >
-                  <option value="">--Select Supervisor--</option>
+                  <option value="">Select Supervisor</option>
                   {supervisorList?.map((supervisor) => (
                     <option key={supervisor._id} value={supervisor._id}>
                       {`${supervisor.firstName} ${supervisor.lastName}`}
@@ -405,7 +412,22 @@ const ModifyAgent = () => {
             </button>
           </div>
           <div className="ag-theme-alpine ag-grid-container">
-            <AgGridReact rowData={filteredData} columnDefs={columnDefs} />
+          <AgGridReact
+  rowData={filteredData}
+ 
+  columnDefs={[
+    { 
+      headerName: "S.No", 
+      valueGetter: (params) => params.node.rowIndex + 1, 
+      width: 80 ,
+      cellStyle: { marginLeft: '20px' } 
+    }, ...columnDefs,
+
+   
+  ]}
+  defaultColDef={{ resizable: true, sortable: true, cellStyle: { marginLeft: '15px' }  }}
+  rowHeight={30} 
+/>
           </div>
           {renderPagination()}
         </div>

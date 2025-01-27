@@ -33,6 +33,40 @@
           border-color: #075307;
         }
       }
+      .search-input::placeholder {
+        color: #075307; 
+        opacity: 0.6; 
+      }
+      .create-agent-button {
+        padding: 10px;
+        background-color: #075307;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight:600;
+        cursor: pointer;
+    
+        &:hover {
+          background-color: #004d00;
+        }
+        @keyframes move-arrow {
+          0% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(5px);
+          }
+          100% {
+            transform: translateX(0); 
+          }
+        }
+        
+        .create-agent-button i {
+          display: inline-block; 
+          animation: move-arrow 2s infinite; 
+        }
+      }
   
       
       .search-button-download {
@@ -53,46 +87,60 @@
     }
   
     .ag-grid-container {
-      height: 60vh;;
-    color: white;
-    border: 2px solid #006400;
+      height: 65vh;
+      color: white;
+      border: 2px solid #006400;
+      border-radius: 5px;
+    
+      // Header styles
       .ag-header {
         background-color: #006400;
         color: white;
         font-weight: bold;
+        font-size: 12px; // Set smaller font size for the header
       }
-  
+    
+      // Cell styles
+      .ag-row {
+        font-size: 12px; // Smaller font size for row content
+      }
+    
+      .ag-cell {
+        font-size: 12px; // Ensure cell content is smaller
+        padding: 4px; // Reduce padding inside cells if needed
+      }
+    
+      // Action icons
       .action-icons {
-       
         display: flex;
-        gap: 10px;
+        gap: 8px; // Adjust gap between icons
         justify-content: left;
-        align-items: left;
-  
+        align-items: center;
+    
         .icon {
-          margin: 5px;
-          font-size: 16px;
+          margin: 3px; // Reduce margin for icons
+          font-size: 12px; // Smaller icon size
           cursor: pointer;
-  
+    
           &.edit-icon {
             color: #4caf50;
           }
-  
+    
           &.notify-icon {
             color: #ff9800;
           }
-  
+    
           &.delete-icon {
             color: #f44336;
           }
-  
+    
           &:hover {
-            transform: scale(1.2);
+            transform: scale(1.1); // Slight hover effect
             transition: transform 0.2s ease-in-out;
           }
         }
       }
-    } 
+    }
   }
   .ag-theme-alpine .ag-header-cell-label {
     color: white !important; 
@@ -104,20 +152,7 @@
   align-items: center;
   margin-bottom: 20px;
 
-  .create-agent-button {
-    padding: 10px 20px;
-    background-color: #075307;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight:600;
-    cursor: pointer;
 
-    &:hover {
-      background-color: #004d00;
-    }
-  }
 }
 .pagination-container {
   display: flex;

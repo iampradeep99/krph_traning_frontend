@@ -18,17 +18,23 @@ function Page(props) {
       : "KRPH Training Management";
   }, [title]);
 
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  // Get the sidebar state from localStorage, defaulting to 'true' if not found
+  const savedSidebarState = localStorage.getItem("isSidebarOpen");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(
+    savedSidebarState !== null ? JSON.parse(savedSidebarState) : true
+  );
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+    // Store the new state in localStorage
+    localStorage.setItem("isSidebarOpen", JSON.stringify(!isSidebarOpen));
   };
 
   return (
     <>
       <div className="wrapper">
         <Header toggleSidebar={toggleSidebar} />
-        <SideBarModified isSidebarOpen={isSidebarOpen} />
+        <SideBarModified isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
         <div className="content-wrapper">{component}</div>
       </div>
     </>
